@@ -1,0 +1,63 @@
+/*
+CSS file created with:Instantblueprint - Create a web project framework in seconds.
+http://instantblueprint.com
+Project: Simple
+File: css/style.css
+Last edited: January 16, 2016, 5:52 pm
+*/
+
+/*  Main  */
+html {
+    height:100%;
+}
+body {
+    height:100%;
+    
+ background:#0FF;
+ color:#000;
+ margin:0;
+ padding:0;
+ cursor: none; 
+ 
+--main-color:#00AE7C;
+--main-color-pos:#fff;
+}
+
+#wrapper {
+ display: flex;
+ height:100%;
+ cursor: none; 
+ 
+}
+
+.container-half {
+  cursor: none; 
+  
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:50%;
+    background:var(--main-color-pos);
+}
+.container-half.container-negative {
+background:var(--main-color);
+}
+
+#px-render {
+    position: absolute;
+    mix-blend-mode: screen;
+
+}
+
+#cursor {
+    position: absolute;
+    float: left;
+    display:inline-block;
+    /* background:lime; */
+}
+
+
+  canvas{
+    width: 100%;
+    /* height: 50%; */
+  }
