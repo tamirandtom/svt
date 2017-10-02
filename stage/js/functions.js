@@ -43,8 +43,8 @@ if (showAniamtion) {
   var width = 700;
   var height = 700;
 
-  var innerCircleRadius = 170;
-  var outerCircleRadius = 220;
+  var innerCircleRadius = 190;
+  var outerCircleRadius = 240;
 
   var playground = document.getElementById('px-render');
   var playground2 = document.getElementById('px-render-green');
@@ -101,14 +101,12 @@ if (showAniamtion) {
   
   
 	  // create displacement map
-	  displacementSprite = PIXI.Sprite.fromImage('images/fill.gif');
+	  displacementSprite = PIXI.Sprite.fromImage('images/displacetexture.png');
 	  displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
 	  displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
   
 	  displacementSprite.scale.y = 0.9;
 	  displacementSprite.scale.x = 0.9;
-  
-  
   
 	  bgCircle = new PIXI.Graphics();
 	  bgCircle.beginFill(0x0000000);
@@ -154,6 +152,10 @@ if (showAniamtion) {
 	  bgGroup2.addChild(bgCircle2);
 	  bgGroup2.addChild(outerCircle2);
   
+
+
+	  
+
 	  // Apply filters to background+white circle
 	  bgGroup.filters = bgGroup2.filters = [blurFilter1,displacementFilter];
   
@@ -183,13 +185,13 @@ if (showAniamtion) {
 	  mainGroup2.addChild(innerCircle2);
   
 	  stage.addChild(mainGroup);
-	  stage.addChild(tilingSprite);
-	  stage.addChild(noiseSquare);
+	//   stage.addChild(tilingSprite);
+	//   stage.addChild(noiseSquare);
 	  stage.addChild(displacementSprite);
   
 	  stage2.addChild(mainGroup2);
-	  stage2.addChild(tilingSprite2);
-	  stage2.addChild(noiseSquare2);
+	//   stage2.addChild(tilingSprite2);
+	//   stage2.addChild(noiseSquare2);
 	  stage2.addChild(displacementSprite);
   
   
@@ -209,7 +211,7 @@ if (showAniamtion) {
 	  
 	  
   
-	  // count += 0.1;
+	  count += 0.1;
   
 	  mousePullStrenght = 7;
 
@@ -224,6 +226,10 @@ if (showAniamtion) {
 
 	//   displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
 	//   displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
+  
+	
+	  displacementSprite.x =   2* count;
+	  displacementSprite.y =   2* count;
   
   
 	  renderer.render(stage);
