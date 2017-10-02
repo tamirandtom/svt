@@ -31,6 +31,8 @@ body {
 
 canvas {
     width:100%;
+    margin-bottom:30px;
+    
 }
 
 
@@ -76,6 +78,7 @@ canvas {
 .svt-main-title {
     width:38%;
     max-width: 256px;
+    margin-bottom:30px;
 }
 
 #cursor {
