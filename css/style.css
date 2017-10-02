@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:500,700&subset=hebrew');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i');
+
+/*  Main  */
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    background: #00AE7C;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    /* cursor: none; */
+    --main-color: #00AE7C;
+    --main-color-pos: #fff;
+    --color-black: #000;
+    --color-none: rgba(0,0,0,0);
+}
+
+#wrapper {
+    display: flex;
+    height: 100%;
+    /* cursor: none; */
+}
+
+/* Rendering  */
+
+canvas {
+    width:100%;
+    margin-bottom:30px;
+    
+}
+
+
+.float-intro.white {
+    mix-blend-mode: screen;    
+    left:0%;
+    }
+    
+    .float-intro.green {
+    mix-blend-mode: multiply;    
+    left:50%;
+    }
+    
+    .float-intro {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width:50%;
+    height:100%;
+    pointer-events:none;
+    z-index:100;
+    }
+
+.container-half {
+    /* cursor: none;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction:column; */
+    width: 50%;
+    background: var(--main-color-pos);
+    overflow: hidden;
+    position: relative;
+    color: var(--main-color);
+}
+
+.container-half.container-negative {
+    background: var(--main-color);
+    color: var(--main-color-pos);
+}
+
+.svt-main-title {
+    width:38%;
+    max-width: 256px;
+    margin-bottom:30px;
+}
+
+#cursor {
+    position: absolute;
+    float: left;
+    display: inline-block;
+    /* background:lime; */
+}
+
+canvas {
+    /* width: 100%; */
+    /* height: 50%; */
+}
+
+
+
+.svt-main-title--mobile {
+    display: none;
+}
+
+.mobile-coming-soon-overlay {
+    display: none;
+}
+
+.hazira-container,
+.svt-container {
+    align-self: flex-end flex-end;
+}
+
+
+/* Floating bottom links */
+
+.float-bottom {
+    position: fixed;
+    bottom: 60px;
+    display: flex;
+    width: 100%;
+    z-index: 30;
+    justify-content: space-between;
+}
+
+.float-bottom__contain {
+    width: 100%;
+    text-align: center;
+}
+
+.svt-program-link {
+    font-size: 18px;
+    /* margin-bottom:32px; */
+    display: inline-block;
+    padding: 5px 0px;
+    border-bottom: 2px solid  var(--color-none);
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.svt-program-link:hover {
+    border-color: #fff;
+}
+
+.svt-program-link.green {
+    color: var(--main-color);
+    border-color:var(--color-none);
+}
+
+.svt-program-link.green:hover {
+    border-color: var(--main-color);
+}
+
+
+/* mobile */
+
+@media (max-width: 800px) {
+    .float-bottom {
+        bottom: 30px;
+    }
+    .svt-program-link.green {
+        border-color: var(--main-color);
+        /* border-width:1px; */
+    }
+    .svt-program-link {
+        border-width: 1px;
+        border-color: #fff;
+    }
+    .container-half {
+        align-items: flex-start;
+    }
+    .mobile-coming-soon-overlay {
+        display: flex;
+        z-index: 1;
+        text-align: center;
+        /* padding:0 40px; */
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        letter-spacing: 2.3px;
+        line-height: 43px;
+        font-family: 'Libre Baskerville', serif;
+        font-style: italic;
+        color: var(--color-black);
+    }
+    canvas {
+        display: none;
+    }
+    body,
+    #wrapper {
+        cursor: auto;
+    }
+    #cursor {
+        display: none;
+    }
+    .svt-main-title--mobile {
+        display: flex;
+        text-align: center;
+        font-size: 28px;
+        line-height: 24px;
+        font-family: 'Frank Ruhl Libre', serif;
+        font-weight: 500;
+        letter-spacing: 1.3px;
+        /* align-self: flex-end; */
+        margin-top: 25px;
+    }
+    .svt-main-title {
+        display: none;
+    }
+}

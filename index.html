@@ -8,7 +8,18 @@
   <title>The School of Visual Theater התיאטרון החזותי</title>
   <meta name="description" content="The School of Visual Theater התיאטרון החזותי">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+  <meta property="og:url" content="https://svt-hazira.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="svt-hazira.com" />
+  <meta property="og:site_name" content="The School of Visual Theater התיאטרון החזותי" />
+  <meta property="og:description" content="The School of Visual Theater התיאטרון החזותי" />
+  <meta property="og:image" content="http://svt-hazira.com/ogimage.png" />
+  <meta property="og:image:url" content="http://svt-hazira.com/ogimage.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <link rel="icon" href="/favicon.ico?v=1.2">   
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
@@ -16,7 +27,42 @@
 </head>
 
 <body>
- -
+    <div class="float-intro white">
+        <div id="px-render" class="pixi-render"></div>
+    </div>
+
+    <div class="float-intro green">
+  <div id="px-render-green" class="pixi-render "></div>
+    </div>
+
+    
+  <div class="float-bottom">
+    <div class="float-bottom__contain"><a href="/files/SVT_WEB.pdf" class="svt-program-link">תוכניה</a><br><a href="https://www.eventer.co.il/user/svtjlm" class="svt-program-link">כרטיסים</a></div>
+    <div class="float-bottom__contain"><a href="/files/Hazira_WEB.pdf" class="svt-program-link green">תוכניה</a><br><a href="https://www.eventer.co.il/user/hazira?events=0&events=59d0bf1ce896350d00187565&events=59d0c024d5a305130014a256&events=59d0c1248e2b7b1300f1e869&events=59d0c303e896350d001875bb" class="svt-program-link green">כרטיסים</a></div>
+  </div>
+ 
+    <div class="mobile-coming-soon-overlay">coming<br>
+        soon</div>
+  <div id="wrapper">
+    <div class="container-half container-negative">
+      <img class="svt-main-title" src="images/title-2.svg" />
+      <div class="svt-main-title--mobile">החזותי</div>
+    </div>
+
+    <div class="container-half">
+      <img class="svt-main-title" src="images/title-1.svg" />
+      <div class="svt-main-title--mobile">הזירה</div>
+
+    </div>
+  </div>
+
+  <div id="cursor"><img src="images/cs.svg" /></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.2.2/pixi.min.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/functions.js"></script>
+
 </body>
 
 </html>
