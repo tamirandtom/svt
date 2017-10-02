@@ -1,10 +1,4 @@
-/*
-CSS file created with:Instantblueprint - Create a web project framework in seconds.
-http://instantblueprint.com
-Project: Simple
-File: css/style.css
-Last edited: January 16, 2016, 5:52 pm
-*/
+
 
 @import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:700&subset=hebrew');
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i');
@@ -22,7 +16,7 @@ body {
     color: #000;
     margin: 0;
     padding: 0;
-    cursor: none;
+    /* cursor: none; */
     --main-color: #00AE7C;
     --main-color-pos: #fff;
     --color-black:#000;
@@ -31,7 +25,7 @@ body {
 #wrapper {
     display: flex;
     height: 100%;
-    cursor: none;
+    /* cursor: none; */
 }
 
 .container-half {
@@ -39,6 +33,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* flex-direction:column; */
     width: 50%;
     background: var(--main-color-pos);
     overflow: hidden;
@@ -51,13 +46,16 @@ body {
     color: var(--main-color-pos);
 }
 
-#px-render {
+
+.pixi-render {
     position: absolute;
+    top: calc(50% - 300px);
+}
+#px-render {
     mix-blend-mode: screen;
 }
 
 #px-render-green {
-    position: absolute;
     mix-blend-mode: multiply;
 }
 
@@ -81,7 +79,39 @@ canvas {
     display: none;
 }
 
+.hazira-container, .svt-container {
+   align-self: flex-end flex-end;
+}
 
+
+/* Floating bottom links */
+.float-bottom {
+position:fixed;
+bottom:60px;
+display:flex;
+width:100%;
+z-index:30;
+justify-content:space-between;
+}
+.float-bottom__contain {
+    width:100%;
+    text-align:center;
+}
+.svt-program-link {
+    margin-bottom:32px;
+    display:inline-block;
+    padding:5px 0px;
+    border-bottom:2px solid #fff;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight:700;
+    color:#fff;    
+    text-decoration:none;
+}
+.svt-program-link.green {
+    color:var(--main-color);    
+    border-color:var(--main-color);    
+    
+}
 /* mobile */
 
 @media (max-width: 800px) {
@@ -121,8 +151,8 @@ canvas {
         line-height: 24px;
         font-family: 'Frank Ruhl Libre', serif;
         font-weight: 700;
-        align-self: flex-end;
-        margin-bottom: 35px;
+        /* align-self: flex-end; */
+        /* margin-bottom: 35px; */
         
     }
     .svt-main-title {

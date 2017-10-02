@@ -18,212 +18,215 @@ isMobile = function() {
 	
 //   });
 
+showAniamtion= true;
 
-
-
-
+if (showAniamtion) {
 
   // aniamtions
-var screenWidth = window.innerWidth;
-var screenHeight = window.innerHeight;
+  var screenWidth = window.innerWidth;
+  var screenHeight = window.innerHeight;
+  
+  var cursorPosW = 0,
+	  cursorPosH = 0;
+  
+  $(document).bind('mousemove', function (e) {
+	  $('#cursor').css({
+		  left: e.pageX - 65,
+		  top: e.pageY - 10
+	  });
+	  cursorPosW = e.pageX / screenWidth;
+	  cursorPosH = e.pageY / screenHeight;
+  });
+  
+  
+  // Set up canvas width
+  var width = 600;
+  var height = 600;
+  var playground = document.getElementById('px-render');
+  var playground2 = document.getElementById('px-render-green');
+  var canvas,canvas2;
+  // Timer for animation
+  var count = 0;
+  var raf;
+  
+  
+  var renderer = PIXI.autoDetectRenderer(width, height, {
+	  transparent: true
+  });
+  var renderer2 = PIXI.autoDetectRenderer(width, height, {
+	  transparent: true
+  });
+  renderer.autoResize = false;
+  renderer2.autoResize = false;
+  
+  renderer.backgroundColor = 0x000000;
+  renderer2.backgroundColor = 0x00AE7C;
+  
+  var innerCircle, outerCircle, bgCircle;
+  var innerCircle2, outerCircle2, bgCircle2;
+  var displacementSprite,
+	  displacementFilter,
+	  stage,stage2;
+  
+  // Both blur filters
+  var blurFilter1 = new PIXI.filters.BlurFilter();
+  var blurFilter2 = new PIXI.filters.BlurFilter();
+  
+  // Groups
+  var bgGroup = new PIXI.Container();
+  var mainGroup = new PIXI.Container();
+  
+  var bgGroup2 = new PIXI.Container();
+  var mainGroup2 = new PIXI.Container();
+  
+  var noiseFilter = new PIXI.filters.NoiseFilter(0.3, 6);
+  
+  
+  
+  
+  
+  function setScene() {
+  
+	  playground.appendChild(renderer.view);
+	  playground2.appendChild(renderer2.view);
+	  stage = new PIXI.Container();
+	  stage2 = new PIXI.Container();
+  
+	  stage.filters = stage2.filters = [new PIXI.filters.VoidFilter()];
+	  stage.filterArea = stage2.filterArea = new PIXI.Rectangle(0, 0, width, width);
+  
+  
+	  // create displacement map
+	  displacementSprite = PIXI.Sprite.fromImage('images/fill.gif');
+	  displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+	  displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+  
+	  displacementSprite.scale.y = 0.9;
+	  displacementSprite.scale.x = 0.9;
+  
+  
+  
+	  bgCircle = new PIXI.Graphics();
+	  bgCircle.beginFill(0x0000000);
+	  bgCircle.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
+	  bgCircle.endFill();
+  
+	  bgCircle2 = new PIXI.Graphics();
+	  bgCircle2.beginFill(0xffffff);
+	  bgCircle2.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
+	  bgCircle2.endFill();
+  
+  
+	  outerCircle = new PIXI.Graphics();
+	  outerCircle.beginFill(0xffffff);
+	  outerCircle.drawCircle(width / 2, height / 2, 200); //(x,y,radius)
+	  outerCircle.endFill();
+  
+	  outerCircle2 = new PIXI.Graphics();
+	  outerCircle2.beginFill(0x00AE7C);
+	  outerCircle2.drawCircle(width / 2, height / 2, 200); //(x,y,radius)
+	  outerCircle2.endFill();
+  
+	  blurFilter1.blur = 25;
+  
+  
+	  innerCircle = new PIXI.Graphics();
+	  innerCircle.beginFill(0x000000);
+	  innerCircle.drawCircle(width / 2, height / 2, 160); //(x,y,radius)
+	  innerCircle.endFill();
+  
+	  innerCircle2 = new PIXI.Graphics();
+	  innerCircle2.beginFill(0xffffff);
+	  innerCircle2.drawCircle(width / 2, height / 2, 160); //(x,y,radius)
+	  innerCircle2.endFill();
+	  
+	  blurFilter2.blur = 4;
+	  innerCircle.filters = innerCircle2.filters = [blurFilter2];
+  
+	  // adding  to the container
+	  bgGroup.addChild(bgCircle);
+	  bgGroup.addChild(outerCircle);
+  
+	  bgGroup2.addChild(bgCircle2);
+	  bgGroup2.addChild(outerCircle2);
+  
+	  // Apply filters to background+white circle
+	  bgGroup.filters = bgGroup2.filters = [blurFilter1,displacementFilter];
+  
+	  // adding  to the main group	
+	  mainGroup.addChild(bgGroup);
+	  mainGroup2.addChild(bgGroup2);
+  
+	  // Adding noise square (black)
+	  var noiseSquare = new PIXI.Graphics();
+	  noiseSquare.beginFill(0xFFFFFF);
+	  noiseSquare.drawRect(0, 0, width, height);
+	  var texture = PIXI.Texture.fromImage("images/noise.png");
+	  var tilingSprite = new PIXI.TilingSprite(texture, width, height);
+	  tilingSprite.mask = noiseSquare;
+  
+		  // Adding noise square (white)
+		  var noiseSquare2 = new PIXI.Graphics();
+		  noiseSquare2.beginFill(0x000000);
+		  noiseSquare2.drawRect(0, 0, width, height);
+		  var texture2 = PIXI.Texture.fromImage("images/noisew.png");
+		  var tilingSprite2 = new PIXI.TilingSprite(texture2, width, height);
+		  tilingSprite2.mask = noiseSquare2;
+  
+  
+	  // Add everything to the group
+	  mainGroup.addChild(innerCircle);
+	  mainGroup2.addChild(innerCircle2);
+  
+	  stage.addChild(mainGroup);
+	  stage.addChild(tilingSprite);
+	  stage.addChild(noiseSquare);
+	  stage.addChild(displacementSprite);
+  
+	  stage2.addChild(mainGroup2);
+	  stage2.addChild(tilingSprite2);
+	  stage2.addChild(noiseSquare2);
+	  stage2.addChild(displacementSprite);
+  
+  
+	  animate();
+  }
+  
+  // function removeScene(){
+  // 	cancelAnimationFrame(raf);
+  // 	stage.removeChildren();
+  // 	stage.destroy(true);
+  // 	playground.removeChild(canvas);
+  // }
+  
+  
+  function animate() {
+	  raf = requestAnimationFrame(animate);
+	  
+	  
+  
+	  // count += 0.1;
+  
+	  mousePullStrenght = 7;
+	  innerCircle.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
+	  innerCircle.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
+	  innerCircle2.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
+	  innerCircle2.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
+  
+	  displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
+	  displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
+  
+  
+	  renderer.render(stage);
+	  renderer2.render(stage2);
+  
+	  canvas = playground.querySelector('canvas');
+	  canvas2 = playground2.querySelector('canvas');
+  }
+  
+  setScene();
+	  
+  
 
-var cursorPosW = 0,
-	cursorPosH = 0;
-
-$(document).bind('mousemove', function (e) {
-	$('#cursor').css({
-		left: e.pageX - 65,
-		top: e.pageY - 10
-	});
-	cursorPosW = e.pageX / screenWidth;
-	cursorPosH = e.pageY / screenHeight;
-});
-
-
-// Set up canvas width
-var width = 600;
-var height = 600;
-var playground = document.getElementById('px-render');
-var playground2 = document.getElementById('px-render-green');
-var canvas,canvas2;
-// Timer for animation
-var count = 0;
-var raf;
-
-
-var renderer = PIXI.autoDetectRenderer(width, height, {
-	transparent: true
-});
-var renderer2 = PIXI.autoDetectRenderer(width, height, {
-	transparent: true
-});
-renderer.autoResize = false;
-renderer2.autoResize = false;
-
-renderer.backgroundColor = 0x000000;
-renderer2.backgroundColor = 0x00AE7C;
-
-var innerCircle, outerCircle, bgCircle;
-var innerCircle2, outerCircle2, bgCircle2;
-var displacementSprite,
-	displacementFilter,
-	stage,stage2;
-
-// Both blur filters
-var blurFilter1 = new PIXI.filters.BlurFilter();
-var blurFilter2 = new PIXI.filters.BlurFilter();
-
-// Groups
-var bgGroup = new PIXI.Container();
-var mainGroup = new PIXI.Container();
-
-var bgGroup2 = new PIXI.Container();
-var mainGroup2 = new PIXI.Container();
-
-var noiseFilter = new PIXI.filters.NoiseFilter(0.3, 6);
-
-
-
-
-
-function setScene() {
-
-	playground.appendChild(renderer.view);
-	playground2.appendChild(renderer2.view);
-	stage = new PIXI.Container();
-	stage2 = new PIXI.Container();
-
-	stage.filters = stage2.filters = [new PIXI.filters.VoidFilter()];
-	stage.filterArea = stage2.filterArea = new PIXI.Rectangle(0, 0, width, width);
-
-
-	// create displacement map
-	displacementSprite = PIXI.Sprite.fromImage('images/fill.gif');
-	displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
-	displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-
-	displacementSprite.scale.y = 0.9;
-	displacementSprite.scale.x = 0.9;
-
-
-
-	bgCircle = new PIXI.Graphics();
-	bgCircle.beginFill(0x0000000);
-	bgCircle.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
-	bgCircle.endFill();
-
-	bgCircle2 = new PIXI.Graphics();
-	bgCircle2.beginFill(0xffffff);
-	bgCircle2.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
-	bgCircle2.endFill();
-
-
-	outerCircle = new PIXI.Graphics();
-	outerCircle.beginFill(0xffffff);
-	outerCircle.drawCircle(width / 2, height / 2, 200); //(x,y,radius)
-	outerCircle.endFill();
-
-	outerCircle2 = new PIXI.Graphics();
-	outerCircle2.beginFill(0x00AE7C);
-	outerCircle2.drawCircle(width / 2, height / 2, 200); //(x,y,radius)
-	outerCircle2.endFill();
-
-	blurFilter1.blur = 25;
-
-
-	innerCircle = new PIXI.Graphics();
-	innerCircle.beginFill(0x000000);
-	innerCircle.drawCircle(width / 2, height / 2, 160); //(x,y,radius)
-	innerCircle.endFill();
-
-	innerCircle2 = new PIXI.Graphics();
-	innerCircle2.beginFill(0xffffff);
-	innerCircle2.drawCircle(width / 2, height / 2, 160); //(x,y,radius)
-	innerCircle2.endFill();
-	
-	blurFilter2.blur = 4;
-	innerCircle.filters = innerCircle2.filters = [blurFilter2];
-
-	// adding  to the container
-	bgGroup.addChild(bgCircle);
-	bgGroup.addChild(outerCircle);
-
-	bgGroup2.addChild(bgCircle2);
-	bgGroup2.addChild(outerCircle2);
-
-	// Apply filters to background+white circle
-	bgGroup.filters = bgGroup2.filters = [blurFilter1,displacementFilter];
-
-	// adding  to the main group	
-	mainGroup.addChild(bgGroup);
-	mainGroup2.addChild(bgGroup2);
-
-	// Adding noise square (black)
-	var noiseSquare = new PIXI.Graphics();
-	noiseSquare.beginFill(0xFFFFFF);
-	noiseSquare.drawRect(0, 0, width, height);
-	var texture = PIXI.Texture.fromImage("images/noise.png");
-	var tilingSprite = new PIXI.TilingSprite(texture, width, height);
-	tilingSprite.mask = noiseSquare;
-
-		// Adding noise square (white)
-		var noiseSquare2 = new PIXI.Graphics();
-		noiseSquare2.beginFill(0x000000);
-		noiseSquare2.drawRect(0, 0, width, height);
-		var texture2 = PIXI.Texture.fromImage("images/noisew.png");
-		var tilingSprite2 = new PIXI.TilingSprite(texture2, width, height);
-		tilingSprite2.mask = noiseSquare2;
-
-
-	// Add everything to the group
-	mainGroup.addChild(innerCircle);
-	mainGroup2.addChild(innerCircle2);
-
-	stage.addChild(mainGroup);
-	stage.addChild(tilingSprite);
-	stage.addChild(noiseSquare);
-	stage.addChild(displacementSprite);
-
-	stage2.addChild(mainGroup2);
-	stage2.addChild(tilingSprite2);
-	stage2.addChild(noiseSquare2);
-	stage2.addChild(displacementSprite);
-
-
-	animate();
 }
 
-// function removeScene(){
-// 	cancelAnimationFrame(raf);
-// 	stage.removeChildren();
-// 	stage.destroy(true);
-// 	playground.removeChild(canvas);
-// }
-
-
-function animate() {
-	raf = requestAnimationFrame(animate);
-	
-	
-
-	// count += 0.1;
-
-	mousePullStrenght = 7;
-	innerCircle.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
-	innerCircle.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
-	innerCircle2.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
-	innerCircle2.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
-
-	displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
-	displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
-
-
-	renderer.render(stage);
-	renderer2.render(stage2);
-
-	canvas = playground.querySelector('canvas');
-	canvas2 = playground2.querySelector('canvas');
-}
-
-setScene();
-	
