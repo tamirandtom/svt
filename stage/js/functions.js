@@ -40,8 +40,12 @@ if (showAniamtion) {
   
   
   // Set up canvas width
-  var width = 600;
-  var height = 600;
+  var width = 700;
+  var height = 700;
+
+  var innerCircleRadius = 170;
+  var outerCircleRadius = 220;
+
   var playground = document.getElementById('px-render');
   var playground2 = document.getElementById('px-render-green');
   var canvas,canvas2;
@@ -119,12 +123,12 @@ if (showAniamtion) {
   
 	  outerCircle = new PIXI.Graphics();
 	  outerCircle.beginFill(0xffffff);
-	  outerCircle.drawCircle(width / 2, height / 2, 200); //(x,y,radius)
+	  outerCircle.drawCircle(width / 2, height / 2, outerCircleRadius); //(x,y,radius)
 	  outerCircle.endFill();
   
 	  outerCircle2 = new PIXI.Graphics();
 	  outerCircle2.beginFill(0x00AE7C);
-	  outerCircle2.drawCircle(width / 2, height / 2, 200); //(x,y,radius)
+	  outerCircle2.drawCircle(width / 2, height / 2, outerCircleRadius); //(x,y,radius)
 	  outerCircle2.endFill();
   
 	  blurFilter1.blur = 25;
@@ -132,12 +136,12 @@ if (showAniamtion) {
   
 	  innerCircle = new PIXI.Graphics();
 	  innerCircle.beginFill(0x000000);
-	  innerCircle.drawCircle(width / 2, height / 2, 160); //(x,y,radius)
+	  innerCircle.drawCircle(width / 2, height / 2, innerCircleRadius); //(x,y,radius)
 	  innerCircle.endFill();
   
 	  innerCircle2 = new PIXI.Graphics();
 	  innerCircle2.beginFill(0xffffff);
-	  innerCircle2.drawCircle(width / 2, height / 2, 160); //(x,y,radius)
+	  innerCircle2.drawCircle(width / 2, height / 2, innerCircleRadius); //(x,y,radius)
 	  innerCircle2.endFill();
 	  
 	  blurFilter2.blur = 4;
@@ -208,7 +212,7 @@ if (showAniamtion) {
 	  // count += 0.1;
   
 	  mousePullStrenght = 7;
-	  
+
 	//   inner circle move
 
 	//   innerCircle.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
