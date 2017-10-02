@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,500,700|Libre+Baskerville:400,400i,700|Miriam+Libre:400,700');
+
+@font-face {
+    font-family: 'fakir';
+    src: url('fonts/2-regular-webfont.woff2') format('woff2'),
+         url('fonts/2-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'Hadassah';
+    font-weight:400;    
+    src: url('fonts/HadassahFriedlaenderRegular.63c349a4b85685df370e58b039d668ad.eot');
+    src: url('fonts/HadassahFriedlaenderRegular.63c349a4b85685df370e58b039d668ad.eot#iefix') format('embedded-opentype'), url('fonts/HadassahFriedlaenderRegular.7baf17c3ffa2ad28a80671e3fa938043.woff2') format('woff2'), url('fonts/HadassahFriedlaenderRegular.05f7f16356223548ccd57f9a6ecf97bf.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Hadassah';
+    font-weight:700;
+    src: url('fonts/HadassahFriedlaenderBold.b3551827fd974696dadb49db7e6ff98d.eot');
+    src: url('fonts/HadassahFriedlaenderBold.b3551827fd974696dadb49db7e6ff98d.eot#iefix') format('embedded-opentype'), url('fonts/HadassahFriedlaenderBold.e7ab7f9fff33a9209d9dc4434dbf6a9b.woff2') format('woff2'), url('fonts/HadassahFriedlaenderBold.0256683e34dcfaf68022ba99b8d7dd88.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Nitti';
+    src: url('fonts/c-black-webfont.woff2') format('woff2'),
+         url('fonts/c-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+.font-fr {
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+.font-hadassa {
+    font-family: 'Hadassah', serif;
+}
+
+.font-fakir {}
+
+.font-miriam {
+    font-family: 'Miriam Libre', sans-serif;
+}
+
+.font-bask {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.font-niti {
+    font-family: 'Nitti', serif;   
+}
+
+
+
+.intro-text-title
+{
+    font-family: 'Nitti', serif;   
+font-size:39px;
+line-height:41px;
+letter-spacing:1.9px;    
+}
+.intro-text-subtitle {
+    font-family: 'Nitti', serif;   
+    font-size:32px;
+    line-height:39px;
+    letter-spacing:3.6px;  
+    margin-bottom:54px;
+}
+.intro-text-pre {
+    font-family: 'Libre Baskerville', serif;
+    font-style:italic;  
+    font-size:24px;
+    line-height:34px;
+    letter-spacing:0.3px;  
+    margin-bottom:29px;
+    
+}
+.intro-text-body
+
+{
+    font-family: 'Libre Baskerville', serif;
+    font-size:18px;
+    line-height:29px;
+    letter-spacing:0px;  
+    margin-bottom:120px;
+}
+
+
+/* intro Zira */
+
+.zi-text-title {
+    font-family: 'Hadassah';
+    font-weight:700;
+    font-size:41px;
+    line-height:39px;
+    letter-spacing:3px;
+}
+.zi-text-subtitle {
+    font-family: 'Hadassah';
+    font-weight:700;
+    font-size:27px;
+    line-height:39px;
+    letter-spacing:3px;
+    margin-bottom:54px;
+    
+}
+.zi-text-pre {
+    font-family: 'Libre Baskerville', serif;
+    font-style:italic;  
+    font-size:24px;
+    line-height:34px;
+    letter-spacing:0.3px;  
+    margin-bottom:29px;
+}
+.zi-text-body {
+    font-family: 'Libre Baskerville', serif;
+    font-size:18px;
+    line-height:29px;
+    letter-spacing:0px;  
+    margin-bottom:120px;
+}

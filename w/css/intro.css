@@ -1,0 +1,112 @@
+
+.float-intro.white {
+mix-blend-mode: screen;    
+left:0%;
+}
+
+.float-intro.green {
+mix-blend-mode: multiply;    
+left:50%;
+}
+
+.float-intro {
+position: fixed;
+width:50%;
+height:100%;
+pointer-events:none;
+}
+.wrapper {
+    display: flex;
+}
+
+.center-col {
+    max-width:1000px;
+    min-width:700px;
+    margin:auto auto;
+}
+.center-col-inner {
+margin:0 64px;
+}
+
+
+
+canvas {
+    width:100%;
+}
+.svt-intro,
+.zira-intro {
+    pointer-events:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
+.intro-main-title{
+    width:19vw;
+    max-width: 333px;
+}
+
+.container-half-content {
+    transition: opacity 1s ease;
+}
+.scroll-blur .container-half-content
+{
+    opacity:0;
+}
+
+
+.container-half.scroll-begin {
+width:50%;
+}
+.container-half.scroll-focus {
+    width: calc(100% - var(--left-space));
+}
+.container-half.scroll-blur {
+  width:var(--left-space);
+}
+
+.container-half {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: var(--main-color-pos);
+    color: var(--main-color);
+    transition:width 1s ease;
+}
+
+.container-half.container-negative {
+    background: var(--main-color);
+    color: var(--main-color-pos);
+}
+
+
+
+.intro-main-title--mobile {
+    display: none;
+}
+
+.hazira-container,
+.svt-container {
+    align-self: flex-end flex-end;
+}
+
+
+@media (max-width: 800px) {
+    canvas {
+        display: none;
+    }
+    .intro-main-title--mobile {
+        display: flex;
+        text-align: center;
+        font-size: 19px;
+        line-height: 24px;
+        font-family: 'Frank Ruhl Libre', serif;
+        font-weight: 700;
+        /* align-self: flex-end; */
+        /* margin-bottom: 35px; */
+    }
+    .intro-main-title {
+        display: none;
+    }
+}

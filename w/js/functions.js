@@ -15,18 +15,54 @@ $(".svt-cal-item-title").click(function () {
 	$(this).siblings(".svt-cal-item-content-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
 });
+$(".zir-cal-item-title").click(function () {
+	$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
+	$(this).toggleClass('svt-zippy--open');
+});
 
 // Onscroll event svt
 
 var innitialScroll = 0;
+var lastScrollTop = 0;
+
+$(".wrap-svt").click(function() {
+	$(".wrap-svt").addClass('scroll-focus');
+	$(".wrap-svt").removeClass('scroll-blur');
+	$(".wrap-zira").addClass('scroll-blur');
+	$(".wrap-zira").removeClass('scroll-focus');
+});
+
+
+$(".wrap-zira").click(function() {
+	$(".wrap-svt").addClass('scroll-blur');
+	$(".wrap-svt").removeClass('scroll-focus');
+	$(".wrap-zira").addClass('scroll-focus');
+	$(".wrap-zira").removeClass('scroll-blur');
+});
+
 
 $(".wrap-svt").scroll(function () {
 	if (!innitialScroll) {
+
+		var st = $(this).scrollTop();
+		if (st > lastScrollTop){
+			// downscroll code
+		} else {
+		   // upscroll code
+		   $('body').scrollTop(0);
+	   console.log('scroll up!')
+	   
+		}
+		lastScrollTop = st;
+
+
 		innitialScroll = 1;				
 		$(".wrap-svt").addClass('scroll-focus');
 		$(".wrap-zira").addClass('scroll-blur');
+	$(".container-half").removeClass('scroll-begin');
+	
 	}
-	console.log('scroll svt is at ' + $(this).scrollTop());
+	// console.log('scroll svt is at ' + $(this).scrollTop());
 	$('.wrap-zira').scrollTop($(this).scrollTop());
 });
 
@@ -35,10 +71,249 @@ $(".wrap-svt").scroll(function () {
 $(".wrap-zira").scroll(function () {
 
 if (!innitialScroll) {
+	var st = $(this).scrollTop();
+	if (st > lastScrollTop){
+		// downscroll code
+	} else {
+	   // upscroll code
+	   $('body').scrollTop(0);
+	   console.log('scroll up!')
+	}
+	lastScrollTop = st;
+
 	innitialScroll = 1;			
 	$(".wrap-zira").addClass('scroll-focus');
 	$(".wrap-svt").addClass('scroll-blur');
+
+	$(".container-half").removeClass('scroll-begin');
 }
-	console.log('scroll zira is at ' + $(this).scrollTop());
+	// console.log('scroll zira is at ' + $(this).scrollTop());
 	$('.wrap-svt').scrollTop($(this).scrollTop());
 });
+
+
+
+
+
+showAniamtion = true;
+
+if (showAniamtion) {
+
+	// aniamtions
+	var screenWidth = window.innerWidth;
+	var screenHeight = window.innerHeight;
+
+	var cursorPosW = 0,
+		cursorPosH = 0;
+
+	$(document).bind('mousemove', function (e) {
+		$('#cursor').css({
+			left: e.pageX - 65,
+			top: e.pageY - 10
+		});
+		cursorPosW = e.pageX / screenWidth;
+		cursorPosH = e.pageY / screenHeight;
+	});
+
+
+	// Set up canvas width
+	var width = 700;
+	var height = 700;
+
+	var innerCircleRadius = 200;
+	var outerCircleRadius = 250;
+
+	var playground = document.getElementById('px-render');
+	var playground2 = document.getElementById('px-render-green');
+	var canvas, canvas2;
+	// Timer for animation
+	var count = 0;
+	var raf;
+
+
+	var renderer = PIXI.autoDetectRenderer(width, height, {
+		transparent: true
+	});
+	var renderer2 = PIXI.autoDetectRenderer(width, height, {
+		transparent: true
+	});
+	renderer.autoResize = false;
+	renderer2.autoResize = false;
+
+	renderer.backgroundColor = 0x000000;
+	renderer2.backgroundColor = 0x00AE7C;
+
+	var innerCircle, outerCircle, bgCircle;
+	var innerCircle2, outerCircle2, bgCircle2;
+	var displacementSprite,
+		displacementFilter,
+		stage, stage2;
+
+	// Both blur filters
+	var blurFilter1 = new PIXI.filters.BlurFilter();
+	var blurFilter2 = new PIXI.filters.BlurFilter();
+
+	// Groups
+	var bgGroup = new PIXI.Container();
+	var mainGroup = new PIXI.Container();
+
+	var bgGroup2 = new PIXI.Container();
+	var mainGroup2 = new PIXI.Container();
+
+	var noiseFilter = new PIXI.filters.NoiseFilter(0.3, 6);
+
+
+
+
+
+	function setScene() {
+
+		playground.appendChild(renderer.view);
+		playground2.appendChild(renderer2.view);
+		stage = new PIXI.Container();
+		stage2 = new PIXI.Container();
+
+		stage.filters = stage2.filters = [new PIXI.filters.VoidFilter()];
+		stage.filterArea = stage2.filterArea = new PIXI.Rectangle(0, 0, width, width);
+
+
+		// create displacement map
+		displacementSprite = PIXI.Sprite.fromImage('images/displacetexture.png');
+		displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+		displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+		displacementSprite.scale.y = 0.9;
+		displacementSprite.scale.x = 0.9;
+
+		bgCircle = new PIXI.Graphics();
+		bgCircle.beginFill(0x0000000);
+		bgCircle.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
+		bgCircle.endFill();
+
+		bgCircle2 = new PIXI.Graphics();
+		bgCircle2.beginFill(0xffffff);
+		bgCircle2.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
+		bgCircle2.endFill();
+
+
+		outerCircle = new PIXI.Graphics();
+		outerCircle.beginFill(0xffffff);
+		outerCircle.drawCircle(width / 2, height / 2, outerCircleRadius); //(x,y,radius)
+		outerCircle.endFill();
+
+		outerCircle2 = new PIXI.Graphics();
+		outerCircle2.beginFill(0x00AE7C);
+		outerCircle2.drawCircle(width / 2, height / 2, outerCircleRadius); //(x,y,radius)
+		outerCircle2.endFill();
+
+		blurFilter1.blur = 25;
+
+
+		innerCircle = new PIXI.Graphics();
+		innerCircle.beginFill(0x000000);
+		innerCircle.drawCircle(width / 2, height / 2, innerCircleRadius); //(x,y,radius)
+		innerCircle.endFill();
+
+		innerCircle2 = new PIXI.Graphics();
+		innerCircle2.beginFill(0xffffff);
+		innerCircle2.drawCircle(width / 2, height / 2, innerCircleRadius); //(x,y,radius)
+		innerCircle2.endFill();
+
+		blurFilter2.blur = 4;
+		innerCircle.filters = innerCircle2.filters = [blurFilter2];
+
+		// adding  to the container
+		bgGroup.addChild(bgCircle);
+		bgGroup.addChild(outerCircle);
+
+		bgGroup2.addChild(bgCircle2);
+		bgGroup2.addChild(outerCircle2);
+
+		// Apply filters to background+white circle
+		bgGroup.filters = bgGroup2.filters = [blurFilter1, displacementFilter];
+
+		// adding  to the main group	
+		mainGroup.addChild(bgGroup);
+		mainGroup2.addChild(bgGroup2);
+
+		// Adding noise square (black)
+		var noiseSquare = new PIXI.Graphics();
+		noiseSquare.beginFill(0xFFFFFF);
+		noiseSquare.drawRect(0, 0, width, height);
+		var texture = PIXI.Texture.fromImage("images/noise.png");
+		var tilingSprite = new PIXI.TilingSprite(texture, width, height);
+		tilingSprite.mask = noiseSquare;
+
+		// Adding noise square (white)
+		var noiseSquare2 = new PIXI.Graphics();
+		noiseSquare2.beginFill(0x000000);
+		noiseSquare2.drawRect(0, 0, width, height);
+		var texture2 = PIXI.Texture.fromImage("images/noisew.png");
+		var tilingSprite2 = new PIXI.TilingSprite(texture2, width, height);
+		tilingSprite2.mask = noiseSquare2;
+
+
+		// Add everything to the group
+		mainGroup.addChild(innerCircle);
+		mainGroup2.addChild(innerCircle2);
+
+		stage.addChild(mainGroup);
+		//   stage.addChild(tilingSprite);
+		//   stage.addChild(noiseSquare);
+		stage.addChild(displacementSprite);
+
+		stage2.addChild(mainGroup2);
+		//   stage2.addChild(tilingSprite2);
+		//   stage2.addChild(noiseSquare2);
+		stage2.addChild(displacementSprite);
+
+
+		animate();
+	}
+
+	// function removeScene(){
+	// 	cancelAnimationFrame(raf);
+	// 	stage.removeChildren();
+	// 	stage.destroy(true);
+	// 	playground.removeChild(canvas);
+	// }
+
+
+	function animate() {
+		raf = requestAnimationFrame(animate);
+
+
+
+		count += 0.1;
+
+		mousePullStrenght = 7;
+
+		//   inner circle move
+
+		//   innerCircle.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
+		//   innerCircle.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
+		//   innerCircle2.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
+		//   innerCircle2.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
+
+		// noise animation
+
+		//   displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
+		//   displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
+
+
+		displacementSprite.x = 2 * count;
+		displacementSprite.y = 2 * count;
+
+
+		renderer.render(stage);
+		renderer2.render(stage2);
+
+		canvas = playground.querySelector('canvas');
+		canvas2 = playground2.querySelector('canvas');
+	}
+
+	setScene();
+
+
+
+}

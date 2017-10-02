@@ -32,19 +32,28 @@ body {
 canvas {
     width:100%;
 }
-.pixi-render {
-    /* position: absolute; */
-    /* top: calc(50% - 300px); */
-}
 
-#px-render {
-    mix-blend-mode: screen;
-}
 
-#px-render-green {
-    mix-blend-mode: multiply;
-}
-
+.float-intro.white {
+    mix-blend-mode: screen;    
+    left:0%;
+    }
+    
+    .float-intro.green {
+    mix-blend-mode: multiply;    
+    left:50%;
+    }
+    
+    .float-intro {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width:50%;
+    height:100%;
+    pointer-events:none;
+    z-index:100;
+    }
 
 .container-half {
     /* cursor: none;  */

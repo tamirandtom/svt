@@ -1,0 +1,23 @@
+
+
+
+@import 'fonts.css';
+@import 'intro.css';
+@import 'calander.css';
+@import 'after-sections.css';
+@import 'menu.css';
+
+body {
+    height: 100%;
+    /* overflow: hidden; */
+    background: #f0f;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    /* cursor: none; */
+    --main-color: #00AE7C;
+    --main-color-pos: #fff;
+    --color-black: #000;
+
+    --left-space:130px;
+}
