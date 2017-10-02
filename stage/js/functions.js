@@ -208,13 +208,18 @@ if (showAniamtion) {
 	  // count += 0.1;
   
 	  mousePullStrenght = 7;
-	  innerCircle.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
-	  innerCircle.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
-	  innerCircle2.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
-	  innerCircle2.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
+	  
+	//   inner circle move
+
+	//   innerCircle.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
+	//   innerCircle.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
+	//   innerCircle2.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
+	//   innerCircle2.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
   
-	  displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
-	  displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
+	// noise animation
+
+	//   displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
+	//   displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
   
   
 	  renderer.render(stage);

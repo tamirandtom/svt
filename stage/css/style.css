@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:700&subset=hebrew');
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:500,700&subset=hebrew');
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i');
 
 /*  Main  */
@@ -98,23 +98,51 @@ justify-content:space-between;
     text-align:center;
 }
 .svt-program-link {
+    font-size:18px;
     margin-bottom:32px;
     display:inline-block;
     padding:5px 0px;
-    border-bottom:2px solid #fff;
+    border-bottom:2px solid var(--main-color);
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight:700;
+    font-weight:500;
+    letter-spacing:1px;
     color:#fff;    
     text-decoration:none;
 }
+.svt-program-link:hover {
+    border-bottom:2px solid #fff;    
+}
+
+
 .svt-program-link.green {
     color:var(--main-color);    
-    border-color:var(--main-color);    
+    border-color:#fff;    
     
+}
+.svt-program-link.green:hover {
+    border-color:2px solid var(--main-color);    
 }
 /* mobile */
 
 @media (max-width: 800px) {
+
+    .float-bottom { 
+        bottom:30px;        
+    }
+
+
+    .svt-program-link.green {
+        border-color:var(--main-color);    
+    }
+    .svt-program-link {
+        border-color:#fff;    
+    }
+
+
+
+    .container-half {
+align-items:flex-start;
+    }
     .mobile-coming-soon-overlay {
         display: flex;
         z-index:1;
@@ -147,12 +175,13 @@ justify-content:space-between;
     .svt-main-title--mobile {
         display: flex;
         text-align: center;
-        font-size: 19px;
+        font-size: 28px;
         line-height: 24px;
         font-family: 'Frank Ruhl Libre', serif;
-        font-weight: 700;
+        font-weight: 500;
+        letter-spacing:1.3px;
         /* align-self: flex-end; */
-        /* margin-bottom: 35px; */
+        margin-top: 25px;
         
     }
     .svt-main-title {
