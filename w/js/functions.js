@@ -19,6 +19,14 @@ $(".zir-cal-item-title").click(function () {
 	$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
 });
+$(".zir-cal-day-header").click(function () {
+	$(this).siblings(".zir-cal-items-wrap").slideToggle();
+	$(this).toggleClass('svt-zippy--open');
+});
+
+
+
+
 
 // Onscroll event svt
 
