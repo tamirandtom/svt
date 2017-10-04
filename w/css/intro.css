@@ -6,7 +6,7 @@ canvas {
 }
 
 #px-render, #px-render-green {
-    transition:all 1s ease;
+    transition:all 3s ease;
 }
 .float-intro.white {
     mix-blend-mode: screen;
@@ -59,7 +59,7 @@ canvas {
 }
 
 .intro-scrolldown {
-    opacity:0.1 !important;
+    opacity:0.3 !important;
 }
 
 .scroll-focus.wrap-zira .intro-main-title {

@@ -1,23 +1,26 @@
 /* intro text */
-.svt-section-text,.zi-section-text {
-    direction:rtl;
+
+.svt-section-text,
+.zi-section-text {
+    direction: rtl;
 }
 
 .intro-text-title .close-kerning {
-letter-spacing:-2px;
+    letter-spacing: -2px;
 }
+
 .intro-text-title {
-    font-family: 'Nitti','zvi', sans-serif;
+    font-family: 'Nitti', 'zvi', sans-serif;
     font-size: 39px;
-    font-weight:700;
+    font-weight: 700;
     line-height: 41px;
     letter-spacing: 6px;
 }
 
 .intro-text-subtitle {
-    font-family: 'Nitti','zvi', serif;
+    font-family: 'Nitti', 'zvi', serif;
     font-size: 32px;
-    font-weight:700;
+    font-weight: 700;
     line-height: 39px;
     letter-spacing: 5px;
     margin-bottom: 54px;
@@ -35,7 +38,7 @@ letter-spacing:-2px;
 
 .intro-text-body {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight:400;
+    font-weight: 400;
     font-size: 20px;
     line-height: 29px;
     letter-spacing: 0.6px;
@@ -43,8 +46,8 @@ letter-spacing:-2px;
 }
 
 .intro-text-body b {
-font-weight:700;
-letter-spacing:3px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 
@@ -62,23 +65,22 @@ letter-spacing:3px;
     font-family: 'Hadassah';
     font-weight: 700;
     font-size: 27px;
-    line-height: 39px;
+    line-height: 54px;
     letter-spacing: 3px;
     margin-bottom: 54px;
 }
 
 .zi-text-pre {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight:700;
+    font-weight: 700;
     font-size: 20px;
     line-height: 29px;
     letter-spacing: 5px;
-    margin-bottom: 29px;
 }
 
 .zi-text-body {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight:500;
+    font-weight: 400;
     font-size: 20px;
     line-height: 29px;
     letter-spacing: 0.3px;
@@ -90,7 +92,7 @@ letter-spacing:3px;
 
 .svt-cal-item-title {
     display: flex;
-
+    cursor: pointer;
     direction: rtl;
     justify-content: space-between;
     align-items: center;
@@ -107,7 +109,6 @@ letter-spacing:3px;
     border-top: 2px solid var(--main-color);
     height: 80px;
     direction: rtl;
-    
 }
 
 .svt-cal-item-title__name,
@@ -120,7 +121,6 @@ letter-spacing:3px;
 .zir-cal-item-content {
     display: flex;
     direction: rtl;
-    
 }
 
 .svt-cal-item-content,
@@ -188,28 +188,28 @@ letter-spacing:3px;
     border-top: 2px solid #fff;
 }
 
-.svt-cal-day-header__day-name{
-    direction:rtl;
+.svt-cal-day-header__day-name {
+    direction: rtl;
     line-height: 41px;
     font-size: 41px;
-    text-align:center;
-    
+    text-align: center;
     letter-spacing: 2.2px;
-    font-weight:700;
-    word-spacing: -12px;  
-    font-family: 'Nitti','zvi', sans-serif;
+    font-weight: 700;
+    word-spacing: -12px;
+    font-family: 'Nitti', 'zvi', sans-serif;
 }
+
 .svt-cal-day-header__day-name .close-kerning {
-    letter-spacing:-4px;
+    letter-spacing: -4px;
 }
 
 .svt-cal-day-header__day-title {
     line-height: 48px;
-    text-align:center;
+    text-align: center;
     font-size: 28px;
     letter-spacing: 2.2px;
-    word-spacing:-10px;    
-    font-family: 'Nitti','zvi', sans-serif;
+    word-spacing: -10px;
+    font-family: 'Nitti', 'zvi', sans-serif;
 }
 
 
@@ -229,14 +229,14 @@ letter-spacing:3px;
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 1.2px;
-    font-family: 'Nitti','zvi', sans-serif;
+    font-family: 'Nitti', 'zvi', sans-serif;
 }
 
 .svt-cal-item-title__time,
 .svt-cal-item-title__location {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 20px;
     letter-spacing: .9px;
 }
@@ -247,10 +247,10 @@ letter-spacing:3px;
 
 .svt-cal-item-content__desc-text {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight:500;    
+    font-weight: 400;
     font-size: 17px;
     line-height: 24px;
-    letter-spacing: .2px;
+    letter-spacing: .4px;
     margin-bottom: 35px;
 }
 
@@ -280,14 +280,14 @@ letter-spacing:3px;
 }
 
 .zir-cal-day-header__day-name {
-    font-size: 62px;
+    font-size: 80px;
     letter-spacing: 1.9px;
     line-height: 60px;
     font-family: 'fakir';
 }
 
 .zir-cal-day-header__day-title {
-    font-size: 29px;
+    font-size: 27px;
     line-height: 35px;
     letter-spacing: 2.2px;
     font-family: 'Hadassah';
@@ -300,11 +300,11 @@ letter-spacing:3px;
 .zir-cal-item-title__name__by {
     font-size: 16px;
     line-height: 28px;
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
     letter-spacing: 0.8px;
-    font-family: 'Frank Ruhl Libre', serif;    
-    font-weight:400;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: 400;
     padding: 0 8px;
 }
 
@@ -335,7 +335,7 @@ letter-spacing:3px;
     line-height: 24px;
     letter-spacing: .2px;
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight:500;    
+    font-weight: 500;
     margin-bottom: 35px;
 }
 
