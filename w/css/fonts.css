@@ -24,7 +24,7 @@
     src: url('fonts/HadassahFriedlaenderBold.b3551827fd974696dadb49db7e6ff98d.eot#iefix') format('embedded-opentype'), url('fonts/HadassahFriedlaenderBold.e7ab7f9fff33a9209d9dc4434dbf6a9b.woff2') format('woff2'), url('fonts/HadassahFriedlaenderBold.0256683e34dcfaf68022ba99b8d7dd88.woff') format('woff');
 }
 
-
+/* 
 @font-face {
     font-family: 'Nitti';
     src: url('fonts/c-black-webfont.woff2') format('woff2'),
@@ -32,28 +32,40 @@
     font-weight: normal;
     font-style: normal;
 
-}
+} */
+
+
 
 @font-face {
-    font-family: 'zvi';
-    src: url('fonts/mf_hazvi-bold-webfont.woff2') format('woff2'),
-         url('fonts/mf_hazvi-bold-webfont.woff') format('woff');
-    font-weight: 400;
+    font-family: 'Nitti';
+    src: url('fonts/f-bold-webfont.woff2') format('woff2'),
+         url('fonts/f-bold-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 
 }
 
 
+@font-face {
+    font-family: 'zvi';
+    src: url('fonts/hatzvig_bold-webfont.woff2') format('woff2'),
+         url('fonts/hatzvig_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 
 @font-face {
     font-family: 'zvi';
-    src: url('fonts/mf_hazvi-black-webfont.woff2') format('woff2'),
-         url('fonts/mf_hazvi-black-webfont.woff') format('woff');
+    src: url('fonts/hatzvig_extrabold-webfont.woff2') format('woff2'),
+         url('fonts/hatzvig_extrabold-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 
 }
+
 
 
 
