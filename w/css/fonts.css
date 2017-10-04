@@ -34,6 +34,28 @@
 
 }
 
+@font-face {
+    font-family: 'zvi';
+    src: url('fonts/mf_hazvi-bold-webfont.woff2') format('woff2'),
+         url('fonts/mf_hazvi-bold-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'zvi';
+    src: url('fonts/mf_hazvi-black-webfont.woff2') format('woff2'),
+         url('fonts/mf_hazvi-black-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+
 
 .font-fr {
     font-family: 'Frank Ruhl Libre', serif;
@@ -58,71 +80,3 @@
 }
 
 
-
-.intro-text-title
-{
-    font-family: 'Nitti', serif;   
-font-size:39px;
-line-height:41px;
-letter-spacing:1.9px;    
-}
-.intro-text-subtitle {
-    font-family: 'Nitti', serif;   
-    font-size:32px;
-    line-height:39px;
-    letter-spacing:3.6px;  
-    margin-bottom:54px;
-}
-.intro-text-pre {
-    font-family: 'Libre Baskerville', serif;
-    font-style:italic;  
-    font-size:24px;
-    line-height:34px;
-    letter-spacing:0.3px;  
-    margin-bottom:29px;
-    
-}
-.intro-text-body
-
-{
-    font-family: 'Libre Baskerville', serif;
-    font-size:18px;
-    line-height:29px;
-    letter-spacing:0px;  
-    margin-bottom:120px;
-}
-
-
-/* intro Zira */
-
-.zi-text-title {
-    font-family: 'Hadassah';
-    font-weight:700;
-    font-size:41px;
-    line-height:39px;
-    letter-spacing:3px;
-}
-.zi-text-subtitle {
-    font-family: 'Hadassah';
-    font-weight:700;
-    font-size:27px;
-    line-height:39px;
-    letter-spacing:3px;
-    margin-bottom:54px;
-    
-}
-.zi-text-pre {
-    font-family: 'Libre Baskerville', serif;
-    font-style:italic;  
-    font-size:24px;
-    line-height:34px;
-    letter-spacing:0.3px;  
-    margin-bottom:29px;
-}
-.zi-text-body {
-    font-family: 'Libre Baskerville', serif;
-    font-size:18px;
-    line-height:29px;
-    letter-spacing:0px;  
-    margin-bottom:120px;
-}

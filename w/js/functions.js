@@ -23,44 +23,65 @@ $(".zir-cal-item-title").click(function () {
 // Onscroll event svt
 
 var innitialScroll = 0;
-var lastScrollTop = 0;
-
-$(".wrap-svt").click(function() {
-	$(".wrap-svt").addClass('scroll-focus');
-	$(".wrap-svt").removeClass('scroll-blur');
-	$(".wrap-zira").addClass('scroll-blur');
-	$(".wrap-zira").removeClass('scroll-focus');
-});
+var ziraScroll = 0;
+var svtScroll = 0;
 
 
-$(".wrap-zira").click(function() {
+
+function focusOnHazira() {
 	$(".wrap-svt").addClass('scroll-blur');
 	$(".wrap-svt").removeClass('scroll-focus');
 	$(".wrap-zira").addClass('scroll-focus');
 	$(".wrap-zira").removeClass('scroll-blur');
+	$(".white").addClass('hideintro');
+	$(".green").removeClass('hideintro');
+	$(".white").removeClass('showintro');
+	$(".green").addClass('showintro');
+}
+
+function focusOnSvt() {
+
+	$(".wrap-svt").addClass('scroll-focus');
+	$(".wrap-svt").removeClass('scroll-blur');
+	$(".wrap-zira").addClass('scroll-blur');
+	$(".wrap-zira").removeClass('scroll-focus');
+	$(".white").removeClass('hideintro');
+	$(".green").addClass('hideintro');
+	$(".green").removeClass('showintro');
+	$(".white").addClass('showintro');
+}
+
+$(".wrap-svt").click(function () {
+	focusOnSvt();
+});
+
+
+$(".wrap-zira").click(function () {
+	focusOnHazira();
 });
 
 
 $(".wrap-svt").scroll(function () {
+	// console.log($(this).scrollTop());
+
+
+	svtScroll = $(this).scrollTop();
+
+	if ($(this).scrollTop() > 200) {
+		$("#px-render").addClass("intro-scrolldown");
+		// console.log('true!');
+	} else {
+		$("#px-render").removeClass("intro-scrolldown");
+		// console.log('false!');
+	}
+
+
 	if (!innitialScroll) {
-
-		var st = $(this).scrollTop();
-		if (st > lastScrollTop){
-			// downscroll code
-		} else {
-		   // upscroll code
-		   $('body').scrollTop(0);
-	   console.log('scroll up!')
-	   
-		}
-		lastScrollTop = st;
-
-
-		innitialScroll = 1;				
+		innitialScroll = 1;
+		focusOnSvt();
 		$(".wrap-svt").addClass('scroll-focus');
 		$(".wrap-zira").addClass('scroll-blur');
-	$(".container-half").removeClass('scroll-begin');
-	
+		$(".container-half").removeClass('scroll-begin');
 	}
 	// console.log('scroll svt is at ' + $(this).scrollTop());
 	$('.wrap-zira').scrollTop($(this).scrollTop());
@@ -69,24 +90,25 @@ $(".wrap-svt").scroll(function () {
 
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
-
-if (!innitialScroll) {
-	var st = $(this).scrollTop();
-	if (st > lastScrollTop){
-		// downscroll code
+	ziraScroll = $(this).scrollTop();
+	
+	if ($(this).scrollTop() > 200) {
+		$("#px-render-green").addClass("intro-scrolldown");
+		// console.log('true!');
 	} else {
-	   // upscroll code
-	   $('body').scrollTop(0);
-	   console.log('scroll up!')
+		$("#px-render-green").removeClass("intro-scrolldown");
+		// console.log('false!');
 	}
-	lastScrollTop = st;
 
-	innitialScroll = 1;			
-	$(".wrap-zira").addClass('scroll-focus');
-	$(".wrap-svt").addClass('scroll-blur');
 
-	$(".container-half").removeClass('scroll-begin');
-}
+
+	if (!innitialScroll) {
+		focusOnHazira();
+		innitialScroll = 1;
+		$(".wrap-zira").addClass('scroll-focus');
+		$(".wrap-svt").addClass('scroll-blur');
+		$(".container-half").removeClass('scroll-begin');
+	}
 	// console.log('scroll zira is at ' + $(this).scrollTop());
 	$('.wrap-svt').scrollTop($(this).scrollTop());
 });
@@ -185,6 +207,18 @@ if (showAniamtion) {
 		displacementSprite.scale.y = 0.9;
 		displacementSprite.scale.x = 0.9;
 
+
+		var bgSquare = new PIXI.Graphics();
+		var bgSquare2 = new PIXI.Graphics();
+		bgSquare.beginFill(0x000000);
+		bgSquare.drawRect(0, 0, width, height);
+		mainGroup.addChild(bgSquare);
+
+		bgSquare2.beginFill(0xffffff);
+		bgSquare2.drawRect(0, 0, width, height);
+		mainGroup2.addChild(bgSquare2);
+
+
 		bgCircle = new PIXI.Graphics();
 		bgCircle.beginFill(0x0000000);
 		bgCircle.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
@@ -237,12 +271,11 @@ if (showAniamtion) {
 		mainGroup2.addChild(bgGroup2);
 
 		// Adding noise square (black)
-		var noiseSquare = new PIXI.Graphics();
-		noiseSquare.beginFill(0xFFFFFF);
-		noiseSquare.drawRect(0, 0, width, height);
-		var texture = PIXI.Texture.fromImage("images/noise.png");
-		var tilingSprite = new PIXI.TilingSprite(texture, width, height);
-		tilingSprite.mask = noiseSquare;
+
+		
+		// var texture = PIXI.Texture.fromImage("images/noise.png");
+		// var tilingSprite = new PIXI.TilingSprite(texture, width, height);
+		// tilingSprite.mask = noiseSquare;
 
 		// Adding noise square (white)
 		var noiseSquare2 = new PIXI.Graphics();
@@ -251,7 +284,6 @@ if (showAniamtion) {
 		var texture2 = PIXI.Texture.fromImage("images/noisew.png");
 		var tilingSprite2 = new PIXI.TilingSprite(texture2, width, height);
 		tilingSprite2.mask = noiseSquare2;
-
 
 		// Add everything to the group
 		mainGroup.addChild(innerCircle);
@@ -281,18 +313,14 @@ if (showAniamtion) {
 
 	function animate() {
 		raf = requestAnimationFrame(animate);
-
-
-
-		count += 0.1;
-
+		// count += 0.1;
 		mousePullStrenght = 7;
 
 		//   inner circle move
 
-		//   innerCircle.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
-		//   innerCircle.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
-		//   innerCircle2.x = mousePullStrenght * cursorPosW - mousePullStrenght / 2;
+		  innerCircle.x = ziraScroll/4;
+		//   innerCircle.y = mousePulStrenght * cursorPosH - mousePullStrenght / 2;
+		  innerCircle2.x = svtScroll/4;
 		//   innerCircle2.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
 
 		// noise animation
@@ -301,8 +329,10 @@ if (showAniamtion) {
 		//   displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
 
 
-		displacementSprite.x = 2 * count;
-		displacementSprite.y = 2 * count;
+		
+
+		// displacementSprite.x = 2 * count;
+		// displacementSprite.y = 2 * count;
 
 
 		renderer.render(stage);

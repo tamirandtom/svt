@@ -3,14 +3,14 @@
 
 @import 'fonts.css';
 @import 'intro.css';
-@import 'calender.css';
+@import 'calender-heb.css';
 @import 'after-sections.css';
 @import 'menu.css';
 
 body {
     height: 100%;
     /* overflow: hidden; */
-
+    
     background: #fff;
     color: #000;
     margin: 0;
