@@ -34,15 +34,15 @@ $(".svt-cal-day-header").click(function () {
 
 var menuTimer = null;
 var menuTimeout = 3000;
-$("body").mousemove(function() {
-    clearTimeout(menuTimer);
-    $("menu").removeClass('menu--hide');
-    menuTimer = setTimeout(function () {
-        $("menu").addClass('menu--hide');
-    }, menuTimeout);
-}).mouseleave(function() {
-    clearTimeout(menuTimer);
-    $("menu").addClass('menu--hide');
+$("body").mousemove(function () {
+	clearTimeout(menuTimer);
+	$("menu").removeClass('menu--hide');
+	menuTimer = setTimeout(function () {
+		$("menu").addClass('menu--hide');
+	}, menuTimeout);
+}).mouseleave(function () {
+	clearTimeout(menuTimer);
+	$("menu").addClass('menu--hide');
 });
 
 
@@ -50,6 +50,7 @@ $("body").mousemove(function() {
 // Onscroll event svt
 
 var innitialScroll = 0;
+
 var ziraScroll = 0;
 var svtScroll = 0;
 
@@ -88,11 +89,43 @@ $(".wrap-zira").click(function () {
 });
 
 
+$(window).scroll(function() {
+    var top_of_element = $(".after-section").offset().top;
+    var bottom_of_element = $(".after-section").offset().top + $(".after-section").outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + $(window).height();
+    var top_of_screen = $(window).scrollTop();
+
+    if((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+		// The element is visible, do something
+		console.log('is vis!');
+ isSectionTwoUp = true;
+
+    }
+    else {
+        // The element is not visible, do something else
+    }
+});
+
+
+var isSectionTwoUp = false;
 $(".wrap-svt").scroll(function () {
 	// console.log($(this).scrollTop());
+	let currScrollTop = $(this).scrollTop()
+	if (currScrollTop > svtScroll) {
+		// downscroll code
+		console.log('down!');
+	} else {
+		// upscroll code
+		console.log('up!');
+		if (isSectionTwoUp) {
+			$('html, body').animate({
+				scrollTop: 0
+			}, 100);
+			isSectionTwoUp = false;
+		}
 
+	}
 
-	svtScroll = $(this).scrollTop();
 
 	if ($(this).scrollTop() > 200) {
 		$("#px-render").addClass("intro-scrolldown");
@@ -111,14 +144,31 @@ $(".wrap-svt").scroll(function () {
 		$(".container-half").removeClass('scroll-begin');
 	}
 	// console.log('scroll svt is at ' + $(this).scrollTop());
-	$('.wrap-zira').scrollTop($(this).scrollTop());
+	// $('.wrap-zira').scrollTop($(this).scrollTop());
+	svtScroll = currScrollTop;
+
+
 });
 
 
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
-	ziraScroll = $(this).scrollTop();
-	
+
+	let currScrollTop = $(this).scrollTop()
+	if (currScrollTop > ziraScroll) {
+		// downscroll code
+		console.log('down!');
+	} else {
+		// upscroll code
+		console.log('up!');
+		if (isSectionTwoUp) {
+			$('html, body').animate({
+				scrollTop: 0
+			}, 100);
+			isSectionTwoUp = false;
+		}
+	}
+
 	if ($(this).scrollTop() > 200) {
 		$("#px-render-green").addClass("intro-scrolldown");
 		// console.log('true!');
@@ -136,8 +186,10 @@ $(".wrap-zira").scroll(function () {
 		$(".wrap-svt").addClass('scroll-blur');
 		$(".container-half").removeClass('scroll-begin');
 	}
+
+	ziraScroll = $(this).scrollTop();
 	// console.log('scroll zira is at ' + $(this).scrollTop());
-	$('.wrap-svt').scrollTop($(this).scrollTop());
+	// $('.wrap-svt').scrollTop($(this).scrollTop());
 });
 
 
@@ -299,7 +351,7 @@ if (showAniamtion) {
 
 		// Adding noise square (black)
 
-		
+
 		// var texture = PIXI.Texture.fromImage("images/noise.png");
 		// var tilingSprite = new PIXI.TilingSprite(texture, width, height);
 		// tilingSprite.mask = noiseSquare;
@@ -352,7 +404,7 @@ if (showAniamtion) {
 		//   displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
 
 
-		
+
 
 		// displacementSprite.x = 2 * count;
 		// displacementSprite.y = 2 * count;
