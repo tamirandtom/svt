@@ -30,6 +30,21 @@ $(".svt-cal-day-header").click(function () {
 
 
 
+// Menu hide timer 
+
+var menuTimer = null;
+var menuTimeout = 3000;
+$("body").mousemove(function() {
+    clearTimeout(menuTimer);
+    $("menu").removeClass('menu--hide');
+    menuTimer = setTimeout(function () {
+        $("menu").addClass('menu--hide');
+    }, menuTimeout);
+}).mouseleave(function() {
+    clearTimeout(menuTimer);
+    $("menu").addClass('menu--hide');
+});
+
 
 
 // Onscroll event svt
