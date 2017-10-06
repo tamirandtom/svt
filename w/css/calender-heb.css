@@ -189,6 +189,10 @@
     padding: 70px 0;
     border-top: 2px solid #fff;
 }
+.zir-cal-items-wrap, .svt-cal-items-wrap
+{
+    display:none;
+}
 
 .svt-cal-day-header__day-name {
     direction: rtl;

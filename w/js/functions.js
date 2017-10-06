@@ -23,6 +23,10 @@ $(".zir-cal-day-header").click(function () {
 	$(this).siblings(".zir-cal-items-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
 });
+$(".svt-cal-day-header").click(function () {
+	$(this).siblings(".svt-cal-items-wrap").slideToggle();
+	$(this).toggleClass('svt-zippy--open');
+});
 
 
 
@@ -320,19 +324,15 @@ if (showAniamtion) {
 
 
 	function animate() {
-		raf = requestAnimationFrame(animate);
+		// raf = requestAnimationFrame(animate);
 		// count += 0.1;
-		mousePullStrenght = 7;
+		// mousePullStrenght = 7;
 
 		//   inner circle move
-
-		  innerCircle.x = ziraScroll/4;
-		//   innerCircle.y = mousePulStrenght * cursorPosH - mousePullStrenght / 2;
-		  innerCircle2.x = svtScroll/4;
-		//   innerCircle2.y = mousePullStrenght * cursorPosH - mousePullStrenght / 2;
+		// innerCircle2.x = svtScroll/4;
+		//  innerCircle.x = ziraScroll/4;
 
 		// noise animation
-
 		//   displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
 		//   displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
 
@@ -343,11 +343,11 @@ if (showAniamtion) {
 		// displacementSprite.y = 2 * count;
 
 
-		renderer.render(stage);
-		renderer2.render(stage2);
+		// renderer.render(stage);
+		// renderer2.render(stage2);
 
-		canvas = playground.querySelector('canvas');
-		canvas2 = playground2.querySelector('canvas');
+		// canvas = playground.querySelector('canvas');
+		// canvas2 = playground2.querySelector('canvas');
 	}
 
 	setScene();
