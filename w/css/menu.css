@@ -62,7 +62,7 @@ menu .menu-content a {
     letter-spacing: 0.3px;
     text-decoration: none;
     transition: all 0.2s ease;
-    border-bottom: 2px solid var(--main-color);
+    border-bottom: 2px solid rgba(255,255,255,0);
 }
 
 menu .menu-content a:hover {

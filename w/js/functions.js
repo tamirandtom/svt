@@ -89,21 +89,23 @@ $(".wrap-zira").click(function () {
 });
 
 
-$(window).scroll(function() {
-    var top_of_element = $(".after-section").offset().top;
-    var bottom_of_element = $(".after-section").offset().top + $(".after-section").outerHeight();
-    var bottom_of_screen = $(window).scrollTop() + $(window).height();
-    var top_of_screen = $(window).scrollTop();
 
-    if((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+// Hide bottom part on scroll up
+
+$(window).scroll(function () {
+	var top_of_element = $(".after-section").offset().top;
+	var bottom_of_element = $(".after-section").offset().top + $(".after-section").outerHeight();
+	var bottom_of_screen = $(window).scrollTop() + $(window).height();
+	var top_of_screen = $(window).scrollTop();
+
+	if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
 		// The element is visible, do something
 		console.log('is vis!');
- isSectionTwoUp = true;
+		isSectionTwoUp = true;
 
-    }
-    else {
-        // The element is not visible, do something else
-    }
+	} else {
+		// The element is not visible, do something else
+	}
 });
 
 
@@ -146,14 +148,11 @@ $(".wrap-svt").scroll(function () {
 	// console.log('scroll svt is at ' + $(this).scrollTop());
 	// $('.wrap-zira').scrollTop($(this).scrollTop());
 	svtScroll = currScrollTop;
-
-
 });
 
 
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
-
 	let currScrollTop = $(this).scrollTop()
 	if (currScrollTop > ziraScroll) {
 		// downscroll code
@@ -193,6 +192,24 @@ $(".wrap-zira").scroll(function () {
 });
 
 
+
+
+// Tooltips 
+$(".after-images-item").mousemove(function (e) {
+if (screenWidth/2  > e.pageX)
+{
+	$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
+	
+} else {
+	$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
+	
+}
+
+});
+
+$(".after-images-item").mouseout(function () {
+	$(this).children('.tooltip').css('display', 'none');
+});
 
 
 
