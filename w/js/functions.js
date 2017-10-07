@@ -1,3 +1,6 @@
+
+
+// Check if is mobile / touch. if touch - show mobile version
 isMobile = function () {
 	var check = false;
 	(function (a) {
@@ -8,6 +11,46 @@ isMobile = function () {
 	}
 	return check;
 };
+
+// Menu links
+$(".menu-link__zira").click(function () {
+	//Scroll to top
+	$('html, body, .wrap-svt, .wrap-zira').animate({
+		scrollTop: 0
+	}, 300);
+	//Focus on Zira
+	focusOnHazira();
+});
+
+$(".menu-link__svt").click(function () {
+	//Scroll to top
+	$('html, body, .wrap-svt, .wrap-zira').animate({
+		scrollTop: 0
+	}, 300);
+	//Focus on Zira
+	focusOnSvt();
+});
+
+$(".menu-link__preformers").click(function () {
+	//Scroll to section
+	$('body, html').animate({
+		scrollTop: $('.after-section').offset().top
+	}, 300);
+});
+
+$(".menu-link__map").click(function () {
+	//Scroll to section
+	$('body, html').animate({
+		scrollTop: $('.after-map-container').offset().top
+	}, 300);
+});
+
+$(".menu-link__details").click(function () {
+	//Scroll to section
+	$('body, html').animate({
+		scrollTop: $('.after-map-credits').offset().top
+	}, 300);
+});
 
 
 // Accordeon zippy
@@ -31,7 +74,6 @@ $(".svt-cal-day-header").click(function () {
 
 
 // Menu hide timer 
-
 var menuTimer = null;
 var menuTimeout = 3000;
 $("body").mousemove(function () {
@@ -68,7 +110,6 @@ function focusOnHazira() {
 }
 
 function focusOnSvt() {
-
 	$(".wrap-svt").addClass('scroll-focus');
 	$(".wrap-svt").removeClass('scroll-blur');
 	$(".wrap-zira").addClass('scroll-blur');
@@ -79,6 +120,9 @@ function focusOnSvt() {
 	$(".white").addClass('showintro');
 }
 
+
+
+// Focus on Click
 $(".wrap-svt").click(function () {
 	focusOnSvt();
 });
@@ -90,54 +134,46 @@ $(".wrap-zira").click(function () {
 
 
 
-// Hide bottom part on scroll up
+
+// On scroll check if the bottom part is showing
+var isSectionTwoUp = false;
 
 $(window).scroll(function () {
 	var top_of_element = $(".after-section").offset().top;
 	var bottom_of_element = $(".after-section").offset().top + $(".after-section").outerHeight();
 	var bottom_of_screen = $(window).scrollTop() + $(window).height();
 	var top_of_screen = $(window).scrollTop();
-
 	if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
-		// The element is visible, do something
-		console.log('is vis!');
+		// Is visible
 		isSectionTwoUp = true;
-
-	} else {
-		// The element is not visible, do something else
 	}
 });
 
-
-var isSectionTwoUp = false;
 $(".wrap-svt").scroll(function () {
-	// console.log($(this).scrollTop());
+
+	// Detect if scroll up or down
+
 	let currScrollTop = $(this).scrollTop()
 	if (currScrollTop > svtScroll) {
-		// downscroll code
-		console.log('down!');
+		// down scroll 
 	} else {
-		// upscroll code
-		console.log('up!');
+		// up scroll 
 		if (isSectionTwoUp) {
 			$('html, body').animate({
 				scrollTop: 0
 			}, 100);
 			isSectionTwoUp = false;
 		}
-
 	}
 
-
+	// Hide / show intro circle
 	if ($(this).scrollTop() > 200) {
 		$("#px-render").addClass("intro-scrolldown");
-		// console.log('true!');
 	} else {
 		$("#px-render").removeClass("intro-scrolldown");
-		// console.log('false!');
 	}
 
-
+	// After innitial scroll remove 1/2 class
 	if (!innitialScroll) {
 		innitialScroll = 1;
 		focusOnSvt();
@@ -145,8 +181,8 @@ $(".wrap-svt").scroll(function () {
 		$(".wrap-zira").addClass('scroll-blur');
 		$(".container-half").removeClass('scroll-begin');
 	}
-	// console.log('scroll svt is at ' + $(this).scrollTop());
-	// $('.wrap-zira').scrollTop($(this).scrollTop());
+	// Save new valie for up / down detection
+
 	svtScroll = currScrollTop;
 });
 
@@ -154,12 +190,12 @@ $(".wrap-svt").scroll(function () {
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
 	let currScrollTop = $(this).scrollTop()
+
+	// Detect if scroll up or down
 	if (currScrollTop > ziraScroll) {
-		// downscroll code
-		console.log('down!');
+		// down scroll
 	} else {
-		// upscroll code
-		console.log('up!');
+		// up scroll
 		if (isSectionTwoUp) {
 			$('html, body').animate({
 				scrollTop: 0
@@ -168,16 +204,15 @@ $(".wrap-zira").scroll(function () {
 		}
 	}
 
+	// Hide / show intro circle
 	if ($(this).scrollTop() > 200) {
 		$("#px-render-green").addClass("intro-scrolldown");
-		// console.log('true!');
 	} else {
 		$("#px-render-green").removeClass("intro-scrolldown");
-		// console.log('false!');
 	}
 
 
-
+	// After innitial scroll remove 1/2 class
 	if (!innitialScroll) {
 		focusOnHazira();
 		innitialScroll = 1;
@@ -186,32 +221,30 @@ $(".wrap-zira").scroll(function () {
 		$(".container-half").removeClass('scroll-begin');
 	}
 
+	// Save new valie for up / down detection
 	ziraScroll = $(this).scrollTop();
-	// console.log('scroll zira is at ' + $(this).scrollTop());
-	// $('.wrap-svt').scrollTop($(this).scrollTop());
 });
 
 
 
 
-// Tooltips 
+// Tooltips for images
+// TODO: Fade between images
 $(".after-images-item").mousemove(function (e) {
-if (screenWidth/2  > e.pageX)
-{
-	$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
-	
-} else {
-	$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
-	
-}
+	if (screenWidth / 2 > e.pageX) {
+		$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
 
+	} else {
+		$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
+	}
 });
-
 $(".after-images-item").mouseout(function () {
 	$(this).children('.tooltip').css('display', 'none');
 });
 
 
+
+// Animaitons
 
 showAniamtion = true;
 
