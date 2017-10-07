@@ -107,10 +107,7 @@ font-family: 'Frank Ruhl Libre', serif;
 margin-bottom:26px;
 }
 
-
-
 /* map */
-
 .after-map-container {
     height: 600px;
     background:red;
@@ -122,8 +119,21 @@ margin-bottom:26px;
     display: flex;
     justify-content:flex-start;
     flex-flow:row;
+    flex-wrap: wrap;
 
 }
+
 .after-map-credits__col {
     width:50%;
+    direction:rtl;
+    color:var(--main-color);
+    padding-top:60px;
+    font-size:13px;
+    line-height:20px;
+    letter-spacing:.6px;
+    font-family: 'Miriam Libre', sans-serif;
+    font-weight:400;    
+}
+.after-map-credits__col b {
+    font-weight:700;    
 }
