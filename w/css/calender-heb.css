@@ -1,4 +1,27 @@
+/* Setting up color vars */
+
+
+.wrap-zira .container-half-content {
+    --main-color:#00AE7C;
+    --bg-color:#fff;
+    color: var(--main-color);
+    
+}
+
+.wrap-svt .container-half-content {
+    --main-color:#fff;
+    --bg-color:#00AE7C;
+
+    color: var(--main-color);
+}
 /* intro text */
+
+
+.svt-section-calender,.zir-section-calender {
+margin-bottom:100px;
+border-bottom: 2px solid var(--main-color);
+}
+
 
 .svt-section-text,
 .zi-section-text {
@@ -99,7 +122,7 @@
     justify-content: space-between;
     align-items: center;
     /* background: lime; */
-    border-top: 2px solid #fff;
+    border-top: 2px solid var(--main-color);
     height: 80px;
 }
 
@@ -149,7 +172,7 @@
     transform: rotate(90deg);
     transform-origin: 50% 50%;
     position: relative;
-    top: 4px;
+    top: 12px;
 }
 
 .svt-zippy--open .svt-cal-item-title__accordion__arr,
@@ -187,7 +210,7 @@
 .svt-cal-day-header {
     text-align: center;
     padding: 70px 0;
-    border-top: 2px solid #fff;
+    border-top: 2px solid var(--main-color);
 }
 .zir-cal-items-wrap, .svt-cal-items-wrap
 {
@@ -359,4 +382,51 @@
     font-weight: 400;
     letter-spacing: 0.55px;
     line-height: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+    
+    .center-col {
+max-width: auto;
+min-width: auto;
+    }
+    .center-col-inner {
+        margin:0;
+    }
+
+
+    /* Day titles */
+.svt-cal-day-header__day-name {
+    /* font- */
+}
+
+/* Items flexbox */
+.svt-cal-item-title ,.zir-cal-item-title {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: right;
+}
+
+.zir-cal-item-title__accordion {
+    display: none;
+}
+
+.svt-cal-item-content, .zir-cal-item-content {
+flex-direction:column;
+}
+
+/* images */
+.svt-cal-item-content__image, .zir-cal-item-content__image
+{
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+.zir-cal-item-content__desc, .svt-cal-item-content__desc {
+width:100%;
+}
 }
