@@ -68,3 +68,47 @@ menu .menu-content a {
 menu .menu-content a:hover {
     border-bottom: 2px solid #fff;
 }
+
+
+@media (max-width: 800px) {
+    menu {
+        top:auto;
+        bottom: 26px;
+        left: 26px;
+    }
+    menu .menu-content {
+        position:relative;
+        top:-260px;
+/* background-color:lime; */
+    }
+
+    .svt-backdrop {
+        position: fixed;
+        top:0px;
+        left:0px;
+        width:100%;
+        height:100%;
+        pointer-events:none;
+        opacity:0;
+        background-color:var(--main-color-50);
+        z-index:900;
+    }
+    .svt-backdrop.svt-backdrop--visible {
+       opacity:1;
+       pointer-events:all;       
+    }
+    menu:hover .menu-content {
+        visibility: hidden;
+        opacity: 0;
+    }
+    menu.menu--open  .menu-content{
+        visibility: visible;
+        opacity:1;        
+    }
+    menu .menu-content{
+        visibility: hidden;
+        opacity:0;
+    }
+ 
+
+}

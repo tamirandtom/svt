@@ -133,7 +133,7 @@ a.cal-ticket-cta img{
     align-items: center;
     /* background: lime; */
     border-top: 2px solid var(--main-color);
-    height: 80px;
+    min-height: 80px;
 }
 
 .zir-cal-item-title {
@@ -142,7 +142,7 @@ a.cal-ticket-cta img{
     align-items: center;
     /* background: lime; */
     border-top: 2px solid var(--main-color);
-    height: 80px;
+    min-height: 80px;
     direction: rtl;
 }
 
@@ -169,12 +169,21 @@ a.cal-ticket-cta img{
     min-width:240px;
 }
 
+.svt-cal-item-title__right {
+    align-items:center;
+    flex-grow:1;
+}
+
+
+
+
 
 /* accordion icon */
 
 .svt-cal-item-title__accordion,
 .zir-cal-item-title__accordion {
     width: 40px;
+    display: flex;
 }
 
 .svt-cal-item-title__accordion__arr,
@@ -182,9 +191,16 @@ a.cal-ticket-cta img{
     transition: all 0.3s ease;
     transform: rotate(90deg);
     transform-origin: 50% 50%;
-    position: relative;
-    top: 12px;
+    /* position: relative; */
+    /* top: 12px; */
 }
+
+.svt-cal-item-title__accordion__arr {
+    top: 0px;    
+}
+
+
+
 
 .svt-zippy--open .svt-cal-item-title__accordion__arr,
 .svt-zippy--open .zir-cal-item-title__accordion__arr {
@@ -223,6 +239,7 @@ a.cal-ticket-cta img{
     text-align: center;
     padding: 70px 0;
     border-top: 2px solid var(--main-color);
+    cursor: pointer;
 }
 .zir-cal-items-wrap, .svt-cal-items-wrap
 {
@@ -256,20 +273,44 @@ a.cal-ticket-cta img{
 
 /* svt cal items */
 
+
+
+
+
+.svt-cal-item-title__name {
+    
+        /* max-width: 300px; */
+        flex-wrap: wrap;
+        margin:8px 0;
+        flex-flow:column;
+    }
+
+    .zir-cal-item-title__name {
+        
+            /* max-width: 300px; */
+            flex-wrap: wrap;
+            margin:8px 0;
+            flex-flow:column;
+        }
+
+
 .svt-cal-item-title__name__by {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 20px;
     letter-spacing: 1.2px;
     font-family: 'Frank Ruhl Libre', serif;
     font-weight: 400;
     padding: 0 8px;
+    display: none;
+    /* top: -4px; */
+    /* position: relative; */
 }
 
 .svt-cal-item-title__name__name,
 .svt-cal-item-title__name__author {
     font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 1.2px;
+    line-height: 20px;
+    letter-spacing: 1.4px;
     word-spacing:-5px;
     font-family: 'Nitti', 'zvi', sans-serif;
     max-width: 400px;
@@ -283,6 +324,15 @@ a.cal-ticket-cta img{
     line-height: 20px;
     letter-spacing: .9px;
 }
+
+.svt-cal-item-title__name__author {
+font-size: 14px;
+letter-spacing: 1.6px;
+font-weight: 400;
+margin-top: 3px;
+}
+
+
 
 .svt-cal-item-content__desc {
     width: 50%;
@@ -320,6 +370,16 @@ a.cal-ticket-cta img{
     text-align: center;
     padding: 70px 0;
     border-top: 2px solid var(--main-color);
+    cursor: pointer;
+}
+
+
+
+
+.svt-cal-day-header_arrow {
+    /* background:lawngreen; */
+    display:inline-block;
+
 }
 
 .zir-cal-day-header__day-name {
@@ -349,16 +409,25 @@ a.cal-ticket-cta img{
     font-family: 'Frank Ruhl Libre', serif;
     font-weight: 400;
     padding: 0 8px;
+    display:none;
 }
 
 .zir-cal-item-title__name__name,
 .zir-cal-item-title__name__author {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 20px;
     letter-spacing: 0.8px;
     font-family: 'Hadassah';
     font-weight: 700;
 }
+
+
+.zir-cal-item-title__name__author {
+    font-size: 14px;
+    letter-spacing: 1.6px;
+    margin-top: 3px;
+    font-weight: 700;
+    }
 
 .zir-cal-item-title__time,
 .zir-cal-item-title__location {
@@ -399,52 +468,6 @@ a.cal-ticket-cta img{
 }
 
 
-/* Mobile */
-
-@media (max-width: 800px) {
-    
-    .center-col {
-max-width: auto;
-min-width: auto;
-    }
-    .center-col-inner {
-        margin:0;
-    }
-
-
-    /* Day titles */
-.svt-cal-day-header__day-name {
-    /* font- */
-}
-
-/* Items flexbox */
-.svt-cal-item-title ,.zir-cal-item-title {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: right;
-}
-
-.zir-cal-item-title__accordion {
-    display: none;
-}
-
-.svt-cal-item-content, .zir-cal-item-content {
-flex-direction:column;
-}
-
-/* images */
-.svt-cal-item-content__image, .zir-cal-item-content__image
-{
-    width:100%;
-    padding:0;
-    margin:0;
-}
-
-.zir-cal-item-content__desc, .svt-cal-item-content__desc {
-width:100%;
-}
-}
-
 
 
 /* complex items */
@@ -475,3 +498,136 @@ width:100%;
     max-width:480px;
     padding:0;
 }
+
+/* Mobile */
+
+@media (max-width: 930px) { 
+    .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
+        margin-right:40px;
+    }
+    .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-content__image {
+        margin-right:40px;
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    
+    .center-col {
+max-width: auto;
+min-width: auto;
+    }
+    .center-col-inner {
+        margin:0 16px;
+    }
+
+
+    /* Day titles */
+
+    .svt-cal-day-header {
+        padding:30px 0;
+    }
+    .svt-cal-day-header__day-name {
+        word-spacing: 1px;
+    }
+    .svt-cal-day-header__day-name {
+        word-spacing: 1px;
+    }
+    .svt-cal-day-header--mobile-part1 {
+        font-size: 45px;
+        line-height:45px;
+        font-family: 'Nitti', serif;   
+    }
+
+    .svt-cal-day-header--mobile-part2 {
+        font-size: 22px;
+        line-height:19px;
+        letter-spacing:2.1px;
+        font-family: 'zvi';
+        font-weight:700;
+        margin-top: 8px;
+    }
+
+    .svt-cal-day-header--mobile-part3 {
+        font-size: 15px;
+        line-height:20px;
+        letter-spacing:1px;
+        margin-top:20px;
+        font-family: 'zvi';
+        font-weight:400;
+    }
+    .svt-cal-day-header__day-title {
+font-size: 15px;
+line-height:20px;
+word-spacing: -4px;
+    }
+.cal-ticket-cta {
+    display: none;
+}
+    .svt-cal-item-content__desc-text {
+        margin-top: 15px;
+        font-size: 15px;
+        line-height: 21px;
+        letter-spacing:normal;
+    }
+/* Items flexbox */
+.svt-cal-item-title ,.zir-cal-item-title {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: right;
+    padding: 12px 0 12px 0;
+}
+
+.zir-cal-item-title__accordion {
+    /* display: none; */
+}
+
+.svt-cal-item-content, .zir-cal-item-content {
+flex-direction:column;
+margin-top:20px;
+}
+
+.svt-cal-item-title__name {
+    margin:0px;
+}
+
+.svt-cal-item-title__left:before {
+    content: "***";
+    font-family: 'Miriam Libre', sans-serif;
+font-size:12px;
+line-height:15px;
+letter-spacing:1.3px;  
+padding-top: 6px;  
+ }
+.svt-cal-item-title__name__name, .svt-cal-item-title__name__author {
+    line-height:22px;
+}
+
+.svt-cal-item-title__name__author {
+    font-size:15px;
+    line-height:21px;
+    letter-spacing:1.3px;
+}
+/* images */
+.svt-cal-item-content__image, .zir-cal-item-content__image
+{
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+.zir-cal-item-content__desc, .svt-cal-item-content__desc {
+width:100%;
+}
+
+
+.svt-cal-item-title__right, .zir-cal-item-title__right {
+    align-items: center;
+    flex-grow: 1;
+    direction: ltr;
+    justify-content: space-between;
+    width: 100%;
+}
+}
+

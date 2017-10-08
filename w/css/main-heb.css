@@ -1,32 +1,42 @@
-
-
-
 @import 'fonts.css';
 @import 'intro.css';
 @import 'calender-heb.css';
 @import 'common-section-heb.css';
 @import 'menu.css';
-
 body {
     height: 100%;
     /* overflow: hidden; */
-    
     background: #fff;
     color: #000;
     margin: 0;
     padding: 0;
     /* cursor: none; */
     --main-color: #00AE7C;
+    --main-color-50: rgba(0, 174, 124, 0.8);
     --main-color-pos: #fff;
     --color-black: #000;
-    --left-space:130px;
-
-
+    --left-space: 130px;
 }
 
 
 /* disables scrollbars */
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
+}
+
+.show-on-mobile {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    body {
+        --left-space: 44px;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+    .show-on-mobile {
+        display: block;
+    }
 }

@@ -20,15 +20,23 @@ $(".menu-link__zira").click(function () {
 	}, 300);
 	//Focus on Zira
 	focusOnHazira();
+	// Remove backdrop
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');	
+	$("menu").removeClass('menu--open');		
 });
 
 $(".menu-link__svt").click(function () {
+		// Remove backdrop
+		$(".svt-backdrop").removeClass('svt-backdrop--visible');
+	$("menu").removeClass('menu--open');		
+	
 	//Scroll to top
 	$('html, body, .wrap-svt, .wrap-zira').animate({
 		scrollTop: 0
 	}, 300);
 	//Focus on Zira
 	focusOnSvt();
+		
 });
 
 $(".menu-link__preformers").click(function () {
@@ -36,6 +44,10 @@ $(".menu-link__preformers").click(function () {
 	$('body, html').animate({
 		scrollTop: $('.after-section').offset().top
 	}, 300);
+		// Remove backdrop
+		$(".svt-backdrop").removeClass('svt-backdrop--visible');		
+	$("menu").removeClass('menu--open');		
+	
 });
 
 $(".menu-link__map").click(function () {
@@ -43,6 +55,10 @@ $(".menu-link__map").click(function () {
 	$('body, html').animate({
 		scrollTop: $('.after-map-container').offset().top
 	}, 300);
+		// Remove backdrop
+		$(".svt-backdrop").removeClass('svt-backdrop--visible');	
+	$("menu").removeClass('menu--open');		
+	
 });
 
 $(".menu-link__details").click(function () {
@@ -50,6 +66,10 @@ $(".menu-link__details").click(function () {
 	$('body, html').animate({
 		scrollTop: $('.after-map-credits').offset().top
 	}, 300);
+		// Remove backdrop
+		$(".svt-backdrop").removeClass('svt-backdrop--visible');	
+	$("menu").removeClass('menu--open');		
+	
 });
 
 
@@ -74,17 +94,34 @@ $(".svt-cal-day-header").click(function () {
 
 
 // Menu hide timer 
-var menuTimer = null;
-var menuTimeout = 3000;
-$("body").mousemove(function () {
-	clearTimeout(menuTimer);
-	$("menu").removeClass('menu--hide');
-	menuTimer = setTimeout(function () {
+if (!isMobile)
+{
+	var menuTimer = null;
+	var menuTimeout = 3000;
+	$("body").mousemove(function () {
+		clearTimeout(menuTimer);
+		$("menu").removeClass('menu--hide');
+		menuTimer = setTimeout(function () {
+			$("menu").addClass('menu--hide');
+		}, menuTimeout);
+	}).mouseleave(function () {
+		clearTimeout(menuTimer);
 		$("menu").addClass('menu--hide');
-	}, menuTimeout);
-}).mouseleave(function () {
-	clearTimeout(menuTimer);
-	$("menu").addClass('menu--hide');
+	});
+	
+} else {
+	$("menu").removeClass('menu--hide');
+}
+
+$(".menucircle").click(function () {
+	$(".svt-backdrop").addClass('svt-backdrop--visible');	
+	$("menu").addClass('menu--open');	
+});
+
+
+$(".svt-backdrop").click(function () {
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');	
+	$("menu").removeClass('menu--open');
 });
 
 

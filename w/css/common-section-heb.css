@@ -37,11 +37,26 @@
 
 
 .after-images-container {
-	display: flex;
+	/* display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
     font-size: 0; 
-    justify-content:space-between;
+    justify-content:space-between; */
+
+
+    /* TODO: this does not work in safari */
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -moz-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+    -moz-column-fill: initial;
+    -webkit-column-fill: initial;
+    column-fill: initial;
+    column-count: 3;
+
+
     /* height:1500px; */
 }
 
@@ -50,7 +65,9 @@
     
 }
 .after-images-container .after-images-item  { 
-    width:calc((100% / 3) - 15px);
+    /* width:calc((100% / 3) - 15px); */
+
+    width:100%;
     background:#000;
     margin-bottom:20px;    
     /* mix-blend-mode:lighten; */
@@ -137,4 +154,14 @@ margin-bottom:26px;
 }
 .after-map-credits__col b {
     font-weight:700;    
+}
+@media (max-width: 800px) {
+ 
+    .after-map-credits .after-map-credits__col {
+        width:100%;
+     }  
+     
+     .after-map-credits {
+        flex-wrap:wrap;
+     }  
 }
