@@ -537,8 +537,17 @@ a.cal-ticket-cta img {
         min-width: auto;
     }
     .center-col-inner {
-        margin: 0 16px;
+        margin: 0 0px;
     }
+
+
+    .svt-section-text,
+    .zi-section-text {
+        padding:0 16px;
+    }
+
+
+   
     /* Into texts*/
     .intro-text-title {
         font-size: 35px;
@@ -709,5 +718,18 @@ a.cal-ticket-cta img {
         direction: ltr;
         justify-content: space-between;
         width: 100%;
+    }
+
+
+
+    /* adding padding to some elements
+     */
+
+
+     .svt-cal-day-header, .svt-cal-item-title, .svt-cal-item-content__desc,  .zir-cal-day-header, .zir-cal-item-title, .zir-cal-item-content__desc {
+        padding-left: 16px;
+        padding-right: 16px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
