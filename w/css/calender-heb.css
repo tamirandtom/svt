@@ -177,6 +177,33 @@ a.cal-ticket-cta img{
 
 
 
+/* day header accordion */
+
+
+.zira-cal-day-header_arrow, .svt-cal-day-header_arrow  {
+    /* background:lawngreen; */
+    display:inline-block;
+    text-align: right;
+    padding-top:30px;
+    margin-bottom:30px;
+    
+}
+
+
+.zir-cal-day-header .svt-cal-item-title__accordion__arr,
+.zir-cal-day-header .zir-cal-item-title__accordion__arr {
+    transition: all 0.3s ease;
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+}
+
+.zir-cal-day-header.svt-zippy--open .svt-cal-item-title__accordion__arr,
+.zir-cal-day-header.svt-zippy--open .zir-cal-item-title__accordion__arr {
+    transform: rotate(0deg);
+}
+
+
+
 
 /* accordion icon */
 
@@ -185,6 +212,8 @@ a.cal-ticket-cta img{
     width: 40px;
     display: flex;
 }
+
+
 
 .svt-cal-item-title__accordion__arr,
 .zir-cal-item-title__accordion__arr {
@@ -237,9 +266,12 @@ a.cal-ticket-cta img{
 
 .svt-cal-day-header {
     text-align: center;
-    padding: 70px 0;
+    padding: 70px 0 0 0;
     border-top: 2px solid var(--main-color);
     cursor: pointer;
+    display: flex;
+    flex-direction:column;
+
 }
 .zir-cal-items-wrap, .svt-cal-items-wrap
 {
@@ -368,19 +400,17 @@ margin-top: 3px;
 
 .zir-cal-day-header {
     text-align: center;
-    padding: 70px 0;
+    padding: 70px 0 0 0;
     border-top: 2px solid var(--main-color);
     cursor: pointer;
+    display: flex;
+    flex-direction:column;
 }
 
 
 
 
-.svt-cal-day-header_arrow {
-    /* background:lawngreen; */
-    display:inline-block;
 
-}
 
 .zir-cal-day-header__day-name {
     font-size: 80px;
@@ -499,8 +529,28 @@ margin-top: 3px;
     padding:0;
 }
 
-/* Mobile */
+.cal-ticket {
+margin-top:20px;
+}
 
+.cal-ticket-cta--mobile {
+    display: inline-block;
+    font-family: 'Miriam Libre', sans-serif;
+    line-height:20px;
+    font-size: 14px;
+    padding:10px 16px;
+    font-weight:700;
+    border: 2px solid var(--main-color);    
+    color: var(--main-color);
+    text-decoration:none;
+}
+.cal-ticket-cta--mobile:hover {
+    color: var(--bg-color);
+    background-color: var(--main-color);     
+    
+}
+
+/* Mobile */
 @media (max-width: 930px) { 
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
         margin-right:40px;
@@ -523,10 +573,67 @@ min-width: auto;
     }
 
 
-    /* Day titles */
+
+
+    /* Into texts*/
+
+    .intro-text-title {
+font-size:35px;
+line-height:29px;
+letter-spacing:2px;
+    }
+.intro-text-subtitle {
+    font-size:20px;
+line-height:21px;
+letter-spacing:4px;
+margin-bottom: 30px;
+margin-top: 15px;
+}
+
+.intro-text-body {
+font-size: 15px;
+line-height:21px;
+letter-spacing:0.4px;
+}
+
+
+.zi-text-title {
+    font-size:35px;
+    line-height:29px;
+    letter-spacing:2px;
+}
+
+.zi-text-subtitle {
+    font-size:20px;
+    line-height:29px;
+    letter-spacing:2px;
+    margin-bottom: 30px;
+    margin-top: 15px; 
+}
+.zi-text-pre {
+    font-size: 15px;
+    line-height:21px;
+letter-spacing: 5px;    
+}
+.zi-text-body {
+    font-size: 15px;
+    line-height:21px;
+    letter-spacing:0.4px;
+    }
+
+/* Day titles */
+
+
+.zira-cal-day-header_arrow, .svt-cal-day-header_arrow  {
+
+    text-align: left;
+    padding-top:0px;
+
+}
+
 
     .svt-cal-day-header {
-        padding:30px 0;
+        padding:30px 0 0 0;
     }
     .svt-cal-day-header__day-name {
         word-spacing: 1px;
@@ -562,14 +669,43 @@ font-size: 15px;
 line-height:20px;
 word-spacing: -4px;
     }
-.cal-ticket-cta {
-    display: none;
-}
+    .cal-ticket-cta {
+        display: none;
+    }
+
+
+    .cal-ticket-cta--mobile {
+        display: inline-block;
+        font-family: 'Miriam Libre', sans-serif;
+        line-height:20px;
+        font-size: 14px;
+        padding:10px 16px;
+        font-weight:700;
+        border: 2px solid var(--main-color);    
+        color: var(--main-color);
+        text-decoration:none;
+    }
+    .cal-ticket-cta--mobile:hover {
+        color: var(--bg-color);
+        background-color: var(--main-color);     
+        
+    }
+
+
     .svt-cal-item-content__desc-text {
         margin-top: 15px;
         font-size: 15px;
         line-height: 21px;
+        letter-spacing:0.4px;
+    }
+
+    .zir-cal-item-content__desc-text {
+        margin-top: 15px;
+        font-size: 15px;
+        line-height: 21px;
         letter-spacing:normal;
+        /* font-weight: 500; */
+        margin-bottom: 35px;
     }
 /* Items flexbox */
 .svt-cal-item-title ,.zir-cal-item-title {
@@ -579,8 +715,11 @@ word-spacing: -4px;
     padding: 12px 0 12px 0;
 }
 
-.zir-cal-item-title__accordion {
-    /* display: none; */
+.zir-cal-day-header__day-title {
+    font-size: 20px;
+    line-height:26px;
+    margin-top:10px;
+    /* font-weight:400; */
 }
 
 .svt-cal-item-content, .zir-cal-item-content {

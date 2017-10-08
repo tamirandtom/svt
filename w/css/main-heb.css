@@ -29,6 +29,10 @@ body {
     display: none;
 }
 
+.is-lrt {
+    direction:ltr;
+    text-align:right;
+}
 @media (max-width: 800px) {
     body {
         --left-space: 44px;
