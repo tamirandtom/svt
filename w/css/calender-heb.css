@@ -115,6 +115,16 @@ border-bottom: 2px solid var(--main-color);
 
 /* Calander */
 
+
+/* tickets CTA  */
+
+a.cal-ticket-cta img{
+    max-width: 104px;
+    transform:rotate(30deg);
+    position: relative;
+    top:-65px;
+    left:40px;
+}
 .svt-cal-item-title {
     display: flex;
     cursor: pointer;
@@ -150,7 +160,7 @@ border-bottom: 2px solid var(--main-color);
 
 .svt-cal-item-content,
 .zir-cal-item-content {
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
 .svt-cal-item-title__left,
@@ -198,6 +208,7 @@ border-bottom: 2px solid var(--main-color);
 .zir-cal-item-content__image {
     width: 50%;
     padding: 0 40px;
+    /* position: relative; */
 }
 
 .svt-cal-item-content__image img,
@@ -259,6 +270,7 @@ border-bottom: 2px solid var(--main-color);
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 1.2px;
+    word-spacing:-5px;
     font-family: 'Nitti', 'zvi', sans-serif;
 }
 
