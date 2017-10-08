@@ -97,6 +97,8 @@ $(".zir-cal-item-title").click(function () {
 	$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
 });
+if (!isMobile)
+{
 $(".zir-cal-day-header").click(function () {
 	$(this).siblings(".zir-cal-items-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
@@ -105,6 +107,7 @@ $(".svt-cal-day-header").click(function () {
 	$(this).siblings(".svt-cal-items-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
 });
+}
 
 
 
@@ -125,7 +128,7 @@ if (!isMobile)
 	});
 	
 } else {
-	// $("menu").removeClass('menu--hide');
+	$("menu").removeClass('menu--hide');
 }
 
 $(".menucircle").click(function () {
@@ -282,17 +285,21 @@ $(".wrap-zira").scroll(function () {
 
 // Tooltips for images
 // TODO: Fade between images
-$(".after-images-item").mousemove(function (e) {
-	if (screenWidth / 2 > e.pageX) {
-		$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
+if (!isMobile)
+{
+	$(".after-images-item").mousemove(function (e) {
+		if (screenWidth / 2 > e.pageX) {
+			$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
+	
+		} else {
+			$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
+		}
+	});
+	$(".after-images-item").mouseout(function () {
+		$(this).children('.tooltip').css('display', 'none');
+	});
+}
 
-	} else {
-		$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
-	}
-});
-$(".after-images-item").mouseout(function () {
-	$(this).children('.tooltip').css('display', 'none');
-});
 
 
 
