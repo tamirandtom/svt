@@ -298,9 +298,9 @@ $(".after-images-item").mouseout(function () {
 
 // Animaitons
 
-showAniamtion = true;
+// showAniamtion = isMobile;
 
-if (showAniamtion) {
+if (!isMobile) {
 
 	// aniamtions
 	var screenWidth = window.innerWidth;
