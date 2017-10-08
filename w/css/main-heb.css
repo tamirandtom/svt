@@ -16,7 +16,7 @@ body {
     --main-color-pos: #fff;
     --color-black: #000;
     --left-space: 130px;
-    --line-width: 1px;
+    --line-width: 2px;
 }
 
 
@@ -36,6 +36,7 @@ body {
 }
 @media (max-width: 800px) {
     body {
+    --line-width: 1px;    
         --left-space: 30px;
     }
     .hide-on-mobile {

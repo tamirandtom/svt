@@ -109,8 +109,8 @@ $(".svt-cal-day-header").click(function () {
 
 
 // Menu hide timer 
-// if (!isMobile)
-// {
+if (!isMobile)
+{
 	var menuTimer = null;
 	var menuTimeout = 3000;
 	$("body").mousemove(function () {
@@ -124,9 +124,9 @@ $(".svt-cal-day-header").click(function () {
 		$("menu").addClass('menu--hide');
 	});
 	
-// } else {
-	$("menu").removeClass('menu--hide');
-// }
+} else {
+	// $("menu").removeClass('menu--hide');
+}
 
 $(".menucircle").click(function () {
 	$(".svt-backdrop").addClass('svt-backdrop--visible');	
@@ -493,30 +493,35 @@ if (showAniamtion) {
 
 
 	function animate() {
-		// raf = requestAnimationFrame(animate);
-		// count += 0.1;
-		// mousePullStrenght = 7;
+		raf = requestAnimationFrame(animate);
+		count += 0.1;
+		scaleFactor = 1;
 
 		//   inner circle move
-		// innerCircle2.x = svtScroll/4;
-		//  innerCircle.x = ziraScroll/4;
+		innerCircle2.x = (ziraScroll/4)/scaleFactor;
+		innerCircle.x = (svtScroll/4)/scaleFactor;
 
+		innerCircle2.y = (ziraScroll/8)/scaleFactor;
+		innerCircle.y = (svtScroll/8)/scaleFactor;
+
+		// innerCircle2.scale = 1+(ziraScroll/1000);
+		// innerCircle.scale = 1+(svtScroll/1000);
+		// innerCircle.scale = 100;
+
+		// console.log(ziraScroll);
 		// noise animation
-		//   displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
-		//   displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
+		// displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
+		// displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
+
+		displacementSprite.x = 2 * count;
+		displacementSprite.y = 2 * count;
 
 
+		renderer.render(stage);
+		renderer2.render(stage2);
 
-
-		// displacementSprite.x = 2 * count;
-		// displacementSprite.y = 2 * count;
-
-
-		// renderer.render(stage);
-		// renderer2.render(stage2);
-
-		// canvas = playground.querySelector('canvas');
-		// canvas2 = playground2.querySelector('canvas');
+		canvas = playground.querySelector('canvas');
+		canvas2 = playground2.querySelector('canvas');
 	}
 
 	setScene();
