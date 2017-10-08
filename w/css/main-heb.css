@@ -35,7 +35,7 @@ body {
 }
 @media (max-width: 800px) {
     body {
-        --left-space: 44px;
+        --left-space: 30px;
     }
     .hide-on-mobile {
         display: none;
