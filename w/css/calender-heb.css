@@ -156,6 +156,7 @@ border-bottom: 2px solid var(--main-color);
 .svt-cal-item-title__left,
 .zir-cal-item-title__left {
     flex-direction: column;
+    min-width:240px;
 }
 
 
@@ -429,4 +430,35 @@ flex-direction:column;
 .zir-cal-item-content__desc, .svt-cal-item-content__desc {
 width:100%;
 }
+}
+
+
+
+/* complex items */
+
+
+.cal-complex-item .svt-cal-item-content__desc-text {
+    margin-right:40px;
+}
+
+.cal-complex-item  .svt-cal-item-content-wrap .no-margin .svt-cal-item-content__desc-text{
+    margin-right:0px;
+}
+
+.cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
+    margin-right:140px;
+    margin-bottom:26px;
+    /* background:lime; */
+}
+
+.cal-complex-item .svt-cal-item-content {
+    margin-bottom:40px;
+}
+
+
+.cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-content__image {
+    margin-right:140px;
+    margin-left:40px;
+    max-width:480px;
+    padding:0;
 }

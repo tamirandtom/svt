@@ -38,10 +38,11 @@
 
 .after-images-container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	flex-wrap: wrap;
     font-size: 0; 
-    height:1500px;
+    justify-content:space-between;
+    /* height:1500px; */
 }
 
 .after-images-item, .after-images-item img {
@@ -49,9 +50,9 @@
     
 }
 .after-images-container .after-images-item  { 
-    width:380px;
+    width:calc((100% / 3) - 15px);
     background:#000;
-    margin-bottom:10px;    
+    margin-bottom:20px;    
     /* mix-blend-mode:lighten; */
 }
 .after-images-container:hover .after-images-item {
