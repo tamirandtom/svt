@@ -272,6 +272,7 @@ a.cal-ticket-cta img{
     letter-spacing: 1.2px;
     word-spacing:-5px;
     font-family: 'Nitti', 'zvi', sans-serif;
+    max-width: 400px;
 }
 
 .svt-cal-item-title__time,
