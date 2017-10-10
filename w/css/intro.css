@@ -144,6 +144,14 @@ canvas {
     align-self: flex-end flex-end;
 }
 
+
+.focus-zira .wrap-svt {
+    cursor: pointer;
+}
+.focus-svt .wrap-zira {
+    cursor: pointer;
+}
+
 @media (max-width: 800px) {
     canvas {
         /* display: none; */

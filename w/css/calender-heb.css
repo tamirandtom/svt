@@ -12,7 +12,15 @@
     color: var(--main-color);
 }
 
-
+.inline-link {
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    border-bottom:2px solid #fff;
+}
+em {
+    font-family: 'Libre Baskerville', serif;
+}
 /* floating labels */
 
 .text-floating-svt {
@@ -113,6 +121,17 @@ pointer-events:none;
     margin-top: 6px;
 }
 
+
+.intro-text-subtitle-2 {
+    font-family: 'Nitti', 'zvi', serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 1.7px;
+
+    margin:55px 0 30px 0;
+}
+
 .intro-text-pre {
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
@@ -174,7 +193,6 @@ pointer-events:none;
     letter-spacing: 0.3px;
     margin-bottom: 120px;
 }
-
 
 
 .wrap-zira strong {
@@ -264,7 +282,7 @@ a.cal-ticket-cta:hover img {
 
 .svt-cal-item-content,
 .zir-cal-item-content {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .svt-cal-item-title__left,
@@ -640,6 +658,15 @@ a.cal-ticket-cta:hover img {
 }
 
 @media (max-width: 800px) {
+    .intro-text-subtitle-2 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: 1.1px;
+    
+        /* margin:55px 0 30px 0; */
+    }
+
 
 .text-floating-zir,
 .text-floating-svt {
