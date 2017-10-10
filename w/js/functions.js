@@ -88,7 +88,7 @@ function initMap() {
 			  position: mark.position,
 			  title:mark.title,
 			  label:mark.title,			  
-			//   icon: 'images/mark.png',
+			  icon: 'images/marker.png',
 			  map: map
 			});
 			// var data = "Hello World!";
