@@ -871,6 +871,8 @@ a.cal-ticket-cta:hover img {
         direction: ltr;
         justify-content: space-between;
         width: 100%;
+        min-height:45px;
+        
     }
 
 

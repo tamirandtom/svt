@@ -85,7 +85,7 @@ letter-spacing:1.9px;
     cursor:pointer ;
     /* background: lime; */
     border-top: 2px solid #fff;
-    height:80px;
+    min-height:80px;
 }
 .zir-cal-item-title{
     display: flex;
