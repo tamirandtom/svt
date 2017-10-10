@@ -61,21 +61,41 @@ function initMap() {
 	
 	var markers = [
 		{
-			position: new google.maps.LatLng(31.7644668, 35.1841473),
-			type: 'info'
+			position: new google.maps.LatLng(31.8047995,35.1246719),
+			title: 'בית נקופה'
 		  },{
-			position: new google.maps.LatLng(31.7744668, 35.1841473),
-			type: 'info'
+			position: new google.maps.LatLng(31.7513185,35.2069618),
+			title: 'הזירה הבינתחומית'
+		  },{
+			position: new google.maps.LatLng(31.7544109,35.2150317),
+			title: 'ביה״ס לתיאטרון חזותי'
+		  },{
+			position: new google.maps.LatLng(31.7690241,35.2121286),
+			title: 'בית הכנסת אוהל נחמה'
+		  },{
+			position: new google.maps.LatLng(31.7743144,35.2192419),
+			title: 'ימק״א'
+		  },{
+			position: new google.maps.LatLng(31.7769833,35.2192136),
+			title: 'המפעל'
+		  },{
+			position: new google.maps.LatLng(31.7428154,35.1492353),
+			title: 'עין לבן'
 		  }];
 
 		markers.forEach(function(mark) {
 			var marker = new google.maps.Marker({
 			  position: mark.position,
-			  title:"Hello World!",
-			  label:"sas",			  
+			  title:mark.title,
+			  label:mark.title,			  
 			//   icon: 'images/mark.png',
 			  map: map
 			});
+			// var data = "Hello World!";
+			var infowindow = new google.maps.InfoWindow({
+			  content: mark.title
+			});
+
 			google.maps.event.addListener(marker, 'click', function() {
 				infowindow.open(map,marker);
 			  });
@@ -83,12 +103,7 @@ function initMap() {
 
 		  
 
-	
-
-	  var data = "Hello World!";
-	  var infowindow = new google.maps.InfoWindow({
-		content: data
-	  });
+	  
 
   }
 

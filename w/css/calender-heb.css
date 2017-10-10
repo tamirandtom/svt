@@ -550,13 +550,14 @@ a.cal-ticket-cta:hover img {
     width: 50%;
 }
 
+
 .zir-cal-item-content__desc-text {
     font-size: 17px;
     line-height: 24px;
     letter-spacing: .2px;
     font-family: 'Frank Ruhl Libre', serif;
     font-weight: 500;
-    /* margin-bottom: 35px; */
+    margin-bottom: 35px;
 }
 
 .zir-cal-item-content__desc-credits-bold {
