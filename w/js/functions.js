@@ -115,7 +115,7 @@ $(".svt-cal-day-header").click(function () {
 if (!isMobile)
 {
 	var menuTimer = null;
-	var menuTimeout = 3000;
+	var menuTimeout = 2000;
 	$("body").mousemove(function () {
 		clearTimeout(menuTimer);
 		$("menu").removeClass('menu--hide');
@@ -162,6 +162,10 @@ function focusOnHazira() {
 	$(".green").removeClass('hideintro');
 	$(".white").removeClass('showintro');
 	$(".green").addClass('showintro');
+
+	$(".wrapper").addClass('focus-zira');
+	$(".wrapper").removeClass('focus-svt');
+	$(".wrapper").removeClass('focus-start');
 }
 
 function focusOnSvt() {
@@ -173,6 +177,10 @@ function focusOnSvt() {
 	$(".green").addClass('hideintro');
 	$(".green").removeClass('showintro');
 	$(".white").addClass('showintro');
+
+	$(".wrapper").addClass('focus-svt');
+	$(".wrapper").removeClass('focus-zira');
+	$(".wrapper").removeClass('focus-start');
 }
 
 
@@ -305,9 +313,9 @@ if (!isMobile)
 
 // Animaitons
 
-// showAniamtion = isMobile;
+showAniamtion = true;
 
-if (!isMobile) {
+if (!isMobile && showAniamtion) {
 
 	// aniamtions
 	var screenWidth = window.innerWidth;

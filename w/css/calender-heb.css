@@ -13,6 +13,71 @@
 }
 
 
+/* floating labels */
+
+.text-floating-svt {
+    transform: rotate(90deg);
+
+    font-family: 'Miriam Libre', sans-serif;
+    font-weight:700;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 3.64px;
+    line-height: 29px;   
+    position:absolute; 
+    top:50%;
+    transition:all 1s ease;
+    opacity:1;
+pointer-events:none;    
+    }
+
+
+.text-floating-zir {
+    transform: rotate(90deg);
+    font-family: 'Miriam Libre', sans-serif;
+    font-weight:700;
+    font-size: 14px;
+    color:var(--main-color);
+    letter-spacing: 3.64px;
+    line-height: 29px;  
+    position:absolute; 
+    top:50%;
+    transition:all 1s ease;
+    opacity:1;
+pointer-events:none;    
+
+    }
+
+
+    .focus-svt .text-floating-zir {
+        left:calc(100% - var(--left-space));
+        }
+        .focus-svt .text-floating-svt {
+            left:calc(100% - var(--left-space) - 60px);
+            }
+
+
+            .focus-zira .text-floating-zir {
+                left:calc(var(--left-space));
+                }
+                .focus-zira .text-floating-svt {
+                    left:calc(var(--left-space) - 60px);
+                    }
+
+
+            .focus-start .text-floating-zir{
+                left:50%;
+                opacity:0;
+                }
+                .focus-start .text-floating-svt{
+                    left:50%;
+                opacity:0;
+                
+                    }
+
+        
+    
+
 /* intro text */
 
 .svt-section-calender,
@@ -59,7 +124,7 @@
 
 .intro-text-body {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight: 400;
+    
     font-size: 20px;
     max-width: 760px;
     line-height: 29px;
@@ -102,7 +167,7 @@
 
 .zi-text-body {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight: 400;
+    
     font-size: 20px;
     max-width: 760px;
     line-height: 29px;
@@ -111,19 +176,58 @@
 }
 
 
+
+.wrap-zira strong {
+    font-weight:700;
+}
+.wrap-zira  p ,.wrap-svt  p {
+margin-top:0px;
+}
+
+
 /* Calander */
 
 
 /* tickets CTA  */
 
-a.cal-ticket-cta img {
-    max-width: 104px;
+a.cal-ticket-cta {
+    width: 104px;
     transform: rotate(30deg);
     position: relative;
     top: -65px;
     left: 40px;
+    display:inline-block;
 }
 
+a.cal-ticket-cta img {
+   width:100%;
+}
+
+a.cal-ticket-cta:hover  {
+    background-image:url('../images/tickets_cta_white--hover.svg');
+    background-size:cover;
+}
+
+.wrap-zira  a.cal-ticket-cta:hover  {
+    background-image:url('../images/tickets_cta_green--hover.svg');
+    background-size:cover;
+}
+
+
+a.cal-ticket-cta:hover img {
+    opacity:0;
+}
+
+
+
+.cal-complex-item .svt-cal-item-content__desc-text a.cal-ticket-cta{
+    position: static;
+    top: 0px;
+    left: 0px;
+}
+
+
+/* Titles */
 .svt-cal-item-title {
     display: flex;
     cursor: pointer;
@@ -143,6 +247,7 @@ a.cal-ticket-cta img {
     border-top: var(--line-width) solid var(--main-color);
     min-height: 80px;
     direction: rtl;
+    cursor: pointer;
 }
 
 .svt-cal-item-title__name,
@@ -312,7 +417,7 @@ a.cal-ticket-cta img {
     line-height: 20px;
     letter-spacing: 1.2px;
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight: 400;
+    
     padding: 0 8px;
     display: none;
     /* top: -4px; */
@@ -333,7 +438,7 @@ a.cal-ticket-cta img {
 .svt-cal-item-title__location {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    
     line-height: 20px;
     letter-spacing: .9px;
 }
@@ -341,7 +446,7 @@ a.cal-ticket-cta img {
 .svt-cal-item-title__name__author {
     font-size: 14px;
     letter-spacing: 1.6px;
-    font-weight: 400;
+    
     margin-top: 3px;
 }
 
@@ -351,7 +456,7 @@ a.cal-ticket-cta img {
 
 .svt-cal-item-content__desc-text {
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight: 400;
+    
     font-size: 17px;
     line-height: 24px;
     letter-spacing: .4px;
@@ -369,7 +474,7 @@ a.cal-ticket-cta img {
 .svt-cal-item-content__desc-credits-light {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    
     letter-spacing: 0.55px;
     line-height: 20px;
 }
@@ -411,7 +516,7 @@ a.cal-ticket-cta img {
     top: 2px;
     letter-spacing: 0.8px;
     font-family: 'Frank Ruhl Libre', serif;
-    font-weight: 400;
+    
     padding: 0 8px;
     display: none;
 }
@@ -451,7 +556,7 @@ a.cal-ticket-cta img {
     letter-spacing: .2px;
     font-family: 'Frank Ruhl Libre', serif;
     font-weight: 500;
-    margin-bottom: 35px;
+    /* margin-bottom: 35px; */
 }
 
 .zir-cal-item-content__desc-credits-bold {
@@ -465,7 +570,7 @@ a.cal-ticket-cta img {
 .zir-cal-item-content__desc-credits-light {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    
     letter-spacing: 0.55px;
     line-height: 20px;
 }
@@ -476,6 +581,7 @@ a.cal-ticket-cta img {
 .cal-complex-item .svt-cal-item-content__desc-text {
     margin-right: 40px;
 }
+
 
 .cal-complex-item .svt-cal-item-content-wrap .no-margin .svt-cal-item-content__desc-text {
     margin-right: 0px;
@@ -532,6 +638,22 @@ a.cal-ticket-cta img {
 }
 
 @media (max-width: 800px) {
+
+.text-floating-zir,
+.text-floating-svt {
+    display:none;
+}
+
+
+    .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
+        margin-right: 16px;
+    }
+    .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-content__image {
+        margin-right: 16px;
+    }
+
+
+
     .center-col {
         max-width: auto;
         min-width: auto;
@@ -576,7 +698,7 @@ a.cal-ticket-cta img {
         line-height: 29px;
         letter-spacing: 2px;
         margin-bottom: 30px;
-        margin-top: 15px;
+        margin-top: 8px;
     }
     .zi-text-pre {
         font-size: 15px;
@@ -623,7 +745,7 @@ a.cal-ticket-cta img {
         letter-spacing: 1px;
         margin-top: 20px;
         font-family: 'zvi';
-        font-weight: 400;
+        
     }
     .svt-cal-day-header__day-title {
         font-size: 15px;
@@ -649,7 +771,7 @@ a.cal-ticket-cta img {
         background-color: var(--main-color);
     }
     .svt-cal-item-content__desc-text {
-        margin-top: 15px;
+        margin-top: 35px;
         font-size: 17px;
         line-height: 23px;
         letter-spacing: 0.4px;
@@ -662,14 +784,34 @@ a.cal-ticket-cta img {
         /* font-weight: 500; */
         margin-bottom: 35px;
     }
+
+    .cal-complex-item .svt-cal-item-content__desc-text {
+        margin-right: 0px;
+    }
+
+    
+
+    .svt-cal-item-title__accordion, .zir-cal-item-title__accordion 
+    {
+    position: relative;
+    top: -11px;
+    
+    }
     /* Items flexbox */
-    .svt-cal-item-title,
     .zir-cal-item-title {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: right;
+        padding: 7px 0 12px 0;
+    }
+
+    .svt-cal-item-title {
         flex-direction: column;
         justify-content: flex-start;
         align-items: right;
         padding: 12px 0 12px 0;
     }
+
     .zir-cal-day-header__day-title {
         font-size: 20px;
         line-height: 26px;
@@ -679,7 +821,7 @@ a.cal-ticket-cta img {
     .svt-cal-item-content,
     .zir-cal-item-content {
         flex-direction: column;
-        margin-top: 20px;
+        margin-bottom: 35px;
     }
     .svt-cal-item-title__name {
         margin: 0px;
@@ -691,6 +833,14 @@ a.cal-ticket-cta img {
         line-height: 15px;
         letter-spacing: 1.3px;
         padding-top: 6px;
+    }
+    .zir-cal-item-title__left:before {
+        content: "***";
+        font-family: 'Miriam Libre', sans-serif;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 1.3px;
+        /* padding-top: 6px; */
     }
     .svt-cal-item-title__name__name,
     .svt-cal-item-title__name__author {
@@ -736,6 +886,13 @@ a.cal-ticket-cta img {
     .svt-cal-day-header, .zir-cal-day-header {
         padding-bottom: 60px;
         
+    }
+
+
+    /* Mobile CTA */
+
+    a.cal-ticket-cta {
+        display: none;
     }
     
 }
