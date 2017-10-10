@@ -12,8 +12,109 @@ checkMobile = function () {
 	return check;
 };
 
+
+// Create map 
+// $( document ).ready(function() {
+   
+	
+function initMap() {
+	var myLatLng = {lat:31.7644668, lng: 35.1841473};
+
+
+
+	var map = new google.maps.Map(document.getElementById('map'), {
+	  zoom: 13,
+	  center: myLatLng,
+	  styles: 
+	  [
+		  {
+			  "stylers": [
+				  {
+					  "hue": "#00AE7C"
+				  },
+				  {
+					  "saturation": 50
+				  }
+			  ]
+		  },
+		  {
+			  "featureType": "water",
+			  "stylers": [
+				  {
+					  "color": "#ffffff"
+				  }
+			  ]
+		  },
+		  {
+			  "featureType": "administrative.country",
+			  "elementType": "labels",
+			  "stylers": [
+				  {
+					  "visibility": "off"
+				  }
+			  ]
+		  }
+	  ]
+	});
+
+
+	
+	var markers = [
+		{
+			position: new google.maps.LatLng(31.7644668, 35.1841473),
+			type: 'info'
+		  },{
+			position: new google.maps.LatLng(31.7744668, 35.1841473),
+			type: 'info'
+		  }];
+
+		markers.forEach(function(mark) {
+			var marker = new google.maps.Marker({
+			  position: mark.position,
+			  title:"Hello World!",
+			  label:"sas",			  
+			//   icon: 'images/mark.png',
+			  map: map
+			});
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,marker);
+			  });
+		  });
+
+		  
+
+	
+
+	  var data = "Hello World!";
+	  var infowindow = new google.maps.InfoWindow({
+		content: data
+	  });
+
+  }
+
+// });
+
+
+
+
 var isMobile = checkMobile();
-console.log(isMobile);
+// console.log(isMobile);
+
+// images iso
+
+if (!isMobile)
+{
+
+$('.after-images-container').isotope({
+	itemSelector: '.after-images-item',
+	percentPosition: true,
+    masonry: {
+	  columnWidth: '.after-images-item',
+	  gutter: 22
+    }
+  });
+
+}
 
 // Menu links
 $(".menu-link__zira").click(function () {
@@ -97,6 +198,7 @@ $(".zir-cal-item-title").click(function () {
 	$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
 });
+
 if (!isMobile)
 {
 $(".zir-cal-day-header").click(function () {
@@ -107,6 +209,16 @@ $(".svt-cal-day-header").click(function () {
 	$(this).siblings(".svt-cal-items-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
 });
+}
+
+
+if (isMobile)
+{
+$(".tooltip .title").click(function () {
+	$(this).siblings(".tooltip-content").slideToggle();
+	$(this).toggleClass('zippy--open');
+});
+
 }
 
 
@@ -291,35 +403,62 @@ $(".wrap-zira").scroll(function () {
 
 
 
-// Tooltips for images
+// Tooltips for images and map
 // TODO: Fade between images
 if (!isMobile)
 {
 	$(".after-images-item").mousemove(function (e) {
 		if (screenWidth / 2 > e.pageX) {
-			$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
+			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left + 0).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
 	
 		} else {
-			$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
+			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left - 340).css('top', e.pageY - $(this).offset().top  + 10).css('display', 'block');
 		}
 	});
 	$(".after-images-item").mouseout(function () {
 		$(this).children('.tooltip').css('display', 'none');
 	});
+
+
+
+	// $(".map-marker").mousemove(function (e) {
+	// 	if (screenWidth / 2 > e.pageX) {
+	// 		$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
+	
+	// 	} else {
+	// 		$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
+	// 	}
+	// 	console.log('move!');
+	// });
+	// $(".map-marker").mouseout(function () {
+	// 	$(this).children('.tooltip').css('display', 'none');
+	// });
+
 }
 
 
 
+// $('.after-map-container').addClass('scrolloff'); // set the pointer events to none on doc ready
+
+$('.after-map-container').click(function () {
+    $('.after-map-container .map-embed').css("pointer-events", "auto");
+});
+
+$( ".after-map-container" ).mouseleave(function() {
+  $('.after-map-container .map-embed').css("pointer-events", "none"); 
+});
+
 
 // Animaitons
+var screenWidth = window.innerWidth;
+var screenHeight = window.innerHeight;
 
-showAniamtion = true;
+showAniamtion = false;
 
 if (!isMobile && showAniamtion) {
 
 	// aniamtions
-	var screenWidth = window.innerWidth;
-	var screenHeight = window.innerHeight;
+	
 
 	var cursorPosW = 0,
 		cursorPosH = 0;

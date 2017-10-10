@@ -47,7 +47,7 @@
 
 
     /* TODO: this does not work in safari */
-    -moz-transition: all .5s ease-in-out;
+    /* -moz-transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
     -moz-column-gap: 20px;
@@ -57,6 +57,7 @@
     -webkit-column-fill: initial;
     column-fill: initial;
     column-count: 3;
+    margin-bottom:40px; */
 
 
     /* height:1500px; */
@@ -66,10 +67,11 @@
     transition:all .8s ease;
     
 }
-.after-images-container .after-images-item  { 
-    /* width:calc((100% / 3) - 15px); */
 
-    width:100%;
+
+.after-images-container .after-images-item  { 
+    width:calc((100% / 3) - 15px);    
+    /* width:100%; */
     background:#000;
     margin-bottom:20px;    
     /* mix-blend-mode:lighten; */
@@ -127,11 +129,63 @@ font-family: 'Frank Ruhl Libre', serif;
 margin-bottom:26px;
 }
 
+.after-images-item .tooltip .tooltip-content img {
+    display:none;
+
+    }
+
 /* map */
 .after-map-container {
-    height: 600px;
-    background:red;
+    /* background:url('../images/map-heb.svg'); */
+    /* background-size:cover;     */
+    /* height:65.1vw; */
+    /* position: relative; */
+    /* overflow:hidden; */
 }
+
+#map {
+    width:100%;
+    height:600px;
+}
+.after-map-container .map-marker {
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:35px;
+    height:35px;
+    background:#fff;
+    border-radius:35px;
+    box-shadow: 0 0 15px 5px #00AE7C;
+ }
+
+ .after-map-container .map-marker:hover {
+    background:var(--main-color);
+    
+     box-shadow: 0 0 15px 5px #00AE7C;
+ }
+
+
+
+.map-marker .tooltip {
+    direction:rtl;
+    position: absolute; 
+    color:var(--main-color);
+    width: 210px;
+    padding:20px;
+    z-index: 9999;
+    font-size:12px;
+    line-height:18px;
+    letter-spacing:0.3px;
+    font-family: 'Miriam Libre', sans-serif;    
+    background: #FFFFFF;
+    box-shadow: -5px 5px 6px 0 rgba(0,174,124,0.20);
+    display: none; 
+}
+.map-marker .tooltip b {
+    font-weight:700;
+ }
+
+
 
 /* creditz */
 
@@ -159,11 +213,81 @@ margin-bottom:26px;
 }
 @media (max-width: 800px) {
  
+    .after-section {
+       padding: 0;
+    }
+    .after-images-title {
+        margin:0;
+        border:none;
+    }
+
     .after-map-credits .after-map-credits__col {
         width:100%;
+        padding: 0 16px;
      }  
+     .after-images-container .after-images-item  { 
+        width:100%   ;
+        margin:0;
+    } 
+
+    .after-images-desktop-img {
+        display: none;
+    }
+
+
+.after-images-item .tooltip {
+display:block;
+font-size: 13.5px;
+
+color: #00AE7C;
+letter-spacing: 0;
+line-height: 20px;
+    direction:rtl;
+    position: static; 
+    color:var(--main-color);
+    width: 100%;
+    padding:0px;
+    font-family: 'Miriam Libre', sans-serif;    
+    background: rgba(0,0,0,0);
+    box-shadow: none;
+}
+
+.after-images-item .tooltip .tooltip-content{
+    display:none;
+    padding:0 20px 20px 20px;
      
-     .after-map-credits {
-        flex-wrap:wrap;
-     }  
+    }
+
+    .after-images-item .tooltip .tooltip-content img {
+    display:block;
+    width:100%;
+    margin-bottom:20px;
+    }
+
+
+    .after-images-item .tooltip .title{
+        font-size: 19px;
+        color: #00AE7C;
+        letter-spacing:normal;
+        line-height: 21px;
+        padding:25px 20px;
+        border-top:1px solid var(--main-color);
+        margin:0;
+        }
+
+
+
+
+.after-images-container:hover .after-images-item , .after-images-container:hover .after-images-item:hover img, .after-images-container:hover .after-images-item:hover ,.after-images-container:hover .after-images-item img,  .after-images-container .after-images-item {
+      -webkit-filter: none; 
+      filter: none;
+    opacity: 1;
+    mix-blend-mode:normal;
+    background:none;
+  }
+
+
+
+
+
 }
