@@ -215,7 +215,20 @@ a.cal-ticket-cta {
     top: -65px;
     left: 40px;
     display:inline-block;
+    
 }
+
+.svt-cal-item-content__buttons a.cal-ticket-cta {
+    width: 104px;
+    transform: rotate(30deg);
+    position: static;
+    top: auto;
+    left: auto;
+    margin-bottom:34px;
+    /* display: */
+    
+}
+
 
 a.cal-ticket-cta img {
    width:100%;
@@ -372,6 +385,14 @@ a.cal-ticket-cta:hover img {
 .zir-cal-item-content__image {
     width: 50%;
     padding: 0 40px;
+    /* position: relative; */
+}
+
+
+.svt-cal-item-content__buttons,
+.zir-cal-item-content__buttons {
+    width: 100px;
+    padding: 0 0;
     /* position: relative; */
 }
 
