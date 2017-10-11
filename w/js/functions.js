@@ -18,90 +18,90 @@ checkMobile = function () {
 $( document ).ready(function() {
    
 	
-// function initMap() {
-// 	var myLatLng = {lat:31.7644668, lng: 35.1841473};
+function initMap() {
+	var myLatLng = {lat:31.7644668, lng: 35.1841473};
 
 
 
-// 	var map = new google.maps.Map(document.getElementById('map'), {
-// 	  zoom: 13,
-// 	  center: myLatLng,
-// 	  styles: 
-// 	  [
-// 		  {
-// 			  "stylers": [
-// 				  {
-// 					  "hue": "#00AE7C"
-// 				  },
-// 				  {
-// 					  "saturation": 50
-// 				  }
-// 			  ]
-// 		  },
-// 		  {
-// 			  "featureType": "water",
-// 			  "stylers": [
-// 				  {
-// 					  "color": "#ffffff"
-// 				  }
-// 			  ]
-// 		  },
-// 		  {
-// 			  "featureType": "administrative.country",
-// 			  "elementType": "labels",
-// 			  "stylers": [
-// 				  {
-// 					  "visibility": "off"
-// 				  }
-// 			  ]
-// 		  }
-// 	  ]
-// 	});
+	var map = new google.maps.Map(document.getElementById('map'), {
+	  zoom: 13,
+	  center: myLatLng,
+	  styles: 
+	  [
+		  {
+			  "stylers": [
+				  {
+					  "hue": "#00AE7C"
+				  },
+				  {
+					  "saturation": 50
+				  }
+			  ]
+		  },
+		  {
+			  "featureType": "water",
+			  "stylers": [
+				  {
+					  "color": "#ffffff"
+				  }
+			  ]
+		  },
+		  {
+			  "featureType": "administrative.country",
+			  "elementType": "labels",
+			  "stylers": [
+				  {
+					  "visibility": "off"
+				  }
+			  ]
+		  }
+	  ]
+	});
 
 
 	
-// 	var markers = [
-// 		{
-// 			position: new google.maps.LatLng(31.8047995,35.1246719),
-// 			title: 'בית נקופה'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7513185,35.2069618),
-// 			title: 'הזירה הבינתחומית'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7544109,35.2150317),
-// 			title: 'ביה״ס לתיאטרון חזותי'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7690241,35.2121286),
-// 			title: 'בית הכנסת אוהל נחמה'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7743144,35.2192419),
-// 			title: 'ימק״א'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7769833,35.2192136),
-// 			title: 'המפעל'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7428154,35.1492353),
-// 			title: 'עין לבן'
-// 		  }];
+	var markers = [
+		{
+			position: new google.maps.LatLng(31.8047995,35.1246719),
+			title: 'בית נקופה'
+		  },{
+			position: new google.maps.LatLng(31.7513185,35.2069618),
+			title: 'הזירה הבינתחומית'
+		  },{
+			position: new google.maps.LatLng(31.7544109,35.2150317),
+			title: 'ביה״ס לתיאטרון חזותי'
+		  },{
+			position: new google.maps.LatLng(31.7690241,35.2121286),
+			title: 'בית הכנסת אוהל נחמה'
+		  },{
+			position: new google.maps.LatLng(31.7743144,35.2192419),
+			title: 'ימק״א'
+		  },{
+			position: new google.maps.LatLng(31.7769833,35.2192136),
+			title: 'המפעל'
+		  },{
+			position: new google.maps.LatLng(31.7428154,35.1492353),
+			title: 'עין לבן'
+		  }];
 
-// 		markers.forEach(function(mark) {
-// 			var marker = new google.maps.Marker({
-// 			  position: mark.position,
-// 			  title:mark.title,
-// 			  label:mark.title,			  
-// 			  icon: 'images/marker.png',
-// 			  map: map
-// 			});
-// 			var infowindow = new google.maps.InfoWindow({
-// 			  content: mark.title
-// 			});
+		markers.forEach(function(mark) {
+			var marker = new google.maps.Marker({
+			  position: mark.position,
+			  title:mark.title,
+			  label:mark.title,			  
+			  icon: 'images/marker.png',
+			  map: map
+			});
+			var infowindow = new google.maps.InfoWindow({
+			  content: mark.title
+			});
 
-// 			google.maps.event.addListener(marker, 'click', function() {
-// 				infowindow.open(map,marker);
-// 			  });
-// 		  });
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,marker);
+			  });
+		  });
 
-//   }
+  }
 
 });
 
