@@ -1,3 +1,4 @@
+showAniamtion = true;
 
 
 // Check if is mobile / touch. if touch - show mobile version
@@ -500,7 +501,6 @@ $( ".after-map-container" ).mouseleave(function() {
 var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
 
-showAniamtion = false;
 
 if (!isMobile && showAniamtion) {
 
