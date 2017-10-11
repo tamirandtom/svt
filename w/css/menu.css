@@ -104,6 +104,15 @@ menu.menu--green .menu-content a:hover {
 /* background-color:lime; */
     }
 
+    menu.menu--green .menu-content a {
+        color: #fff;    
+    }
+    
+    menu.menu--green .menu-content a:hover {
+        border-bottom: 2px solid #fff);
+    }
+
+
     .svt-backdrop {
         position: fixed;
         top:0px;
