@@ -327,7 +327,7 @@ $(".wrap-zira").click(function () {
 
 // On scroll check if the bottom part is showing
 var isSectionTwoUp = false;
-
+var menuState = 'top';
 $(window).scroll(function () {
 	var top_of_element = $(".after-section").offset().top;
 	var bottom_of_element = $(".after-section").offset().top + $(".after-section").outerHeight();
@@ -336,6 +336,24 @@ $(window).scroll(function () {
 	if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
 		// Is visible
 		isSectionTwoUp = true;
+	}
+
+	if ((top_of_screen > top_of_element) ) {
+		// green menu
+		if (menuState=='top')
+		{
+			$('menu').addClass('menu--green');
+		menuState = 'bottom';
+	
+		}
+		
+	} else {
+		// white menu
+		if (menuState=='bottom')
+		{
+		$('menu').removeClass('menu--green');
+		menuState = 'top';
+		}		
 	}
 });
 

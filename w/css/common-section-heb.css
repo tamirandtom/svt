@@ -9,28 +9,33 @@
 .after-images-title {
     text-align:center;
     padding:55px 0;
-    border-top: 2px solid var(--main-color);
-    border-bottom: 2px solid var(--main-color);
+    /* border-top: 2px solid var(--main-color); */
+    /* border-bottom: 2px solid var(--main-color); */
     color:var(--main-color);
-    margin-bottom:20px;
+    margin-bottom:50px;
 }
 .after-images-title_subtitle {
-    font-size:18px;
+    font-size:22px;
     font-weight:400;
-    line-height:23px;
+    line-height:20px;
     letter-spacing:0.8px;
     font-family: 'Frank Ruhl Libre', serif;
     
 }
 
 .after-images-title_main {
-    font-size:30px;
+    font-size:41px;
     font-weight:500;
-    line-height:44px;
+    line-height:48px;
     letter-spacing:1.6px;
     font-family: 'Frank Ruhl Libre', serif;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
-
+.after-images-title_main img {
+padding:0 6px;
+}
 .after-images-item img {
     width:100%;
     mix-blend-mode:screen;
@@ -194,6 +199,7 @@ margin-bottom:26px;
     justify-content:flex-start;
     flex-flow:row;
     flex-wrap: wrap;
+    margin-top:40px;
 
 }
 
@@ -220,6 +226,28 @@ margin-bottom:26px;
         margin:0;
         border:none;
     }
+
+
+
+.after-images-title {
+
+    margin-bottom:0px;
+}
+.after-images-title_subtitle {
+    font-size:18px;
+    line-height:20px;
+    letter-spacing:0.8px;
+
+}
+
+.after-images-title_main {
+    font-size:32px;
+    font-weight:500;
+    line-height:40px;
+    letter-spacing:1.6px;
+}
+
+
 
     .after-map-credits .after-map-credits__col {
         width:100%;
@@ -278,7 +306,7 @@ line-height: 20px;
 
 
 
-.after-images-container:hover .after-images-item , .after-images-container:hover .after-images-item:hover img, .after-images-container:hover .after-images-item:hover ,.after-images-container:hover .after-images-item img,  .after-images-container .after-images-item {
+.after-images-container:hover .after-images-item , .after-images-container:hover .after-images-item:hover img, .after-images-container:hover .after-images-item:hover ,.after-images-container:hover .after-images-item img,.after-images-item img,  .after-images-container .after-images-item {
       -webkit-filter: none; 
       filter: none;
     opacity: 1;
