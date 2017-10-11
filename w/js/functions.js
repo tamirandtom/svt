@@ -15,7 +15,7 @@ checkMobile = function () {
 
 
 // Create map 
-// $( document ).ready(function() {
+$( document ).ready(function() {
    
 	
 // function initMap() {
@@ -103,7 +103,7 @@ checkMobile = function () {
 
 //   }
 
-// });
+});
 
 var isMobile = checkMobile();
 // console.log(isMobile);
