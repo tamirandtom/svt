@@ -1,4 +1,4 @@
-showAniamtion = true;
+showAniamtion = false;
 
 
 // Check if is mobile / touch. if touch - show mobile version
@@ -102,16 +102,9 @@ function initMap() {
 			  });
 		  });
 
-		  
-
-	  
-
   }
 
 // });
-
-
-
 
 var isMobile = checkMobile();
 // console.log(isMobile);
