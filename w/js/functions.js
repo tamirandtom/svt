@@ -119,15 +119,21 @@ var isMobile = checkMobile();
 
 if (!isMobile)
 {
+	$('.after-images-container').imagesLoaded( function() {
 
-$('.after-images-container').isotope({
-	itemSelector: '.after-images-item',
-	percentPosition: true,
-    masonry: {
-	  columnWidth: '.after-images-item',
-	  gutter: 22
-    }
-  });
+		$('.after-images-container').isotope({
+			itemSelector: '.after-images-item',
+			percentPosition: true,
+			masonry: {
+			  columnWidth: '.after-images-item',
+			  gutter: 22
+			}
+		  });
+
+	});
+
+
+
 
 }
 
