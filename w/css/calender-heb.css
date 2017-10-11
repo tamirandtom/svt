@@ -667,11 +667,26 @@ a.cal-ticket-cta:hover img {
         /* margin:55px 0 30px 0; */
     }
 
+    .focus-svt .text-floating-zir {
+        left: calc(100% - var(--left-space) - 12px);
+        }
 
-.text-floating-zir,
+        .focus-zira .text-floating-svt {
+        /* left: calc(100% - var(--left-space) - 12px); */
+        left: calc(var(--left-space) - 48px);
+            }
+
+
+        .focus-svt .text-floating-svt,
+        .focus-zira .text-floating-zir {
+            opacity:0;
+            }
+
+       
+/* .text-floating-zir,
 .text-floating-svt {
     display:none;
-}
+} */
 
 
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
