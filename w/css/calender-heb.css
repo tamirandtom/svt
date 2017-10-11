@@ -124,11 +124,11 @@ pointer-events:none;
 
 .intro-text-subtitle-2 {
     font-family: 'Nitti', 'zvi', serif;
-    font-size: 27px;
+    font-size: 25px;
     font-weight: 700;
     line-height: 32px;
     letter-spacing: 1.7px;
-
+    word-spacing: -7px;
     margin:55px 0 30px 0;
 }
 
@@ -282,7 +282,7 @@ a.cal-ticket-cta:hover img {
 
 .svt-cal-item-content,
 .zir-cal-item-content {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 
 .svt-cal-item-title__left,
@@ -385,7 +385,7 @@ a.cal-ticket-cta:hover img {
 
 .svt-cal-day-header {
     text-align: center;
-    padding: 50px 0 0 0;
+    padding: 36px 0 0 0;
     border-top: var(--line-width) solid var(--main-color);
     cursor: pointer;
     display: flex;
@@ -807,6 +807,16 @@ a.cal-ticket-cta:hover img {
         font-family: 'zvi';
         
     }
+
+    .svt-cal-day-header--mobile-part4 {
+        font-size: 12px;
+        line-height: 19px;
+        letter-spacing: 1.5px;
+        font-family: 'Miriam Libre', sans-serif;    
+        font-weight:400;    
+        /* margin-top: 20px; */
+        
+    }
     .svt-cal-day-header__day-title {
         font-size: 15px;
         line-height: 20px;
@@ -946,8 +956,11 @@ a.cal-ticket-cta:hover img {
         max-width: 100%;
         box-sizing: border-box;
     }
-    .svt-cal-day-header, .zir-cal-day-header {
+    .zir-cal-day-header {
         padding-bottom: 60px;
+    }
+    .svt-cal-day-header {
+        padding-bottom: 40px;
         
     }
 

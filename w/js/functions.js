@@ -293,6 +293,10 @@ function focusOnHazira() {
 	$(".wrapper").addClass('focus-zira');
 	$(".wrapper").removeClass('focus-svt');
 	$(".wrapper").removeClass('focus-start');
+
+	$("body").removeClass('body-start');
+	$("body").addClass('body-zira');
+	$("body").removeClass('body-svt');
 }
 
 function focusOnSvt() {
@@ -308,6 +312,10 @@ function focusOnSvt() {
 	$(".wrapper").addClass('focus-svt');
 	$(".wrapper").removeClass('focus-zira');
 	$(".wrapper").removeClass('focus-start');
+
+	$("body").removeClass('body-start');
+	$("body").removeClass('body-zira');
+	$("body").addClass('body-svt');
 }
 
 

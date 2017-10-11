@@ -36,6 +36,10 @@ body {
     direction:ltr;
     text-align:right;
 }
+
+.close-kerning {
+    letter-spacing:0;
+}
 @media (max-width: 800px) {
     body {
     --line-width: 1px;    

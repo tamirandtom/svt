@@ -93,23 +93,53 @@ menu.menu--green .menu-content a:hover {
 
 
 @media (max-width: 800px) {
+
+    .body-start menu {
+    opacity:0;
+    }        
     menu {
+        opacity:1;
         top:auto;
-        bottom: 26px;
-        left: 26px;
+        /* left:calc(50% - 18px); */
+        bottom:32px;
+        transition:all 1s ease;
     }
     menu .menu-content {
         position:relative;
         top:-260px;
+        padding-left: 12px;
+        padding-right: 12px;
 /* background-color:lime; */
     }
+
+    .body-zira menu {
+        left:calc(32px - 18px);
+    }
+
+    .body-svt menu {
+        left:calc(100% - 32px - 18px);
+    }
+
+    .body-svt menu .menu-content{
+       text-align:right;
+       left: -48px;
+    }
+
+
+menu .menucircle {
+    background: #CBEFE5;
+    box-shadow: 0 0 9px 4px var(--main-color);
+    
+}
+
+
 
     menu.menu--green .menu-content a {
         color: #fff;    
     }
     
     menu.menu--green .menu-content a:hover {
-        border-bottom: 2px solid #fff);
+        border-bottom: 2px solid #fff;
     }
 
 
