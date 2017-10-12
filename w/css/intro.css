@@ -32,6 +32,7 @@ height:100%;
 .float-intro img {
     max-width:570px;
     margin-bottom:50px;
+    width:100%;
 }
 .float-intro.white {
     /* mix-blend-mode: screen; */
@@ -187,6 +188,8 @@ height:100%;
         text-align: center;
         font-size: 19px;
         line-height: 24px;
+        align-self:flex-end;
+        margin-bottom:40px;
         font-family: 'Frank Ruhl Libre', serif;
         font-weight: 700;
         /* align-self: flex-end; */
