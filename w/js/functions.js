@@ -372,6 +372,8 @@ $(window).scroll(function () {
 			menuState = 'top';
 		}
 	}
+
+	updateCircleOpacity();
 });
 
 $(".wrap-svt").scroll(function () {
@@ -392,11 +394,7 @@ $(".wrap-svt").scroll(function () {
 	}
 
 	// Hide / show intro circle
-	if ($(this).scrollTop() > 200) {
-		$(".float-intro").addClass("intro-scrolldown");
-	} else {
-		$(".float-intro").removeClass("intro-scrolldown");
-	}
+	updateCircleOpacity();
 
 	// After innitial scroll remove 1/2 class
 	if (!innitialScroll) {
@@ -417,6 +415,14 @@ $(".wrap-svt").scroll(function () {
 });
 
 
+function updateCircleOpacity() {
+	if ($(window).scrollTop() > 200 ||  $(".wrap-svt").scrollTop() > 200  || $(".wrap-zira").scrollTop() > 200) {
+		$(".float-intro").addClass("intro-scrolldown");
+	} else {
+		$(".float-intro").removeClass("intro-scrolldown");
+	}
+}
+
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
 	let currScrollTop = $(this).scrollTop()
@@ -435,11 +441,7 @@ $(".wrap-zira").scroll(function () {
 	}
 
 	// Hide / show intro circle
-	if ($(this).scrollTop() > 200) {
-		$(".float-intro").addClass("intro-scrolldown");
-	} else {
-		$(".float-intro").removeClass("intro-scrolldown");
-	}
+	updateCircleOpacity();
 
 
 	// After innitial scroll remove 1/2 class
