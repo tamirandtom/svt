@@ -20,6 +20,9 @@ var isMobile = checkMobile();
 
 function resizedNow() {
 
+	screenWidth = window.innerWidth;
+	screenHeight = window.innerHeight;
+
 
 	isMobile = checkMobile();
 
@@ -326,6 +329,7 @@ $(".wrap-zira").click(function () {
 // On scroll check if the bottom part is showing
 var isSectionTwoUp = false;
 var menuState = 'top';
+
 $(window).scroll(function () {
 	var top_of_element = $(".after-section").offset().top;
 	var bottom_of_element = $(".after-section").offset().top + $(".after-section").outerHeight();
@@ -450,8 +454,16 @@ var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
 
 
-if (!isMobile && showAniamtion) {
 
+
+if (!isMobile) {
+
+	
+	
+}
+
+if (!isMobile && showAniamtion) {
+	
 	// aniamtions
 
 

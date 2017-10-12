@@ -876,9 +876,9 @@ line-height: 24px;
     }
     .svt-cal-item-content__desc-text {
         margin-top: 35px;
-        font-size: 17px;
-        line-height: 23px;
-        letter-spacing: 0.4px;
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: normal;
     }
     .zir-cal-item-content__desc-text {
         margin-top: 15px;
@@ -890,7 +890,7 @@ line-height: 24px;
     }
 
     .cal-complex-item .svt-cal-item-content__desc-text {
-        margin-right: 0px;
+        margin: 16px 0 0 0;
     }
 
     
