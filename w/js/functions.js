@@ -1,6 +1,7 @@
 showAniamtion = false;
 
 
+
 // Check if is mobile / touch. if touch - show mobile version
 checkMobile = function () {
 	var check = false;
@@ -16,25 +17,131 @@ checkMobile = function () {
 
 
 var isMobile = checkMobile();
+
+function resizedNow() {
+
+
+	isMobile = checkMobile();
+
+
+	// Menu hide timer 
+	if (!isMobile) {
+		var menuTimer = null;
+		var menuTimeout = 2000;
+		$("body").mousemove(function () {
+			clearTimeout(menuTimer);
+			$("menu").removeClass('menu--hide');
+			menuTimer = setTimeout(function () {
+				$("menu").addClass('menu--hide');
+			}, menuTimeout);
+		}).mouseleave(function () {
+			clearTimeout(menuTimer);
+			$("menu").addClass('menu--hide');
+		});
+
+	} else {
+		$("menu").removeClass('menu--hide');
+	}
+
+
+
+	// Create images grid
+	if (!isMobile) {
+		$('.after-images-container').imagesLoaded(function () {
+
+			$('.after-images-container').isotope({
+				itemSelector: '.after-images-item',
+				percentPosition: true,
+				masonry: {
+					columnWidth: '.after-images-item',
+					gutter: 22
+				}
+			});
+
+		});
+
+	} else {
+		$('.after-images-container').isotope('destroy');
+	}
+
+
+// Tooltips for images and map
+// TODO: Fade between images
+if (!isMobile) {
+	$(".after-images-item").mousemove(function (e) {
+		if (screenWidth / 2 > e.pageX) {
+			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left + 0).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
+
+		} else {
+			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left - 340).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
+		}
+	});
+	$(".after-images-item").mouseout(function () {
+		$(this).children('.tooltip').css('display', 'none');
+	});
+}
+
+
+	// Open all zippies
+	if (isMobile) {
+		$(".zir-cal-items-wrap").slideDown();
+		$(".zir-cal-day-header").addClass('svt-zippy--open');
+		$(".svt-cal-items-wrap").slideDown();
+		$(".svt-cal-day-header").addClass('svt-zippy--open');
+	} else {
+		$(".zir-cal-items-wrap").slideUp();
+		$(".zir-cal-day-header").removeClass('svt-zippy--open');
+		$(".svt-cal-items-wrap").slideUp();
+		$(".svt-cal-day-header").removeClass('svt-zippy--open');
+	}
+
+
+	// Update images section
+
+
+	if (isMobile) {
+		$(".tooltip .title").click(function () {
+			$(this).siblings(".tooltip-content").slideToggle();
+			$(this).toggleClass('zippy--open');
+		});
+
+	} else {
+		// $(".tooltip .title").click(function () {
+
+		// });
+
+	}
+
+
+}
+
+$(window).resize(function () {
+	resizedNow();
+
+});
+
+
+
+
 // console.log(isMobile);
 
 // images iso
 
-if (!isMobile) {
-	$('.after-images-container').imagesLoaded(function () {
+// if (!isMobile) {
+// 	$('.after-images-container').imagesLoaded(function () {
 
-		$('.after-images-container').isotope({
-			itemSelector: '.after-images-item',
-			percentPosition: true,
-			masonry: {
-				columnWidth: '.after-images-item',
-				gutter: 22
-			}
-		});
+// 		$('.after-images-container').isotope({
+// 			itemSelector: '.after-images-item',
+// 			percentPosition: true,
+// 			masonry: {
+// 				columnWidth: '.after-images-item',
+// 				gutter: 22
+// 			}
+// 		});
 
-	});
+// 	});
 
-}
+// }
 
 // Menu links
 $(".menu-link__zira").click(function () {
@@ -103,12 +210,12 @@ function scrollToTop() {
 }
 // Accordeon zippy
 
-if (isMobile) {
-	$(".zir-cal-items-wrap").slideToggle();
-	$(".zir-cal-day-header").toggleClass('svt-zippy--open');
-	$(".svt-cal-items-wrap").slideToggle();
-	$(".svt-cal-day-header").toggleClass('svt-zippy--open');
-}
+// if (isMobile) {
+// 	$(".zir-cal-items-wrap").slideToggle();
+// 	$(".zir-cal-day-header").toggleClass('svt-zippy--open');
+// 	$(".svt-cal-items-wrap").slideToggle();
+// 	$(".svt-cal-day-header").toggleClass('svt-zippy--open');
+// }
 
 
 $(".svt-cal-item-title").click(function () {
@@ -139,35 +246,7 @@ if (!isMobile) {
 }
 
 
-if (isMobile) {
-	$(".tooltip .title").click(function () {
-		$(this).siblings(".tooltip-content").slideToggle();
-		$(this).toggleClass('zippy--open');
 
-	});
-
-}
-
-
-
-// Menu hide timer 
-if (!isMobile) {
-	var menuTimer = null;
-	var menuTimeout = 2000;
-	$("body").mousemove(function () {
-		clearTimeout(menuTimer);
-		$("menu").removeClass('menu--hide');
-		menuTimer = setTimeout(function () {
-			$("menu").addClass('menu--hide');
-		}, menuTimeout);
-	}).mouseleave(function () {
-		clearTimeout(menuTimer);
-		$("menu").addClass('menu--hide');
-	});
-
-} else {
-	$("menu").removeClass('menu--hide');
-}
 
 $(".menucircle").click(function () {
 	$(".svt-backdrop").addClass('svt-backdrop--visible');
@@ -353,49 +432,17 @@ $(".wrap-zira").scroll(function () {
 
 
 
-// Tooltips for images and map
-// TODO: Fade between images
-if (!isMobile) {
-	$(".after-images-item").mousemove(function (e) {
-		if (screenWidth / 2 > e.pageX) {
-			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left + 0).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
-
-		} else {
-			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left - 340).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
-		}
-	});
-	$(".after-images-item").mouseout(function () {
-		$(this).children('.tooltip').css('display', 'none');
-	});
-
-
-
-	// $(".map-marker").mousemove(function (e) {
-	// 	if (screenWidth / 2 > e.pageX) {
-	// 		$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
-
-	// 	} else {
-	// 		$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
-	// 	}
-	// 	console.log('move!');
-	// });
-	// $(".map-marker").mouseout(function () {
-	// 	$(this).children('.tooltip').css('display', 'none');
-	// });
-
-}
-
 
 
 // $('.after-map-container').addClass('scrolloff'); // set the pointer events to none on doc ready
 
-$('.after-map-container').click(function () {
-	$('.after-map-container .map-embed').css("pointer-events", "auto");
-});
+// $('.after-map-container').click(function () {
+// 	$('.after-map-container .map-embed').css("pointer-events", "auto");
+// });
 
-$(".after-map-container").mouseleave(function () {
-	$('.after-map-container .map-embed').css("pointer-events", "none");
-});
+// $(".after-map-container").mouseleave(function () {
+// 	$('.after-map-container .map-embed').css("pointer-events", "none");
+// });
 
 
 // Animaitons
@@ -633,10 +680,10 @@ if (!isMobile && showAniamtion) {
 }
 
 
-$( document ).ready(function() {
+$(document).ready(function () {
 	$('.zira-intro, .svt-intro').imagesLoaded(function () {
-		$('.preloader').hide();		
-			});
+	resizedNow();	
+		$('.preloader').hide();
+	});
 
 });
-
