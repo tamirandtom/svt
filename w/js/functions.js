@@ -466,6 +466,13 @@ $(".wrap-zira").scroll(function () {
 });
 
 
+if ($(this).scrollTop() > 200) {
+	$(".float-intro").addClass("intro-scrolldown");
+} else {
+	$(".float-intro").removeClass("intro-scrolldown");
+}
+
+
 // initiate animation:
 
 
