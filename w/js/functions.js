@@ -634,6 +634,9 @@ if (!isMobile && showAniamtion) {
 
 
 $( document ).ready(function() {
-   $('.preloader').hide();
+	$('.zira-intro, .svt-intro').imagesLoaded(function () {
+		$('.preloader').hide();		
+			});
+
 });
 
