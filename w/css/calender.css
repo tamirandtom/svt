@@ -155,7 +155,13 @@ pointer-events:none;
     letter-spacing: normal;
     margin-bottom: 120px;
 }
-
+.intro-text-body-sub2 {
+    font-size:24px;
+    line-height:34px;
+    letter-spacing:0.3px;
+    margin-bottom:24px;
+    display:block;
+}
 .intro-text-body b {
     font-weight: 400;
     font-style:italic;

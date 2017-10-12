@@ -92,3 +92,20 @@
 }
 
 
+
+
+
+.logo-img {
+max-width:78px;
+max-height: 80px;
+display:inline-block;
+}
+
+.after-map-credits__col--full-line .logo-img {
+    margin:20px 20px;
+}
+
+.logo-img.force-big {
+    max-width:150px;
+  
+    }

@@ -1,6 +1,11 @@
 showAniamtion = false;
 
 
+if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+	$('.after-images-item').addClass('no-transition');
+	
+	
+}
 
 // Check if is mobile / touch. if touch - show mobile version
 checkMobile = function () {
@@ -14,6 +19,9 @@ checkMobile = function () {
 	return check;
 };
 
+
+
+// if safari 
 
 
 var isMobile = checkMobile();
@@ -139,11 +147,13 @@ $(window).resize(function () {
 
 // Sliders
 
-
+// var count = 0;
 	$(".tooltip .title").click(function () {
 		if (isMobile) {
 		$(this).siblings(".tooltip-content").slideToggle();
 		$(this).toggleClass('zippy--open');
+		// console.log('fire! ' + count);
+		// count++;
 		}
 	});
 
@@ -293,6 +303,8 @@ function focusOnHazira() {
 	$("body").removeClass('body-start');
 	$("body").addClass('body-zira');
 	$("body").removeClass('body-svt');
+
+	scrollToTop();
 }
 
 function focusOnSvt() {
@@ -312,6 +324,8 @@ function focusOnSvt() {
 	$("body").removeClass('body-start');
 	$("body").removeClass('body-zira');
 	$("body").addClass('body-svt');
+
+	scrollToTop();
 }
 
 

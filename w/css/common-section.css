@@ -8,7 +8,7 @@
 .after-map-divider {
 max-width:1180px;
 background:var(--main-color);
-height:2px;
+height:1px;
 margin:20px 0;
 }
 
@@ -82,6 +82,9 @@ padding:0 6px;
 .after-images-item, .after-images-item img {
     transition:all .8s ease;
     
+}
+.no-transition.after-images-item, .no-transition.after-images-item img {
+    transition:none;
 }
 
 
@@ -226,6 +229,19 @@ margin-bottom:26px;
     font-family: 'Miriam Libre', sans-serif;
     font-weight:400;    
 }
+
+
+.after-map-credits__col--full-line.after-map-credits__col--full-line {
+    width:100%;
+    /* background:lime; */
+    padding-top:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+
 .after-map-credits__col b {
     font-weight:700;    
 }
@@ -281,10 +297,14 @@ margin-bottom:26px;
 
 
 
-    .after-map-credits .after-map-credits__col {
-        width:100%;
-        padding: 16px;
-     }  
+.after-map-credits .after-map-credits__col {
+    width:100%;
+    padding: 16px;
+ }  
+ .after-map-credits .after-map-credits__col.no-paddding {
+    padding-top:0;
+    padding-bottom:0;
+ }  
      .after-images-container .after-images-item  { 
         width:100%   ;
         margin:0;
