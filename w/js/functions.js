@@ -102,18 +102,7 @@ if (!isMobile) {
 	// Update images section
 
 
-	if (isMobile) {
-		$(".tooltip .title").click(function () {
-			$(this).siblings(".tooltip-content").slideToggle();
-			$(this).toggleClass('zippy--open');
-		});
 
-	} else {
-		// $(".tooltip .title").click(function () {
-
-		// });
-
-	}
 
 
 }
@@ -145,6 +134,20 @@ $(window).resize(function () {
 // 	});
 
 // }
+
+
+
+// Sliders
+
+
+	$(".tooltip .title").click(function () {
+		if (isMobile) {
+		$(this).siblings(".tooltip-content").slideToggle();
+		$(this).toggleClass('zippy--open');
+		}
+	});
+
+
 
 // Menu links
 $(".menu-link__zira").click(function () {
