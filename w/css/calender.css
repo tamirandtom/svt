@@ -194,9 +194,9 @@ pointer-events:none;
 .zi-text-body {
     font-family: 'Libre Baskerville', serif;
     
-    font-size: 14px;
+    font-size: 18px;
     max-width: 760px;
-    line-height: 22px;
+    line-height: 29px;
     letter-spacing:normal;
     margin-bottom: 120px;
 }

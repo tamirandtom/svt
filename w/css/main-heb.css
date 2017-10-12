@@ -3,6 +3,18 @@
 @import 'calender-heb.css';
 @import 'common-section-heb.css';
 @import 'menu.css';
+
+
+.preloader {
+    position:fixed;
+    background:white;
+    width:100%;
+    height:100%;
+    z-index:9999999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 body {
     height: 100%;
     /* overflow: hidden; */

@@ -631,3 +631,9 @@ if (!isMobile && showAniamtion) {
 
 
 }
+
+
+$( document ).ready(function() {
+   $('.preloader').hide();
+});
+
