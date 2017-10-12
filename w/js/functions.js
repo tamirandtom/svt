@@ -393,9 +393,9 @@ $(".wrap-svt").scroll(function () {
 
 	// Hide / show intro circle
 	if ($(this).scrollTop() > 200) {
-		$("#px-render").addClass("intro-scrolldown");
+		$(".float-intro").addClass("intro-scrolldown");
 	} else {
-		$("#px-render").removeClass("intro-scrolldown");
+		$(".float-intro").removeClass("intro-scrolldown");
 	}
 
 	// After innitial scroll remove 1/2 class
@@ -407,6 +407,11 @@ $(".wrap-svt").scroll(function () {
 		$(".container-half").removeClass('scroll-begin');
 	}
 	// Save new valie for up / down detection
+
+
+
+
+	
 
 	svtScroll = currScrollTop;
 });
@@ -431,9 +436,9 @@ $(".wrap-zira").scroll(function () {
 
 	// Hide / show intro circle
 	if ($(this).scrollTop() > 200) {
-		$("#px-render-green").addClass("intro-scrolldown");
+		$(".float-intro").addClass("intro-scrolldown");
 	} else {
-		$("#px-render-green").removeClass("intro-scrolldown");
+		$(".float-intro").removeClass("intro-scrolldown");
 	}
 
 
@@ -446,9 +451,22 @@ $(".wrap-zira").scroll(function () {
 		$(".container-half").removeClass('scroll-begin');
 	}
 
+	
+	// Do animation:
+	// $('.intro-moon-1').animate({
+		
+	// 		left: $(this).width()*0.07 + (ziraScroll / 4) + "px",
+	// 		top: $(this).height()*0.07 + (ziraScroll / 20) + "px"
+	// 		// scale: $(this).height()*0.07
+	// 	  }, 0);
+
+
 	// Save new valie for up / down detection
 	ziraScroll = $(this).scrollTop();
 });
+
+
+// initiate animation:
 
 
 
@@ -472,12 +490,6 @@ var screenHeight = window.innerHeight;
 
 
 
-
-if (!isMobile) {
-
-	
-	
-}
 
 if (!isMobile && showAniamtion) {
 	
@@ -651,12 +663,12 @@ if (!isMobile && showAniamtion) {
 		stage.addChild(mainGroup);
 		//   stage.addChild(tilingSprite);
 		//   stage.addChild(noiseSquare);
-		stage.addChild(displacementSprite);
+		// stage.addChild(displacementSprite);
 
 		stage2.addChild(mainGroup2);
 		//   stage2.addChild(tilingSprite2);
 		//   stage2.addChild(noiseSquare2);
-		stage2.addChild(displacementSprite);
+		// stage2.addChild(displacementSprite);
 
 
 		animate();
@@ -668,12 +680,12 @@ if (!isMobile && showAniamtion) {
 	// 	stage.destroy(true);
 	// 	playground.removeChild(canvas);
 	// }
-
-
+	canvas = playground.querySelector('canvas');
+	canvas2 = playground2.querySelector('canvas');
+	scaleFactor = 1;
+	
 	function animate() {
-		raf = requestAnimationFrame(animate);
-		count += 0.1;
-		scaleFactor = 1;
+		count += 1;
 
 		//   inner circle move
 		innerCircle2.x = (ziraScroll / 4) / scaleFactor;
@@ -690,16 +702,19 @@ if (!isMobile && showAniamtion) {
 		// noise animation
 		// displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
 		// displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
-
-		displacementSprite.x = 2 * count;
-		displacementSprite.y = 2 * count;
-
-
+		// if ((count%50) == 1)
+		// {
+		// displacementSprite.x = 2 * (count/10);
+		// displacementSprite.y = 2 * (count/10);
+		// }
+		// console.log(count);
+	
+			
+				
+		raf = requestAnimationFrame(animate);
 		renderer.render(stage);
 		renderer2.render(stage2);
 
-		canvas = playground.querySelector('canvas');
-		canvas2 = playground2.querySelector('canvas');
 	}
 
 	setScene();

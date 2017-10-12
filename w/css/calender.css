@@ -656,7 +656,7 @@ line-height: 24px;
 /* complex items */
 
 .cal-complex-item .svt-cal-item-content__desc-text {
-    margin-left: 40px;
+    margin-left: 0px;
 }
 
 
