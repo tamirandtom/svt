@@ -189,7 +189,8 @@ height:100%;
         font-size: 19px;
         line-height: 24px;
         align-self:flex-end;
-        margin-bottom:40px;
+        position: relative;
+        top:-40px;
         font-family: 'Frank Ruhl Libre', serif;
         font-weight: 700;
         /* align-self: flex-end; */
