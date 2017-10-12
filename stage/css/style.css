@@ -155,6 +155,10 @@ canvas {
 /* mobile */
 
 @media (max-width: 800px) {
+
+    body {
+        --left-space:44px;
+    }
     .float-bottom {
         bottom: 30px;
     }
