@@ -14,120 +14,25 @@ checkMobile = function () {
 };
 
 
-// Create map 
-
-// $( document ).ready(function() {
-   
-	
-// function initMap() {
-// 	var myLatLng = {lat:31.7644668, lng: 35.1841473};
-
-
-
-// 	var map = new google.maps.Map(document.getElementById('map'), {
-// 	  zoom: 13,
-// 	  center: myLatLng,
-// 	  styles: 
-// 	  [
-// 		  {
-// 			  "stylers": [
-// 				  {
-// 					  "hue": "#00AE7C"
-// 				  },
-// 				  {
-// 					  "saturation": 50
-// 				  }
-// 			  ]
-// 		  },
-// 		  {
-// 			  "featureType": "water",
-// 			  "stylers": [
-// 				  {
-// 					  "color": "#ffffff"
-// 				  }
-// 			  ]
-// 		  },
-// 		  {
-// 			  "featureType": "administrative.country",
-// 			  "elementType": "labels",
-// 			  "stylers": [
-// 				  {
-// 					  "visibility": "off"
-// 				  }
-// 			  ]
-// 		  }
-// 	  ]
-// 	});
-
-
-	
-// 	var markers = [
-// 		{
-// 			position: new google.maps.LatLng(31.8047995,35.1246719),
-// 			title: 'בית נקופה'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7513185,35.2069618),
-// 			title: 'הזירה הבינתחומית'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7544109,35.2150317),
-// 			title: 'ביה״ס לתיאטרון חזותי'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7690241,35.2121286),
-// 			title: 'בית הכנסת אוהל נחמה'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7743144,35.2192419),
-// 			title: 'ימק״א'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7769833,35.2192136),
-// 			title: 'המפעל'
-// 		  },{
-// 			position: new google.maps.LatLng(31.7428154,35.1492353),
-// 			title: 'עין לבן'
-// 		  }];
-
-// 		markers.forEach(function(mark) {
-// 			var marker = new google.maps.Marker({
-// 			  position: mark.position,
-// 			  title:mark.title,
-// 			  label:mark.title,			  
-// 			  icon: 'images/marker.png',
-// 			  map: map
-// 			});
-// 			var infowindow = new google.maps.InfoWindow({
-// 			  content: mark.title
-// 			});
-
-// 			google.maps.event.addListener(marker, 'click', function() {
-// 				infowindow.open(map,marker);
-// 			  });
-// 		  });
-
-//   }
-
-// });
 
 var isMobile = checkMobile();
 // console.log(isMobile);
 
 // images iso
 
-if (!isMobile)
-{
-	$('.after-images-container').imagesLoaded( function() {
+if (!isMobile) {
+	$('.after-images-container').imagesLoaded(function () {
 
 		$('.after-images-container').isotope({
 			itemSelector: '.after-images-item',
 			percentPosition: true,
 			masonry: {
-			  columnWidth: '.after-images-item',
-			  gutter: 22
+				columnWidth: '.after-images-item',
+				gutter: 22
 			}
-		  });
+		});
 
 	});
-
-
-
 
 }
 
@@ -140,22 +45,22 @@ $(".menu-link__zira").click(function () {
 	//Focus on Zira
 	focusOnHazira();
 	// Remove backdrop
-	$(".svt-backdrop").removeClass('svt-backdrop--visible');	
-	$("menu").removeClass('menu--open');		
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');
+	$("menu").removeClass('menu--open');
 });
 
 $(".menu-link__svt").click(function () {
-		// Remove backdrop
-		$(".svt-backdrop").removeClass('svt-backdrop--visible');
-	$("menu").removeClass('menu--open');		
-	
+	// Remove backdrop
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');
+	$("menu").removeClass('menu--open');
+
 	//Scroll to top
 	$('html, body, .wrap-svt, .wrap-zira').animate({
 		scrollTop: 0
 	}, 300);
 	//Focus on Zira
 	focusOnSvt();
-		
+
 });
 
 $(".menu-link__preformers").click(function () {
@@ -163,10 +68,10 @@ $(".menu-link__preformers").click(function () {
 	$('body, html').animate({
 		scrollTop: $('.after-section').offset().top
 	}, 300);
-		// Remove backdrop
-		$(".svt-backdrop").removeClass('svt-backdrop--visible');		
-	$("menu").removeClass('menu--open');		
-	
+	// Remove backdrop
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');
+	$("menu").removeClass('menu--open');
+
 });
 
 $(".menu-link__map").click(function () {
@@ -174,10 +79,10 @@ $(".menu-link__map").click(function () {
 	$('body, html').animate({
 		scrollTop: $('.after-map-container').offset().top
 	}, 300);
-		// Remove backdrop
-		$(".svt-backdrop").removeClass('svt-backdrop--visible');	
-	$("menu").removeClass('menu--open');		
-	
+	// Remove backdrop
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');
+	$("menu").removeClass('menu--open');
+
 });
 
 $(".menu-link__details").click(function () {
@@ -185,62 +90,68 @@ $(".menu-link__details").click(function () {
 	$('body, html').animate({
 		scrollTop: $('.after-map-credits').offset().top
 	}, 300);
-		// Remove backdrop
-		$(".svt-backdrop").removeClass('svt-backdrop--visible');	
-	$("menu").removeClass('menu--open');		
-	
+	// Remove backdrop
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');
+	$("menu").removeClass('menu--open');
+
 });
 
-
+function scrollToTop() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 300);
+}
 // Accordeon zippy
 
-if (isMobile)
-{
+if (isMobile) {
 	$(".zir-cal-items-wrap").slideToggle();
 	$(".zir-cal-day-header").toggleClass('svt-zippy--open');
 	$(".svt-cal-items-wrap").slideToggle();
 	$(".svt-cal-day-header").toggleClass('svt-zippy--open');
-	
-
 }
 
 
 $(".svt-cal-item-title").click(function () {
 	$(this).siblings(".svt-cal-item-content-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
+	scrollToTop();
 });
 $(".zir-cal-item-title").click(function () {
 	$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
 	$(this).toggleClass('svt-zippy--open');
+	scrollToTop();
+
 });
 
-if (!isMobile)
-{
-$(".zir-cal-day-header").click(function () {
-	$(this).siblings(".zir-cal-items-wrap").slideToggle();
-	$(this).toggleClass('svt-zippy--open');
-});
-$(".svt-cal-day-header").click(function () {
-	$(this).siblings(".svt-cal-items-wrap").slideToggle();
-	$(this).toggleClass('svt-zippy--open');
-});
+if (!isMobile) {
+	$(".zir-cal-day-header").click(function () {
+		$(this).siblings(".zir-cal-items-wrap").slideToggle();
+		$(this).toggleClass('svt-zippy--open');
+		scrollToTop();
+
+	});
+	$(".svt-cal-day-header").click(function () {
+		$(this).siblings(".svt-cal-items-wrap").slideToggle();
+		$(this).toggleClass('svt-zippy--open');
+		scrollToTop();
+
+	});
 }
 
 
-if (isMobile)
-{
-$(".tooltip .title").click(function () {
-	$(this).siblings(".tooltip-content").slideToggle();
-	$(this).toggleClass('zippy--open');
-});
+if (isMobile) {
+	$(".tooltip .title").click(function () {
+		$(this).siblings(".tooltip-content").slideToggle();
+		$(this).toggleClass('zippy--open');
+
+	});
 
 }
 
 
 
 // Menu hide timer 
-if (!isMobile)
-{
+if (!isMobile) {
 	var menuTimer = null;
 	var menuTimeout = 2000;
 	$("body").mousemove(function () {
@@ -253,19 +164,19 @@ if (!isMobile)
 		clearTimeout(menuTimer);
 		$("menu").addClass('menu--hide');
 	});
-	
+
 } else {
 	$("menu").removeClass('menu--hide');
 }
 
 $(".menucircle").click(function () {
-	$(".svt-backdrop").addClass('svt-backdrop--visible');	
-	$("menu").addClass('menu--open');	
+	$(".svt-backdrop").addClass('svt-backdrop--visible');
+	$("menu").addClass('menu--open');
 });
 
 
 $(".svt-backdrop").click(function () {
-	$(".svt-backdrop").removeClass('svt-backdrop--visible');	
+	$(".svt-backdrop").removeClass('svt-backdrop--visible');
 	$("menu").removeClass('menu--open');
 });
 
@@ -346,22 +257,20 @@ $(window).scroll(function () {
 		isSectionTwoUp = true;
 	}
 
-	if ((top_of_screen > top_of_element) ) {
+	if ((top_of_screen > top_of_element)) {
 		// green menu
-		if (menuState=='top')
-		{
+		if (menuState == 'top') {
 			$('menu').addClass('menu--green');
-		menuState = 'bottom';
-	
+			menuState = 'bottom';
+
 		}
-		
+
 	} else {
 		// white menu
-		if (menuState=='bottom')
-		{
-		$('menu').removeClass('menu--green');
-		menuState = 'top';
-		}		
+		if (menuState == 'bottom') {
+			$('menu').removeClass('menu--green');
+			menuState = 'top';
+		}
 	}
 });
 
@@ -446,14 +355,13 @@ $(".wrap-zira").scroll(function () {
 
 // Tooltips for images and map
 // TODO: Fade between images
-if (!isMobile)
-{
+if (!isMobile) {
 	$(".after-images-item").mousemove(function (e) {
 		if (screenWidth / 2 > e.pageX) {
 			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left + 0).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
-	
+
 		} else {
-			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left - 340).css('top', e.pageY - $(this).offset().top  + 10).css('display', 'block');
+			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left - 340).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
 		}
 	});
 	$(".after-images-item").mouseout(function () {
@@ -465,7 +373,7 @@ if (!isMobile)
 	// $(".map-marker").mousemove(function (e) {
 	// 	if (screenWidth / 2 > e.pageX) {
 	// 		$(this).children('.tooltip').css('left', e.pageX + 0).css('top', e.pageY + 10).css('display', 'block');
-	
+
 	// 	} else {
 	// 		$(this).children('.tooltip').css('left', e.pageX - 340).css('top', e.pageY + 10).css('display', 'block');
 	// 	}
@@ -482,11 +390,11 @@ if (!isMobile)
 // $('.after-map-container').addClass('scrolloff'); // set the pointer events to none on doc ready
 
 $('.after-map-container').click(function () {
-    $('.after-map-container .map-embed').css("pointer-events", "auto");
+	$('.after-map-container .map-embed').css("pointer-events", "auto");
 });
 
-$( ".after-map-container" ).mouseleave(function() {
-  $('.after-map-container .map-embed').css("pointer-events", "none"); 
+$(".after-map-container").mouseleave(function () {
+	$('.after-map-container .map-embed').css("pointer-events", "none");
 });
 
 
@@ -498,7 +406,7 @@ var screenHeight = window.innerHeight;
 if (!isMobile && showAniamtion) {
 
 	// aniamtions
-	
+
 
 	var cursorPosW = 0,
 		cursorPosH = 0;
@@ -692,11 +600,11 @@ if (!isMobile && showAniamtion) {
 		scaleFactor = 1;
 
 		//   inner circle move
-		innerCircle2.x = (ziraScroll/4)/scaleFactor;
-		innerCircle.x = (svtScroll/4)/scaleFactor;
+		innerCircle2.x = (ziraScroll / 4) / scaleFactor;
+		innerCircle.x = (svtScroll / 4) / scaleFactor;
 
-		innerCircle2.y = (ziraScroll/8)/scaleFactor;
-		innerCircle.y = (svtScroll/8)/scaleFactor;
+		innerCircle2.y = (ziraScroll / 8) / scaleFactor;
+		innerCircle.y = (svtScroll / 8) / scaleFactor;
 
 		// innerCircle2.scale = 1+(ziraScroll/1000);
 		// innerCircle.scale = 1+(svtScroll/1000);

@@ -1,5 +1,3 @@
-
-
 .after-section {
     padding:60px 0;
     background:#CBEFE5;
@@ -212,6 +210,8 @@ margin-bottom:26px;
 
 .after-map-credits__col {
     width:50%;
+    box-sizing:border-box;
+    padding-right:30px;
     direction:rtl;
     color:var(--main-color);
     padding-top:60px;
