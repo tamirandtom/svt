@@ -72,7 +72,7 @@ function resizedNow() {
 		});
 
 	} else {
-		$('.after-images-container').isotope('destroy');
+		// $('.after-images-container').isotope('destroy');
 	}
 
 
