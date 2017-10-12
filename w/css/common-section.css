@@ -139,9 +139,10 @@ padding:0 6px;
 .after-images-item .tooltip .title {
 font-size:20px;
 letter-spacing:1px;
-line-height:26px;
-font-weight:500;
-font-family: 'Frank Ruhl Libre', serif;
+line-height:24px;
+font-weight:400;
+font-family: 'Libre Baskerville', serif;
+font-style:italic;
 margin-bottom:26px;
 }
 

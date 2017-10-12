@@ -428,7 +428,7 @@ a.cal-ticket-cta:hover img {
 .svt-cal-day-header__day-name {
     direction: ltr;
     line-height: 41px;
-    font-size: 41px;
+    font-size: 36px;
     text-align: center;
     letter-spacing: 2.2px;
     font-weight: 700;
@@ -441,21 +441,23 @@ a.cal-ticket-cta:hover img {
 }
 
 .svt-cal-day-header__day-title {
-    line-height: 48px;
+    line-height: 34px;
     text-align: center;
-    font-size: 28px;
-    letter-spacing: 2.2px;
+    font-size: 24px;
+    letter-spacing: 1.6px;
     word-spacing: -10px;
     font-family: 'Nitti', 'zvi', sans-serif;
 }
 
 .svt-cal-day-header__day-title-2 {
-    line-height: 48px;
+    line-height: 32px;
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
     font-weight:700;
     letter-spacing: 2px;
     font-family: 'Miriam Libre', sans-serif;
+
+    margin-top: 20px;
     
 }
 
@@ -547,7 +549,7 @@ line-height: 24px;
 
 .zir-cal-day-header {
     text-align: center;
-    padding: 70px 0 0 0;
+    padding: 60px 0 0 0;
     border-top: var(--line-width) solid var(--main-color);
     cursor: pointer;
     display: flex;
@@ -567,6 +569,7 @@ line-height: 24px;
     letter-spacing: 2.2px;
     font-family: 'Hadassah';
     font-weight: 700;
+    margin-bottom:20px;
 }
 
 

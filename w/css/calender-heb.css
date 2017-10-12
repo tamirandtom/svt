@@ -424,7 +424,7 @@ a.cal-ticket-cta:hover img {
 .svt-cal-day-header__day-name {
     direction: rtl;
     line-height: 41px;
-    font-size: 41px;
+    font-size: 37px;
     text-align: center;
     letter-spacing: 2.2px;
     font-weight: 700;
@@ -437,18 +437,19 @@ a.cal-ticket-cta:hover img {
 }
 
 .svt-cal-day-header__day-title {
-    line-height: 48px;
+    line-height: 38px;
     text-align: center;
-    font-size: 28px;
+    font-size: 24px;
     letter-spacing: 2.2px;
     word-spacing: -10px;
     font-family: 'Nitti', 'zvi', sans-serif;
 }
 
 .svt-cal-day-header__day-title-2 {
-    line-height: 48px;
+    line-height: 24px;
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
+    margin-top: 16px;
     font-weight:700;
     letter-spacing: 2px;
     font-family: 'Miriam Libre', sans-serif;
