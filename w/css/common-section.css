@@ -116,7 +116,7 @@ padding:0 6px;
 
 
 .after-images-item .tooltip {
-    direction:rtl;
+    direction:ltr;
     position: absolute; 
     color:var(--main-color);
     width: 270px;
@@ -179,7 +179,7 @@ margin-bottom:26px;
 
 
 .map-marker .tooltip {
-    direction:rtl;
+    direction:ltr;
     position: absolute; 
     color:var(--main-color);
     width: 210px;
@@ -212,7 +212,7 @@ margin-bottom:26px;
 
 .after-map-credits__col {
     width:50%;
-    direction:rtl;
+    direction:ltr;
     color:var(--main-color);
     padding-top:60px;
     font-size:13px;
@@ -267,7 +267,7 @@ margin-bottom:26px;
 
     .after-map-credits .after-map-credits__col {
         width:100%;
-        padding: 16px 16px 16px 0;
+        padding: 16px;
      }  
      .after-images-container .after-images-item  { 
         width:100%   ;
@@ -286,7 +286,7 @@ font-size: 13.5px;
 color: #00AE7C;
 letter-spacing: 0;
 line-height: 20px;
-    direction:rtl;
+    direction:ltr;
     position: static; 
     color:var(--main-color);
     width: 100%;

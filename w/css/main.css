@@ -4,29 +4,59 @@
 @import 'fonts.css';
 @import 'intro.css';
 @import 'calender.css';
-@import 'after-sections.css';
+@import 'common-section.css';
 @import 'menu.css';
-
 body {
     height: 100%;
     /* overflow: hidden; */
-
     background: #fff;
     color: #000;
     margin: 0;
     padding: 0;
     /* cursor: none; */
     --main-color: #00AE7C;
+    --main-color-50: rgba(0, 174, 124, 0.8);
     --main-color-pos: #fff;
     --color-black: #000;
-    --left-space:130px;
-
-
+    --left-space: 130px;
+    --line-width: 2px;
 }
 
-
+.scrolloff {
+    pointer-events:none;
+}
 /* disables scrollbars */
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
+}
+
+.show-on-mobile {
+    display: none;
+}
+
+.is-lrt {
+    direction:ltr;
+    /* text-align:right; */
+}
+
+.close-kerning {
+    letter-spacing:0;
+}
+
+p {
+    margin:0;
+    padding:0;
+}
+@media (max-width: 800px) {
+    body {
+    --line-width: 1px;    
+        --left-space: 30px;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+    .show-on-mobile {
+        display: block;
+    }
 }
