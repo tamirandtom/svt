@@ -754,8 +754,8 @@ line-height: 24px;
     }
 
     .center-col {
-        max-width: auto;
-        min-width: auto;
+        max-width:100%;
+        min-width: 100%;
     }
     .center-col-inner {
         margin: 0 0px;
