@@ -3,9 +3,8 @@ var acticeSection = 0;
 
 if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
 	$('.after-images-item').addClass('no-transition');
-	
-	
 }
+
 
 // Check if is mobile / touch. if touch - show mobile version
 checkMobile = function () {
