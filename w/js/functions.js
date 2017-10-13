@@ -1,5 +1,5 @@
-showAniamtion = false;
-
+showAniamtion = true;
+var acticeSection = 0;
 
 if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
 	$('.after-images-item').addClass('no-transition');
@@ -287,6 +287,8 @@ var svtScroll = 0;
 
 
 function focusOnHazira() {
+
+	acticeSection = 'zira';
 	$(".wrap-svt").addClass('scroll-blur');
 	$(".wrap-svt").removeClass('scroll-focus');
 	$(".wrap-zira").addClass('scroll-focus');
@@ -308,6 +310,8 @@ function focusOnHazira() {
 }
 
 function focusOnSvt() {
+	acticeSection = 'svt';
+	
 	$(".wrap-svt").addClass('scroll-focus');
 	$(".wrap-svt").removeClass('scroll-blur');
 	$(".wrap-zira").addClass('scroll-blur');
@@ -375,14 +379,19 @@ $(window).scroll(function () {
 
 	updateCircleOpacity();
 });
+// var scrollPos1;
 
 $(".wrap-svt").scroll(function () {
 
+	// get positoin of title;
+// scrollPos1 = $(".intro-main-title").offset().top;
+	
 	// Detect if scroll up or down
-
 	let currScrollTop = $(this).scrollTop()
+	
 	if (currScrollTop > svtScroll) {
 		// down scroll 
+	
 	} else {
 		// up scroll 
 		if (isSectionTwoUp) {
@@ -405,27 +414,20 @@ $(".wrap-svt").scroll(function () {
 		$(".container-half").removeClass('scroll-begin');
 	}
 	// Save new valie for up / down detection
-
-
-
-
 	
 
+
 	svtScroll = currScrollTop;
+	
+	
+
 });
 
-
-function updateCircleOpacity() {
-	if ($(window).scrollTop() > 200 ||  $(".wrap-svt").scrollTop() > 200  || $(".wrap-zira").scrollTop() > 200) {
-		$(".float-intro").addClass("intro-scrolldown");
-	} else {
-		$(".float-intro").removeClass("intro-scrolldown");
-	}
-}
 
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
 	let currScrollTop = $(this).scrollTop()
+	
 
 	// Detect if scroll up or down
 	if (currScrollTop > ziraScroll) {
@@ -462,11 +464,18 @@ $(".wrap-zira").scroll(function () {
 	// 		// scale: $(this).height()*0.07
 	// 	  }, 0);
 
-
-	// Save new valie for up / down detection
 	ziraScroll = $(this).scrollTop();
+	
+	// Save new valie for up / down detection
 });
 
+function updateCircleOpacity() {
+	if ($(window).scrollTop() > 200 ||  $(".wrap-svt").scrollTop() > 200  || $(".wrap-zira").scrollTop() > 200) {
+		$(".float-intro").addClass("intro-scrolldown");
+	} else {
+		$(".float-intro").removeClass("intro-scrolldown");
+	}
+}
 
 if ($(this).scrollTop() > 200) {
 	$(".float-intro").addClass("intro-scrolldown");
@@ -496,7 +505,6 @@ if ($(this).scrollTop() > 200) {
 // Animaitons
 var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
-
 
 
 
@@ -590,7 +598,7 @@ if (!isMobile && showAniamtion) {
 
 		var bgSquare = new PIXI.Graphics();
 		var bgSquare2 = new PIXI.Graphics();
-		bgSquare.beginFill(0x000000);
+		bgSquare.beginFill(0x00AE7C);
 		bgSquare.drawRect(0, 0, width, height);
 		mainGroup.addChild(bgSquare);
 
@@ -600,8 +608,8 @@ if (!isMobile && showAniamtion) {
 
 
 		bgCircle = new PIXI.Graphics();
-		bgCircle.beginFill(0x0000000);
-		bgCircle.drawCircle(width / 2, height / 2, (width / 2)); //(x,y,radius)
+		bgCircle.beginFill(0x00AE7C);
+		bgCircle.drawCircle(width / 2, height / 2, (width)); //(x,y,radius)
 		bgCircle.endFill();
 
 		bgCircle2 = new PIXI.Graphics();
@@ -624,7 +632,7 @@ if (!isMobile && showAniamtion) {
 
 
 		innerCircle = new PIXI.Graphics();
-		innerCircle.beginFill(0x000000);
+		innerCircle.beginFill(0x00AE7C);
 		innerCircle.drawCircle(width / 2, height / 2, innerCircleRadius); //(x,y,radius)
 		innerCircle.endFill();
 
@@ -693,43 +701,88 @@ if (!isMobile && showAniamtion) {
 	canvas2 = playground2.querySelector('canvas');
 	scaleFactor = 1;
 	
-	function animate() {
-		count += 1;
-
-		//   inner circle move
-		innerCircle2.x = (ziraScroll / 4) / scaleFactor;
-		innerCircle.x = (svtScroll / 4) / scaleFactor;
-
-		innerCircle2.y = (ziraScroll / 8) / scaleFactor;
-		innerCircle.y = (svtScroll / 8) / scaleFactor;
-
-		// innerCircle2.scale = 1+(ziraScroll/1000);
-		// innerCircle.scale = 1+(svtScroll/1000);
-		// innerCircle.scale = 100;
-
-		// console.log(ziraScroll);
-		// noise animation
-		// displacementSprite.x =  mousePullStrenght * 2* cursorPosW - mousePullStrenght;
-		// displacementSprite.y =  mousePullStrenght * 2* cursorPosH - mousePullStrenght;
-		// if ((count%50) == 1)
-		// {
-		// displacementSprite.x = 2 * (count/10);
-		// displacementSprite.y = 2 * (count/10);
-		// }
-		// console.log(count);
 	
-			
-				
-		raf = requestAnimationFrame(animate);
-		renderer.render(stage);
-		renderer2.render(stage2);
-
-	}
 
 	setScene();
 
+	var fps = 30;
+	var now;
+	var then = Date.now();
+	var interval = 1000/fps;
+	var delta;
+	  var prevsvtScroll = 0;
+	  var animationState = 1;
+	function animate() {
+		 
+		requestAnimationFrame(animate);
+		 
+		now = Date.now();
+		delta = now - then;
+		 
+		if (delta > interval) {
+			// update time stuffs
+			console.log()
+			then = now - (delta % interval);
+			// animate
+			// if (svtScroll != prevsvtScroll)
+			// {
+			// prevsvtScroll = svtScroll;	
+			// console.log('changed prev!');
+			// console.log(scrollPos1)	;
+			// }
+			// innerCircle2.x = (ziraScroll-innerCircle2.x)/20;
+
+			
+			// CurrenPos2 = innerCircle2.x;
+
+			innerCircle.x = svtScroll/4;
+			innerCircle.y = (svtScroll / 8);
+
+			innerCircle2.x = ziraScroll/4;
+			innerCircle2.y = (ziraScroll / 8);
 
 
+			// if (svtScroll > 200)
+			// {
+			// 	animationState = 1;
+
+			// } else {
+			// 	animationState = 0;
+			// }
+
+			// if (animationState == 1) {
+			// 	if (innerCircle.x < 400)
+			// 	{
+			// 		innerCircle.x += 1;					
+			// 		innerCircle.y +=0.02;
+			// 	}
+			// } else {
+			// 	if (innerCircle.x > 0)
+			// 	{
+			// 		innerCircle.x -= 1;					
+			// 		innerCircle.y -=0.02;
+			// 	}
+			// }
+			
+	
+	if (acticeSection == 'svt')
+	{
+		renderer.render(stage);
+		
+	} else if (acticeSection == 'zira')
+	{
+		renderer2.render(stage2);
+		
+	} else 
+	{
+		renderer.render(stage);
+		renderer2.render(stage2);
+	}
+			
+
+		}
+	}
+	// animate();
 }
 
 
