@@ -336,12 +336,23 @@ function focusOnSvt() {
 
 // Focus on Click
 $(".wrap-svt").click(function () {
+	if (acticeSection != 'svt')
+	{
 	focusOnSvt();
+	acticeSection = 'svt';
+	
+	} 
+
 });
 
 
 $(".wrap-zira").click(function () {
-	focusOnHazira();
+	if (acticeSection != 'zira')
+	{
+		focusOnHazira();
+	acticeSection = 'zira';
+	
+	} 
 });
 
 
@@ -558,6 +569,7 @@ if (!isMobile && showAniamtion) {
 	var displacementSprite,
 		displacementFilter,
 		stage, stage2;
+
 
 	// Both blur filters
 	var blurFilter1 = new PIXI.filters.BlurFilter();
