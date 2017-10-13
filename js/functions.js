@@ -380,7 +380,7 @@ $(".wrap-svt").scroll(function () {
 
 	// Detect if scroll up or down
 
-	let currScrollTop = $(this).scrollTop()
+	var currScrollTop = $(this).scrollTop()
 	if (currScrollTop > svtScroll) {
 		// down scroll 
 	} else {
@@ -422,10 +422,10 @@ function updateCircleOpacity() {
 		$(".float-intro").removeClass("intro-scrolldown");
 	}
 }
-
+// f
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
-	let currScrollTop = $(this).scrollTop()
+	var currScrollTop = $(this).scrollTop()
 
 	// Detect if scroll up or down
 	if (currScrollTop > ziraScroll) {

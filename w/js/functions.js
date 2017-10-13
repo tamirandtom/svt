@@ -4,7 +4,7 @@ var acticeSection = 0;
 if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
 	$('.after-images-item').addClass('no-transition');
 }
-
+// f
 
 // Check if is mobile / touch. if touch - show mobile version
 checkMobile = function () {
@@ -397,7 +397,7 @@ $(".wrap-svt").scroll(function () {
 // scrollPos1 = $(".intro-main-title").offset().top;
 	
 	// Detect if scroll up or down
-	let currScrollTop = $(this).scrollTop()
+	var currScrollTop = $(this).scrollTop()
 	
 	if (currScrollTop > svtScroll) {
 		// down scroll 
@@ -436,7 +436,7 @@ $(".wrap-svt").scroll(function () {
 
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
-	let currScrollTop = $(this).scrollTop()
+	var currScrollTop = $(this).scrollTop()
 	
 
 	// Detect if scroll up or down
