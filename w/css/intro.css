@@ -32,20 +32,13 @@ canvas {
     background:#fff;
 }
 
-.float-intro.white.hideintro {
-    left: 0%;
-    width:var(--left-space);
-}
 
 .float-intro.green.hideintro .pixi-render ,.float-intro.white.hideintro .pixi-render {
 
     opacity:0;
 }
 
-.float-intro.green.hideintro {
-    left: calc(100% - var(--left-space));
-    width: var(--left-space);
-}
+
 
 .float-intro.white.showintro {
     opacity:1;
@@ -53,15 +46,36 @@ canvas {
     width:100%;
 }
 
+.float-intro.white.hideintro {
+    left: 0%;
+    width:130px;
+}
+.float-intro.green.hideintro {
+    left: calc(100% -130px);
+    width: 130px;
+}
 .float-intro.green.showintro {
     opacity:1;
-    left:var(--left-space);
-    width:calc(100% - var(--left-space));
+    left:130px;
+    width:calc(100% - 130px);
     /* left: 0px;
     width:100%; */
 }
 .float-intro.green.showintro #px-render-green {
-    margin-right:var(--left-space);
+    margin-right:130px;
+}
+.scroll-focus.wrap-zira .intro-main-title {
+    margin-right:130px;
+}
+.scroll-focus.wrap-svt .intro-main-title {
+    margin-left:130px;
+}
+.container-half.scroll-focus {
+    width: calc(100% - 130px);
+}
+
+.container-half.scroll-blur {
+    width: 130px;
 }
 
 
@@ -85,12 +99,7 @@ canvas {
     opacity:0 !important;
 }
 
-.scroll-focus.wrap-zira .intro-main-title {
-    margin-right:var(--left-space);
-}
-.scroll-focus.wrap-svt .intro-main-title {
-    margin-left:var(--left-space);
-}
+
 
 .wrapper {
     display: flex;
@@ -142,13 +151,7 @@ canvas {
     width: 50%;
 }
 
-.container-half.scroll-focus {
-    width: calc(100% - var(--left-space));
-}
 
-.container-half.scroll-blur {
-    width: var(--left-space);
-}
 
 .container-half {
     height: 100vh;
@@ -188,6 +191,43 @@ canvas {
     canvas {
         /* display: none; */
     }
+
+
+.float-intro.white.hideintro {
+    left: 0%;
+    width:30px;
+}
+.float-intro.green.hideintro {
+    left: calc(100% - 30px);
+    width: 30px;
+}
+.float-intro.green.showintro {
+    opacity:1;
+    left:30px;
+    width:calc(100% - 30px);
+    /* left: 0px;
+    width:100%; */
+}
+.float-intro.green.showintro #px-render-green {
+    margin-right:30px;
+}
+.scroll-focus.wrap-zira .intro-main-title {
+    margin-right:30px;
+}
+.scroll-focus.wrap-svt .intro-main-title {
+    margin-left:30px;
+}
+.container-half.scroll-focus {
+    width: calc(100% - 30px);
+}
+
+.container-half.scroll-blur {
+    width: 30px;
+}
+
+
+
+
 
 
     .float-intro img{
