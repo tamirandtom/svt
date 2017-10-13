@@ -4,7 +4,9 @@ canvas {
     
 }
 
-
+.container-half.scroll-begin {
+    width: 50%;
+}
 .float-intro img{
     display:none;
     transition:all 1s ease;
@@ -51,7 +53,7 @@ canvas {
     width:130px;
 }
 .float-intro.green.hideintro {
-    left: calc(100% -130px);
+    left: calc(100% - 130px);
     width: 130px;
 }
 .float-intro.green.showintro {
@@ -147,9 +149,7 @@ canvas {
     opacity: 0;
 }
 
-.container-half.scroll-begin {
-    width: 50%;
-}
+
 
 
 
