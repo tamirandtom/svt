@@ -1,9 +1,13 @@
+@import 'reset.css';
 @import 'fonts.css';
 @import 'intro.css';
 @import 'calender-heb.css';
 @import 'common-section-heb.css';
 @import 'menu.css';
 
+html, body {
+    width:100%;
+}
 
 .preloader {
     position:fixed;
@@ -50,7 +54,7 @@
 body {
     height: 100%;
     /* overflow: hidden; */
-    background: #fff;
+    background:#00AE7C;
     color: #000;
     margin: 0;
     padding: 0;

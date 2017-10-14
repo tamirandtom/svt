@@ -4,57 +4,43 @@ canvas {
     
 }
 
-/* 
-.intro-float-1 {
-    width:60vw;
-    height:60vw;
-    background:#f0f;
-    display:inline-block;
-    position: relative;
+.container-half.scroll-begin {
+    width: 50%;
 }
-.intro-float-1 img{
-width:100%;
-height:100%;
-}
-.intro-moon {
-    width:70%;
-    height:70%;
-    background:#f00;
-    border-radius:200px;
-    position: absolute;
-    
-} */
+.float-intro img{
+    display:none;
+    transition:all 1s ease;
+    }
+
+    .float-intro.hideintro img{
+      opacity:0;
+        }
+
 
 #px-render, #px-render-green {
-    transition:all 3s ease;
+    transition:opacity 3s ease, margin 1s ease;
+    /* transition:margin 1s ease; */
 }
 
-.float-intro img {
-    max-width:570px;
-    margin-bottom:50px;
-    width:100%;
-}
 .float-intro.white {
     /* mix-blend-mode: screen; */
     left: 0%;
+    /* background:var(--main-color); */
 }
 
 .float-intro.green {
     /* mix-blend-mode: multiply; */
     left: 50%;
+    background:#fff;
 }
 
-.float-intro.white.hideintro {
+
+.float-intro.green.hideintro .pixi-render ,.float-intro.white.hideintro .pixi-render {
+
     opacity:0;
-    left: 0%;
-    width:var(--left-space);
 }
 
-.float-intro.green.hideintro {
-    opacity:0;
-    left: calc(100% - var(--left-space));
-    width: var(--left-space);
-}
+
 
 .float-intro.white.showintro {
     opacity:1;
@@ -62,10 +48,36 @@ height:100%;
     width:100%;
 }
 
+.float-intro.white.hideintro {
+    left: 0%;
+    width:130px;
+}
+.float-intro.green.hideintro {
+    left: calc(100% - 130px);
+    width: 130px;
+}
 .float-intro.green.showintro {
     opacity:1;
-    left:0px;
-    width:100%;
+    left:130px;
+    width:calc(100% - 130px);
+    /* left: 0px;
+    width:100%; */
+}
+.float-intro.green.showintro #px-render-green {
+    margin-right:130px;
+}
+.scroll-focus.wrap-zira .intro-main-title {
+    margin-right:130px;
+}
+.scroll-focus.wrap-svt .intro-main-title {
+    margin-left:130px;
+}
+.container-half.scroll-focus {
+    width: calc(100% - 130px);
+}
+
+.container-half.scroll-blur {
+    width: 130px;
 }
 
 
@@ -76,24 +88,25 @@ height:100%;
     align-items: center;
     justify-content: center;
     width: 50%;
-    height: 100vh;
+    height: 100%;
     pointer-events: none;
-    z-index: 100;
+    z-index: -1;
 }
 
-.intro-scrolldown {
+.intro-scrolldown .pixi-render{
     opacity:0 !important;
 }
 
-.scroll-focus.wrap-zira .intro-main-title {
-    margin-right:var(--left-space);
+.intro-scrolldown img{
+    opacity:0 !important;
 }
-.scroll-focus.wrap-svt .intro-main-title {
-    margin-left:var(--left-space);
-}
+
+
 
 .wrapper {
     display: flex;
+    position:relative;
+    z-index:1;
 }
 
 .center-col {
@@ -129,37 +142,32 @@ height:100%;
 }
 
 .container-half-content {
-    transition: opacity 1s ease;
+    transition: all 1s ease;
 }
 
 .scroll-blur .container-half-content {
     opacity: 0;
 }
 
-.container-half.scroll-begin {
-    width: 50%;
-}
 
-.container-half.scroll-focus {
-    width: calc(100% - var(--left-space));
-}
 
-.container-half.scroll-blur {
-    width: var(--left-space);
-}
+
 
 .container-half {
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: var(--main-color-pos);
     color: var(--main-color);
-    transition: width 1s ease;
+    transition: all 1s ease;
 }
 
 .container-half.container-negative {
-    background: var(--main-color);
+    /* background:rgba(0,0,0,0); */
     color: var(--main-color-pos);
+}
+
+.container-half.container-negative.scroll-blur {
+    background: var(--main-color);
 }
 
 .intro-main-title--mobile {
@@ -183,6 +191,51 @@ height:100%;
     canvas {
         /* display: none; */
     }
+
+
+.float-intro.white.hideintro {
+    left: 0%;
+    width:30px;
+}
+.float-intro.green.hideintro {
+    left: calc(100% - 30px);
+    width: 30px;
+}
+.float-intro.green.showintro {
+    opacity:1;
+    left:30px;
+    width:calc(100% - 30px);
+    /* left: 0px;
+    width:100%; */
+}
+.float-intro.green.showintro #px-render-green {
+    margin-right:30px;
+}
+.scroll-focus.wrap-zira .intro-main-title {
+    margin-right:30px;
+}
+.scroll-focus.wrap-svt .intro-main-title {
+    margin-left:30px;
+}
+.container-half.scroll-focus {
+    width: calc(100% - 30px);
+}
+
+.container-half.scroll-blur {
+    width: 30px;
+}
+
+
+
+
+
+
+    .float-intro img{
+        max-width:100%;
+        display: inline;
+        }
+
+
     .intro-main-title--mobile {
         display: flex;
         text-align: center;
@@ -190,7 +243,7 @@ height:100%;
         line-height: 24px;
         align-self:flex-end;
         position: relative;
-        top:-40px;
+        top:-80px;
         font-family: 'Frank Ruhl Libre', serif;
         font-weight: 700;
         /* align-self: flex-end; */

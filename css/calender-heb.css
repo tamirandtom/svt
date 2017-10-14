@@ -13,78 +13,75 @@
 }
 
 .inline-link {
-    color:#fff;
-    text-decoration:none;
-    font-weight:700;
-    border-bottom:2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
 }
+
 em {
     font-family: 'Libre Baskerville', serif;
 }
+
+
 /* floating labels */
 
 .text-floating-svt {
     transform: rotate(90deg);
-
     font-family: 'Miriam Libre', sans-serif;
-    font-weight:700;
+    font-weight: 700;
     font-size: 14px;
     color: #FFFFFF;
     letter-spacing: 3.64px;
-    line-height: 29px;   
-    position:absolute; 
-    top:50%;
-    transition:all 1s ease;
-    opacity:1;
-pointer-events:none;    
-    }
-
+    line-height: 29px;
+    position: absolute;
+    top: 50%;
+    transition: all 1s ease;
+    opacity: 1;
+    pointer-events: none;
+}
 
 .text-floating-zir {
     transform: rotate(90deg);
     font-family: 'Miriam Libre', sans-serif;
-    font-weight:700;
+    font-weight: 700;
     font-size: 14px;
-    color:var(--main-color);
+    color: var(--main-color);
     letter-spacing: 3.64px;
-    line-height: 29px;  
-    position:absolute; 
-    top:50%;
-    transition:all 1s ease;
-    opacity:1;
-pointer-events:none;    
+    line-height: 29px;
+    position: absolute;
+    top: 50%;
+    transition: all 1s ease;
+    opacity: 1;
+    pointer-events: none;
+}
 
-    }
+.focus-svt .text-floating-zir {
+    left: calc(100% - 130px);
+}
 
+.focus-svt .text-floating-svt {
+    left: calc(100% - 130px - 60px);
+}
 
-    .focus-svt .text-floating-zir {
-        left:calc(100% - var(--left-space));
-        }
-        .focus-svt .text-floating-svt {
-            left:calc(100% - var(--left-space) - 60px);
-            }
+.focus-zira .text-floating-zir {
+    left: 130px;
+}
 
+.focus-zira .text-floating-svt {
+    left: calc(130px - 60px);
+}
 
-            .focus-zira .text-floating-zir {
-                left:calc(var(--left-space));
-                }
-                .focus-zira .text-floating-svt {
-                    left:calc(var(--left-space) - 60px);
-                    }
+.focus-start .text-floating-zir {
+    left: 50%;
+    opacity: 0;
+}
 
+.focus-start .text-floating-svt {
+    left: 50%;
+    opacity: 0;
+}
 
-            .focus-start .text-floating-zir{
-                left:50%;
-                opacity:0;
-                }
-                .focus-start .text-floating-svt{
-                    left:50%;
-                opacity:0;
-                
-                    }
-
-        
-    
 
 /* intro text */
 
@@ -110,8 +107,6 @@ pointer-events:none;
     line-height: 41px;
     word-spacing: -7px;
     letter-spacing: 5px;
-
-
 }
 
 .intro-text-subtitle {
@@ -124,7 +119,6 @@ pointer-events:none;
     margin-top: 6px;
 }
 
-
 .intro-text-subtitle-2 {
     font-family: 'Nitti', 'zvi', serif;
     font-size: 25px;
@@ -132,7 +126,7 @@ pointer-events:none;
     line-height: 32px;
     letter-spacing: 1.7px;
     word-spacing: -7px;
-    margin:55px 0 30px 0;
+    margin: 55px 0 30px 0;
 }
 
 .intro-text-pre {
@@ -146,7 +140,6 @@ pointer-events:none;
 
 .intro-text-body {
     font-family: 'Frank Ruhl Libre', serif;
-    
     font-size: 20px;
     max-width: 760px;
     line-height: 29px;
@@ -189,7 +182,6 @@ pointer-events:none;
 
 .zi-text-body {
     font-family: 'Frank Ruhl Libre', serif;
-    
     font-size: 20px;
     max-width: 760px;
     line-height: 29px;
@@ -197,12 +189,13 @@ pointer-events:none;
     margin-bottom: 120px;
 }
 
-
 .wrap-zira strong {
-    font-weight:700;
+    font-weight: 700;
 }
-.wrap-zira  p ,.wrap-svt  p {
-margin:0px;
+
+.wrap-zira p,
+.wrap-svt p {
+    margin: 0px;
 }
 
 
@@ -217,8 +210,7 @@ a.cal-ticket-cta {
     position: relative;
     top: -65px;
     left: 40px;
-    display:inline-block;
-    
+    display: inline-block;
 }
 
 .svt-cal-item-content__buttons a.cal-ticket-cta {
@@ -227,34 +219,29 @@ a.cal-ticket-cta {
     position: static;
     top: auto;
     left: auto;
-    margin-bottom:34px;
+    margin-bottom: 34px;
     /* display: */
-    
 }
-
 
 a.cal-ticket-cta img {
-   width:100%;
+    width: 100%;
 }
 
-a.cal-ticket-cta:hover  {
-    background-image:url('../images/tickets_cta_white--hover.svg');
-    background-size:cover;
+a.cal-ticket-cta:hover {
+    background-image: url('../images/tickets_cta_white--hover.svg');
+    background-size: cover;
 }
 
-.wrap-zira  a.cal-ticket-cta:hover  {
-    background-image:url('../images/tickets_cta_green--hover.svg');
-    background-size:cover;
+.wrap-zira a.cal-ticket-cta:hover {
+    background-image: url('../images/tickets_cta_green--hover.svg');
+    background-size: cover;
 }
-
 
 a.cal-ticket-cta:hover img {
-    opacity:0;
+    opacity: 0;
 }
 
-
-
-.cal-complex-item .svt-cal-item-content__desc-text a.cal-ticket-cta{
+.cal-complex-item .svt-cal-item-content__desc-text a.cal-ticket-cta {
     position: static;
     top: 0px;
     left: 0px;
@@ -262,6 +249,7 @@ a.cal-ticket-cta:hover img {
 
 
 /* Titles */
+
 .svt-cal-item-title {
     display: flex;
     cursor: pointer;
@@ -314,7 +302,6 @@ a.cal-ticket-cta:hover img {
 
 
 /* day header accordion */
-
 
 .svt-cal-day-header_arrow {
     /* background:lawngreen; */
@@ -391,7 +378,6 @@ a.cal-ticket-cta:hover img {
     /* position: relative; */
 }
 
-
 .svt-cal-item-content__buttons,
 .zir-cal-item-content__buttons {
     width: 100px;
@@ -450,10 +436,9 @@ a.cal-ticket-cta:hover img {
     text-align: center;
     font-size: 13px;
     margin-top: 16px;
-    font-weight:700;
+    font-weight: 700;
     letter-spacing: 2px;
     font-family: 'Miriam Libre', sans-serif;
-    
 }
 
 
@@ -478,7 +463,6 @@ a.cal-ticket-cta:hover img {
     line-height: 20px;
     letter-spacing: 1.2px;
     font-family: 'Frank Ruhl Libre', serif;
-    
     padding: 0 8px;
     display: none;
     /* top: -4px; */
@@ -499,7 +483,6 @@ a.cal-ticket-cta:hover img {
 .svt-cal-item-title__location {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    
     line-height: 20px;
     letter-spacing: .9px;
 }
@@ -507,7 +490,6 @@ a.cal-ticket-cta:hover img {
 .svt-cal-item-title__name__author {
     font-size: 14px;
     letter-spacing: 1.6px;
-    
     margin-top: 3px;
 }
 
@@ -517,7 +499,6 @@ a.cal-ticket-cta:hover img {
 
 .svt-cal-item-content__desc-text {
     font-family: 'Frank Ruhl Libre', serif;
-    
     font-size: 17px;
     line-height: 24px;
     letter-spacing: .4px;
@@ -538,6 +519,7 @@ a.cal-ticket-cta:hover img {
     letter-spacing: 0.55px;
     line-height: 23px;
 }
+
 
 /* zira days titles */
 
@@ -561,7 +543,7 @@ a.cal-ticket-cta:hover img {
     font-size: 27px;
     line-height: 35px;
     letter-spacing: 2.2px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     font-family: 'Hadassah';
     font-weight: 700;
 }
@@ -576,7 +558,6 @@ a.cal-ticket-cta:hover img {
     top: 2px;
     letter-spacing: 0.8px;
     font-family: 'Frank Ruhl Libre', serif;
-    
     padding: 0 8px;
     display: none;
 }
@@ -610,7 +591,6 @@ a.cal-ticket-cta:hover img {
     width: 50%;
 }
 
-
 .zir-cal-item-content__desc-text {
     font-size: 17px;
     line-height: 24px;
@@ -631,7 +611,6 @@ a.cal-ticket-cta:hover img {
 .zir-cal-item-content__desc-credits-light {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    
     letter-spacing: 0.55px;
     line-height: 23px;
 }
@@ -642,7 +621,6 @@ a.cal-ticket-cta:hover img {
 .cal-complex-item .svt-cal-item-content__desc-text {
     margin-right: 40px;
 }
-
 
 .cal-complex-item .svt-cal-item-content-wrap .no-margin .svt-cal-item-content__desc-text {
     margin-right: 0px;
@@ -685,7 +663,6 @@ a.cal-ticket-cta:hover img {
     color: var(--bg-color);
     background-color: var(--main-color);
 }
-  
 
 
 /* Mobile */
@@ -700,43 +677,52 @@ a.cal-ticket-cta:hover img {
 }
 
 @media (max-width: 800px) {
+
+
+.focus-svt .text-floating-zir {
+    left: calc(100% - 30px);
+}
+
+.focus-svt .text-floating-svt {
+    left: calc(100% - 30px - 60px);
+}
+
+.focus-zira .text-floating-zir {
+    left:30px;
+}
+
+.focus-zira .text-floating-svt {
+    left: calc(30px - 60px);
+}
+
+
     .intro-text-subtitle-2 {
         font-size: 20px;
         font-weight: 700;
         line-height: 25px;
         letter-spacing: 1.1px;
-    
         /* margin:55px 0 30px 0; */
     }
-
     .focus-svt .text-floating-zir {
-        left: calc(100% - var(--left-space) - 12px);
-        }
-
-        .focus-zira .text-floating-svt {
-        /* left: calc(100% - var(--left-space) - 12px); */
-        left: calc(var(--left-space) - 48px);
-            }
-
-
-        .focus-svt .text-floating-svt,
-        .focus-zira .text-floating-zir {
-            opacity:0;
-            }
-
-       
-/* .text-floating-zir,
+        left: calc(100% - 30px - 12px);
+    }
+    .focus-zira .text-floating-svt {
+        left: calc(30px - 48px);
+    }
+    .focus-svt .text-floating-svt,
+    .focus-zira .text-floating-zir {
+        opacity: 0;
+    }
+    /* .text-floating-zir,
 .text-floating-svt {
     display:none;
 } */
-
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
         margin-right: 16px;
     }
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-content__image {
         margin-right: 0px;
     }
-
     .center-col {
         max-width:100%;
         min-width: 100%;
@@ -744,15 +730,10 @@ a.cal-ticket-cta:hover img {
     .center-col-inner {
         margin: 0 0px;
     }
-
-
     .svt-section-text,
     .zi-section-text {
-        padding:0 16px;
+        padding: 0 16px;
     }
-
-
-   
     /* Into texts*/
     .intro-text-title {
         font-size: 35px;
@@ -828,24 +809,20 @@ a.cal-ticket-cta:hover img {
         letter-spacing: 1px;
         margin-top: 20px;
         font-family: 'zvi';
-        
     }
-
     .svt-cal-day-header--mobile-part4 {
         font-size: 12px;
         line-height: 19px;
         letter-spacing: 1.5px;
-        font-family: 'Miriam Libre', sans-serif;    
-        font-weight:400;    
+        font-family: 'Miriam Libre', sans-serif;
+        font-weight: 400;
         /* margin-top: 20px; */
-        
     }
     .svt-cal-day-header__day-title {
         font-size: 15px;
         line-height: 20px;
         word-spacing: -4px;
     }
-  
     .cal-ticket-cta {
         display: none;
     }
@@ -878,18 +855,13 @@ a.cal-ticket-cta:hover img {
         /* font-weight: 500; */
         margin-bottom: 35px;
     }
-
     .cal-complex-item .svt-cal-item-content__desc-text {
         margin-right: 0px;
     }
-
-    
-
-    .svt-cal-item-title__accordion, .zir-cal-item-title__accordion 
-    {
-    position: relative;
-    top: -11px;
-    
+    .svt-cal-item-title__accordion,
+    .zir-cal-item-title__accordion {
+        position: relative;
+        top: -11px;
     }
     /* Items flexbox */
     .zir-cal-item-title {
@@ -898,14 +870,12 @@ a.cal-ticket-cta:hover img {
         align-items: right;
         padding: 7px 0 12px 0;
     }
-
     .svt-cal-item-title {
         flex-direction: column;
         justify-content: flex-start;
         align-items: right;
         padding: 12px 0 12px 0;
     }
-
     .zir-cal-day-header__day-title {
         font-size: 20px;
         line-height: 26px;
@@ -963,17 +933,16 @@ a.cal-ticket-cta:hover img {
         direction: ltr;
         justify-content: space-between;
         width: 100%;
-        min-height:45px;
-        
+        min-height: 45px;
     }
-
-
-
     /* adding padding to some elements
      */
-
-
-     .svt-cal-day-header, .svt-cal-item-title, .svt-cal-item-content__desc,  .zir-cal-day-header, .zir-cal-item-title, .zir-cal-item-content__desc {
+    .svt-cal-day-header,
+    .svt-cal-item-title,
+    .svt-cal-item-content__desc,
+    .zir-cal-day-header,
+    .zir-cal-item-title,
+    .zir-cal-item-content__desc {
         padding-left: 16px;
         padding-right: 16px;
         max-width: 100%;
@@ -984,14 +953,9 @@ a.cal-ticket-cta:hover img {
     }
     .svt-cal-day-header {
         padding-bottom: 40px;
-        
     }
-
-
     /* Mobile CTA */
-
     a.cal-ticket-cta {
         display: none;
     }
-    
 }
