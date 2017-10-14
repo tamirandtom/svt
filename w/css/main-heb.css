@@ -54,7 +54,7 @@ html, body {
 body {
     height: 100%;
     /* overflow: hidden; */
-    background:var(--main-color);
+    background:#00AE7C;
     color: #000;
     margin: 0;
     padding: 0;
