@@ -8,8 +8,9 @@
 .after-map-divider {
 max-width:1180px;
 background:var(--main-color);
-height:1px;
-margin:20px 0;
+height:2px;
+margin:20px 64px;
+box-sizing:border-box;
 }
 
 
@@ -222,7 +223,7 @@ margin-bottom:26px;
     width:50%;
     direction:ltr;
     color:var(--main-color);
-    padding-top:60px;
+    padding-top:30px;
     font-size:13px;
     line-height:20px;
     letter-spacing:.6px;
@@ -234,9 +235,9 @@ margin-bottom:26px;
 .after-map-credits__col--full-line.after-map-credits__col--full-line {
     width:100%;
     /* background:lime; */
-    padding-top:40px;
+    padding-top:0px;
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
     flex-wrap: wrap;
 }
@@ -253,6 +254,12 @@ margin-bottom:26px;
 }
 .after-map-credits__col .img-arrow {
     margin-top:6px;
+}
+
+.after-map-credits--spacer 
+{
+
+    margin-top:30px;
 }
 @media (max-width: 800px) {
  

@@ -33,7 +33,7 @@ em {
     letter-spacing: 3.64px;
     line-height: 29px;   
     position:absolute; 
-    top:50%;
+    top:calc(50% - 30px);
     transition:all 1s ease;
     opacity:1;
 pointer-events:none;    
@@ -49,7 +49,7 @@ pointer-events:none;
     letter-spacing: 3.64px;
     line-height: 29px;  
     position:absolute; 
-    top:50%;
+    top:calc(50% - 30px);
     transition:all 1s ease;
     opacity:1;
 pointer-events:none;    
@@ -518,13 +518,12 @@ a.cal-ticket-cta:hover img {
 .svt-cal-item-title__name__author {
     font-size: 14px;
     letter-spacing: 1.6px;
-    
     margin-top: 3px;
 }
 
 .svt-cal-item-content__desc {
     width: 50%;
-    margin-bottom:20px;
+    margin-bottom:60px;
 }
 
 .svt-cal-item-content__desc-text {
@@ -620,7 +619,7 @@ line-height: 24px;
 
 .zir-cal-item-content__desc {
     width: 50%;
-    margin-bottom:20px;
+    margin-bottom:60px;
     
 }
 
@@ -716,6 +715,14 @@ line-height: 24px;
 }
 
 @media (max-width: 800px) {
+
+    .intro-text-body-sub2 {
+        font-size:14px;
+        line-height:24px;
+        letter-spacing:0px;
+    }
+
+
     .intro-text-subtitle-2 {
         font-size: 20px;
         font-weight: 700;
@@ -934,7 +941,7 @@ line-height: 24px;
     .svt-cal-item-content,
     .zir-cal-item-content {
         flex-direction: column;
-        margin-bottom: 35px;
+        margin-bottom: 20px;
     }
     .svt-cal-item-title__name {
         margin: 0px;
@@ -974,6 +981,8 @@ line-height: 24px;
     .zir-cal-item-content__desc,
     .svt-cal-item-content__desc {
         width: 100%;
+        margin-bottom:20px;
+
     }
     .svt-cal-item-title__right,
     .zir-cal-item-title__right {
