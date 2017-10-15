@@ -35,7 +35,7 @@ em {
     letter-spacing: 3.64px;
     line-height: 29px;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 32px);
     transition: all 1s ease;
     opacity: 1;
     pointer-events: none;
@@ -50,7 +50,7 @@ em {
     letter-spacing: 3.64px;
     line-height: 29px;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 30px);
     transition: all 1s ease;
     opacity: 1;
     pointer-events: none;
@@ -502,7 +502,7 @@ a.cal-ticket-cta:hover img {
     font-size: 17px;
     line-height: 24px;
     letter-spacing: .4px;
-    margin-bottom: 35px;
+    /* margin-bottom: 35px; */
 }
 
 .svt-cal-item-content__desc-credits-bold {
@@ -925,6 +925,7 @@ a.cal-ticket-cta:hover img {
     .zir-cal-item-content__desc,
     .svt-cal-item-content__desc {
         width: 100%;
+        margin-bottom:20px;
     }
     .svt-cal-item-title__right,
     .zir-cal-item-title__right {

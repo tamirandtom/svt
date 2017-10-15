@@ -92,7 +92,17 @@ body {
 p {
     margin:0;
 }
-@media (max-width: 800px) {
+
+
+/* Later fixes
+ */
+
+.inner-logo {
+    max-width:120px;
+    max-height:120px;
+}
+
+ @media (max-width: 800px) {
     body {
     --line-width: 1px;    
         --left-space: 30px;

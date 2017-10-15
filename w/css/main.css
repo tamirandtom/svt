@@ -93,6 +93,16 @@ p {
     margin:0;
     padding:0;
 }
+
+/* TODO: add to hebrew version */
+.inner-logo {
+    margin-top:10px;
+    max-width:120px;
+    max-height:120px;
+}
+
+
+
 @media (max-width: 800px) {
     body {
     --line-width: 1px;    
