@@ -677,12 +677,12 @@ if (!isMobile && showAniamtion) {
 		// tilingSprite.mask = noiseSquare;
 
 		// Adding noise square (white)
-		var noiseSquare2 = new PIXI.Graphics();
-		noiseSquare2.beginFill(0x000000);
-		noiseSquare2.drawRect(0, 0, width, height);
-		var texture2 = PIXI.Texture.fromImage("images/noisew.png");
-		var tilingSprite2 = new PIXI.TilingSprite(texture2, width, height);
-		tilingSprite2.mask = noiseSquare2;
+		// var noiseSquare2 = new PIXI.Graphics();
+		// noiseSquare2.beginFill(0x000000);
+		// noiseSquare2.drawRect(0, 0, width, height);
+		// var texture2 = PIXI.Texture.fromImage("images/noisew.png");
+		// var tilingSprite2 = new PIXI.TilingSprite(texture2, width, height);
+		// tilingSprite2.mask = noiseSquare2;
 
 		// Add everything to the group
 		mainGroup.addChild(innerCircle);
@@ -800,7 +800,7 @@ if (!isMobile && showAniamtion) {
 $(document).ready(function () {
 	$('.zira-intro, .svt-intro, .preload-image').imagesLoaded(function () {
 	resizedNow();	
-		$('.preloader').hide();
+	$('.preloader').hide();
 	});
 
 });
