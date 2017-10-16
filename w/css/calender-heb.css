@@ -495,6 +495,7 @@ a.cal-ticket-cta:hover img {
 
 .svt-cal-item-content__desc {
     width: 50%;
+    margin-bottom:30px;
 }
 
 .svt-cal-item-content__desc-text {
@@ -589,6 +590,7 @@ a.cal-ticket-cta:hover img {
 
 .zir-cal-item-content__desc {
     width: 50%;
+    margin-bottom:30px;
 }
 
 .zir-cal-item-content__desc-text {
