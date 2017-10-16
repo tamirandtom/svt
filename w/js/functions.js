@@ -798,7 +798,7 @@ if (!isMobile && showAniamtion) {
 
 
 $(document).ready(function () {
-	$('.zira-intro, .svt-intro').imagesLoaded(function () {
+	$('.zira-intro, .svt-intro, .preload-image').imagesLoaded(function () {
 	resizedNow();	
 		$('.preloader').hide();
 	});
