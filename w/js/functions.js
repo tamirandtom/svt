@@ -604,9 +604,6 @@ if (!isMobile && showAniamtion) {
 
 		// create displacement map
 		displacementSprite = new PIXI.Sprite(PIXI.loader.resources.noise.texture);
-
-		// var sprite1 = 
-
 		
 		displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
 		displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
