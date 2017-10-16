@@ -75,21 +75,21 @@ function resizedNow() {
 	}
 
 
-// Tooltips for images and map
-// TODO: Fade between images
-if (!isMobile) {
-	$(".after-images-item").mousemove(function (e) {
-		if (screenWidth / 2 > e.pageX) {
-			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left + 0).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
+	// Tooltips for images and map
+	// TODO: Fade between images
+	if (!isMobile) {
+		$(".after-images-item").mousemove(function (e) {
+			if (screenWidth / 2 > e.pageX) {
+				$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left + 0).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
 
-		} else {
-			$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left - 340).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
-		}
-	});
-	$(".after-images-item").mouseout(function () {
-		$(this).children('.tooltip').css('display', 'none');
-	});
-}
+			} else {
+				$(this).children('.tooltip').css('left', e.pageX - $(this).offset().left - 340).css('top', e.pageY - $(this).offset().top + 10).css('display', 'block');
+			}
+		});
+		$(".after-images-item").mouseout(function () {
+			$(this).children('.tooltip').css('display', 'none');
+		});
+	}
 
 
 	// Open all zippies
@@ -147,14 +147,14 @@ $(window).resize(function () {
 // Sliders
 
 // var count = 0;
-	$(".tooltip .title").click(function () {
-		if (isMobile) {
+$(".tooltip .title").click(function () {
+	if (isMobile) {
 		$(this).siblings(".tooltip-content").slideToggle();
 		$(this).toggleClass('zippy--open');
 		// console.log('fire! ' + count);
 		// count++;
-		}
-	});
+	}
+});
 
 
 
@@ -310,7 +310,7 @@ function focusOnHazira() {
 
 function focusOnSvt() {
 	acticeSection = 'svt';
-	
+
 	$(".wrap-svt").addClass('scroll-focus');
 	$(".wrap-svt").removeClass('scroll-blur');
 	$(".wrap-zira").addClass('scroll-blur');
@@ -335,23 +335,21 @@ function focusOnSvt() {
 
 // Focus on Click
 $(".wrap-svt").click(function () {
-	if (acticeSection != 'svt')
-	{
-	focusOnSvt();
-	acticeSection = 'svt';
-	
-	} 
+	if (acticeSection != 'svt') {
+		focusOnSvt();
+		acticeSection = 'svt';
+
+	}
 
 });
 
 
 $(".wrap-zira").click(function () {
-	if (acticeSection != 'zira')
-	{
+	if (acticeSection != 'zira') {
 		focusOnHazira();
-	acticeSection = 'zira';
-	
-	} 
+		acticeSection = 'zira';
+
+	}
 });
 
 
@@ -394,14 +392,14 @@ $(window).scroll(function () {
 $(".wrap-svt").scroll(function () {
 
 	// get positoin of title;
-// scrollPos1 = $(".intro-main-title").offset().top;
-	
+	// scrollPos1 = $(".intro-main-title").offset().top;
+
 	// Detect if scroll up or down
 	var currScrollTop = $(this).scrollTop()
-	
+
 	if (currScrollTop > svtScroll) {
 		// down scroll 
-	
+
 	} else {
 		// up scroll 
 		if (isSectionTwoUp) {
@@ -424,12 +422,12 @@ $(".wrap-svt").scroll(function () {
 		$(".container-half").removeClass('scroll-begin');
 	}
 	// Save new valie for up / down detection
-	
+
 
 
 	svtScroll = currScrollTop;
-	
-	
+
+
 
 });
 
@@ -437,7 +435,7 @@ $(".wrap-svt").scroll(function () {
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
 	var currScrollTop = $(this).scrollTop()
-	
+
 
 	// Detect if scroll up or down
 	if (currScrollTop > ziraScroll) {
@@ -465,22 +463,22 @@ $(".wrap-zira").scroll(function () {
 		$(".container-half").removeClass('scroll-begin');
 	}
 
-	
+
 	// Do animation:
 	// $('.intro-moon-1').animate({
-		
+
 	// 		left: $(this).width()*0.07 + (ziraScroll / 4) + "px",
 	// 		top: $(this).height()*0.07 + (ziraScroll / 20) + "px"
 	// 		// scale: $(this).height()*0.07
 	// 	  }, 0);
 
 	ziraScroll = $(this).scrollTop();
-	
+
 	// Save new valie for up / down detection
 });
 
 function updateCircleOpacity() {
-	if ($(window).scrollTop() > 200 ||  $(".wrap-svt").scrollTop() > 200  || $(".wrap-zira").scrollTop() > 200) {
+	if ($(window).scrollTop() > 200 || $(".wrap-svt").scrollTop() > 200 || $(".wrap-zira").scrollTop() > 200) {
 		$(".float-intro").addClass("intro-scrolldown");
 	} else {
 		$(".float-intro").removeClass("intro-scrolldown");
@@ -519,8 +517,14 @@ var screenHeight = window.innerHeight;
 
 
 if (!isMobile && showAniamtion) {
-	
+
 	// aniamtions
+
+	var loader = PIXI.loader.add('noise', 'images/displacetexture.png').once('complete', function (loader, resources) {
+		resizedNow();
+		$('.preloader').hide();
+		setScene();
+	}).load();
 
 
 	var cursorPosW = 0,
@@ -599,7 +603,11 @@ if (!isMobile && showAniamtion) {
 
 
 		// create displacement map
-		displacementSprite = PIXI.Sprite.fromImage('images/displacetexture.png');
+		displacementSprite = new PIXI.Sprite(PIXI.loader.resources.noise.texture);
+
+		// var sprite1 = 
+
+		
 		displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
 		displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
 
@@ -711,25 +719,26 @@ if (!isMobile && showAniamtion) {
 	canvas = playground.querySelector('canvas');
 	canvas2 = playground2.querySelector('canvas');
 	scaleFactor = 1;
-	
-	
 
-	setScene();
+
+
+	// setScene();
 
 	var fps = 30;
 	var now;
 	var then = Date.now();
-	var interval = 1000/fps;
+	var interval = 1000 / fps;
 	var delta;
-	  var prevsvtScroll = 0;
-	  var animationState = 1;
+	var prevsvtScroll = 0;
+	var animationState = 1;
+
 	function animate() {
-		 
+
 		requestAnimationFrame(animate);
-		 
+
 		now = Date.now();
 		delta = now - then;
-		 
+
 		if (delta > interval) {
 			// update time stuffs
 			console.log()
@@ -743,13 +752,13 @@ if (!isMobile && showAniamtion) {
 			// }
 			// innerCircle2.x = (ziraScroll-innerCircle2.x)/20;
 
-			
+
 			// CurrenPos2 = innerCircle2.x;
 
-			innerCircle.x = svtScroll/4;
+			innerCircle.x = svtScroll / 4;
 			innerCircle.y = (svtScroll / 8);
 
-			innerCircle2.x = ziraScroll/4;
+			innerCircle2.x = ziraScroll / 4;
 			innerCircle2.y = (ziraScroll / 8);
 
 
@@ -774,22 +783,19 @@ if (!isMobile && showAniamtion) {
 			// 		innerCircle.y -=0.02;
 			// 	}
 			// }
-			
-	
-	if (acticeSection == 'svt')
-	{
-		renderer.render(stage);
-		
-	} else if (acticeSection == 'zira')
-	{
-		renderer2.render(stage2);
-		
-	} else 
-	{
-		renderer.render(stage);
-		renderer2.render(stage2);
-	}
-			
+
+
+			if (acticeSection == 'svt') {
+				renderer.render(stage);
+
+			} else if (acticeSection == 'zira') {
+				renderer2.render(stage2);
+
+			} else {
+				renderer.render(stage);
+				renderer2.render(stage2);
+			}
+
 
 		}
 	}
@@ -798,9 +804,9 @@ if (!isMobile && showAniamtion) {
 
 
 $(document).ready(function () {
-	$('.zira-intro, .svt-intro, .preload-image').imagesLoaded(function () {
-	resizedNow();	
-	$('.preloader').hide();
-	});
+	// $('.zira-intro, .svt-intro, .preload-image').imagesLoaded(function () {
+
+
+	// });
 
 });
