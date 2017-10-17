@@ -797,6 +797,9 @@ if (!isMobile && showAniamtion) {
 		}
 	}
 	// animate();
+} else {
+	$('.preloader').hide();
+	
 }
 
 
