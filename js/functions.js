@@ -137,14 +137,7 @@ $(window).resize(function () {
 // Sliders
 
 // var count = 0;
-$(".tooltip .title").click(function () {
-	if (isMobile) {
-		$(this).siblings(".tooltip-content").slideToggle();
-		$(this).toggleClass('zippy--open');
-		// console.log('fire! ' + count);
-		// count++;
-	}
-});
+
 
 
 
@@ -220,34 +213,6 @@ function scrollToTop() {
 // 	$(".zir-cal-day-header").toggleClass('svt-zippy--open');
 // 	$(".svt-cal-items-wrap").slideToggle();
 // 	$(".svt-cal-day-header").toggleClass('svt-zippy--open');
-// }
-
-
-$(".svt-cal-item-title").click(function () {
-	$(this).siblings(".svt-cal-item-content-wrap").slideToggle();
-	$(this).toggleClass('svt-zippy--open');
-	scrollToTop();
-});
-$(".zir-cal-item-title").click(function () {
-	$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
-	$(this).toggleClass('svt-zippy--open');
-	scrollToTop();
-
-});
-
-// if (!isMobile) {
-	$(".zir-cal-day-header").click(function () {
-		$(this).siblings(".zir-cal-items-wrap").slideToggle();
-		$(this).toggleClass('svt-zippy--open');
-		scrollToTop();
-
-	});
-	$(".svt-cal-day-header").click(function () {
-		$(this).siblings(".svt-cal-items-wrap").slideToggle();
-		$(this).toggleClass('svt-zippy--open');
-		scrollToTop();
-
-	});
 // }
 
 
@@ -795,6 +760,15 @@ if (!isMobile && showAniamtion) {
 
 $(document).ready(function () {
 	// $('.zira-intro, .svt-intro, .preload-image').imagesLoaded(function () {
+		$(".tooltip .title").click(function () {
+			if (isMobile) {
+				$(this).siblings(".tooltip-content").slideToggle();
+				$(this).toggleClass('zippy--open');
+				// console.log('fire! ' + count);
+				// count++;
+			}
+		});
+
 
 		if (isMobile) {
 			$(".zir-cal-items-wrap").slideDown();
@@ -809,4 +783,32 @@ $(document).ready(function () {
 		}
 	// });
 
+	$(".svt-cal-item-title").click(function () {
+		$(this).siblings(".svt-cal-item-content-wrap").slideToggle();
+		$(this).toggleClass('svt-zippy--open');
+		scrollToTop();
+	});
+	$(".zir-cal-item-title").click(function () {
+		$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
+		$(this).toggleClass('svt-zippy--open');
+		scrollToTop();
+	
+	});
+	
+	// if (!isMobile) {
+		$(".zir-cal-day-header").click(function () {
+			$(this).siblings(".zir-cal-items-wrap").slideToggle();
+			$(this).toggleClass('svt-zippy--open');
+			scrollToTop();
+	
+		});
+		$(".svt-cal-day-header").click(function () {
+			$(this).siblings(".svt-cal-items-wrap").slideToggle();
+			$(this).toggleClass('svt-zippy--open');
+			scrollToTop();
+	
+		});
+	// }
+	
+	
 });
