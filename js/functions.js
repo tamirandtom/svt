@@ -93,17 +93,7 @@ function resizedNow() {
 
 
 	// Open all zippies
-	if (isMobile) {
-		$(".zir-cal-items-wrap").slideDown();
-		$(".zir-cal-day-header").addClass('svt-zippy--open');
-		$(".svt-cal-items-wrap").slideDown();
-		$(".svt-cal-day-header").addClass('svt-zippy--open');
-	} else {
-		$(".zir-cal-items-wrap").slideUp();
-		$(".zir-cal-day-header").removeClass('svt-zippy--open');
-		$(".svt-cal-items-wrap").slideUp();
-		$(".svt-cal-day-header").removeClass('svt-zippy--open');
-	}
+	
 
 
 	// Update images section
@@ -245,7 +235,7 @@ $(".zir-cal-item-title").click(function () {
 
 });
 
-if (!isMobile) {
+// if (!isMobile) {
 	$(".zir-cal-day-header").click(function () {
 		$(this).siblings(".zir-cal-items-wrap").slideToggle();
 		$(this).toggleClass('svt-zippy--open');
@@ -258,7 +248,7 @@ if (!isMobile) {
 		scrollToTop();
 
 	});
-}
+// }
 
 
 
@@ -806,7 +796,17 @@ if (!isMobile && showAniamtion) {
 $(document).ready(function () {
 	// $('.zira-intro, .svt-intro, .preload-image').imagesLoaded(function () {
 
-
+		if (isMobile) {
+			$(".zir-cal-items-wrap").slideDown();
+			$(".zir-cal-day-header").addClass('svt-zippy--open');
+			$(".svt-cal-items-wrap").slideDown();
+			$(".svt-cal-day-header").addClass('svt-zippy--open');
+		} else {
+			$(".zir-cal-items-wrap").slideUp();
+			$(".zir-cal-day-header").removeClass('svt-zippy--open');
+			$(".svt-cal-items-wrap").slideUp();
+			$(".svt-cal-day-header").removeClass('svt-zippy--open');
+		}
 	// });
 
 });
