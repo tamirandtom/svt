@@ -106,7 +106,7 @@ menu.menu--green .menu-content a:hover {
     }
     menu .menu-content {
         position:relative;
-        top:-260px;
+        top:-290px;
         padding-left: 12px;
         padding-right: 12px;
 /* background-color:lime; */
@@ -122,7 +122,7 @@ menu.menu--green .menu-content a:hover {
 
     .body-svt menu .menu-content{
        text-align:right;
-       left: -140px;
+       left: -135px;
     }
 
 
