@@ -67,6 +67,7 @@ body {
     --line-width: 2px;
 }
 
+}
 .scrolloff {
     pointer-events:none;
 }

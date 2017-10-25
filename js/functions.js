@@ -322,6 +322,9 @@ $(window).scroll(function () {
 	if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
 		// Is visible
 		isSectionTwoUp = true;
+		$(".floating-tickets").addClass('floating-tickets--hidden');
+	} else {
+		$(".floating-tickets").removeClass('floating-tickets--hidden');
 	}
 
 	if ((top_of_screen > top_of_element)) {

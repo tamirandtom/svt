@@ -112,3 +112,42 @@ display:inline-block;
 
 
     a {color:#fff;}
+
+
+
+.wrap-svt .floating-tickets  {
+    bottom:20px;
+    color: #fff;
+    
+    left:calc(100% - 130px - 100px);
+}
+.wrap-zira .floating-tickets  {
+    bottom:20px;
+    left:166px;
+    color:#00AE7C;
+}
+.wrap-zira .floating-tickets--hidden, .wrap-svt .floating-tickets--hidden {
+    /* display:none; */
+    opacity:0;
+    pointer-events:none;
+}
+.floating-tickets {
+    opacity:1;    
+    transition:all 0.3s ease;
+    border-radius:100px;
+    padding:0 14px;    
+    display:inline-block;
+    font-weight:700;
+    position: fixed;
+    font-family: 'Miriam Libre', sans-serif;
+text-decoration:none;    
+    font-size: 14px;
+letter-spacing: 3px;
+line-height: 29px;
+}
+
+@media (max-width: 800px) {
+
+.floating-tickets {
+    display:none;
+}
