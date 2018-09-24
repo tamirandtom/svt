@@ -1,0 +1,98 @@
+
+                            <!-- day section start -->
+                            <div class="zir-cal-day-content-wrap">
+                                <div class="zir-cal-day-header">
+                                    <div class="zir-cal-day-header__day-name"><img src="images/titles/28.svg"></div>
+                                    <div class="zir-cal-day-header__day-title">יום שבת</div>
+                                </div>
+                                <!-- item1 -->
+                                <div class="zir-cal-items-wrap">
+                                    <div class="zir-cal-item">
+                                        <div class="zir-cal-item-title">
+                                            <div class="zir-cal-item-title__right">
+                                                <div class="zir-cal-item-title__accordion"><img class='zir-cal-item-title__accordion__arr' src="images/arg.svg"></div>
+                                                <div class="zir-cal-item-title__name">
+                                                    <div class="zir-cal-item-title__name__name">קאירוס</div>
+                                                    <div class="zir-cal-item-title__name__by"> מאת </div>
+                                                    <div class="zir-cal-item-title__name__author">ענת בן-דוד</div>
+                                                </div>
+                                            </div>
+                                            <div class="zir-cal-item-title__left">
+                                                <div class="zir-cal-item-title__time">22:00 —20:30</div>
+                                                <div class="zir-cal-item-title__location">סטודיו הזירה</div>
+                                            </div>
+                                        </div>
+                                        <div class="zir-cal-item-content-wrap">
+                                            <div class="zir-cal-item-content">
+                                                <div class="zir-cal-item-content__image"><img src='images/fill.gif' /></div>
+                                                <div class="zir-cal-item-content__desc">
+                                                    <div class="zir-cal-item-content__desc-text">
+                                                   sdffsdfd
+                                                    </div>
+                                                    <div class="zir-cal-item-content__desc-credits">
+                                                        <span class="zir-cal-item-content__desc-credits-bold">כתיבה ובימוי:</span>
+                                                        <span class="zir-cal-item-content__desc-credits-light">ענת בן-דוד</span>|
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end item1 -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- day end -->
+
+
+
+                            SVT
+
+                              <!-- day section start -->
+                            <div class="svt-cal-day-content-wrap">
+                                <div class="svt-cal-day-header">
+                                        <div class="svt-cal-day-header__day-name">
+                                    3<span class='close-kerning'>0.</span>10 יום שני
+                                </div>
+                                    <div class="svt-cal-day-header__day-title">מחול במימד הרביעי</div>
+                                </div>
+                                <!-- item1 -->
+                                <div class="svt-cal-items-wrap">
+                                    <div class="svt-cal-item">
+                                        <div class="svt-cal-item-title">
+                                            <div class="svt-cal-item-title__right">
+                                                <div class="svt-cal-item-title__accordion"><img class='svt-cal-item-title__accordion__arr' src="images/arg.svg"></div>
+                                                <div class="svt-cal-item-title__name">
+                                                    <div class="svt-cal-item-title__name__name">קאירוס</div>
+                                                    <div class="svt-cal-item-title__name__by"> מאת </div>
+                                                    <div class="svt-cal-item-title__name__author">ענת בן-דוד</div>
+                                                </div>
+                                            </div>
+                                            <div class="svt-cal-item-title__left">
+                                                <div class="svt-cal-item-title__time">22:00 —20:30</div>
+                                                <div class="svt-cal-item-title__location">סטודיו הזירה</div>
+                                            </div>
+                                        </div>
+                                        <div class="svt-cal-item-content-wrap">
+                                            <div class="svt-cal-item-content">
+                                                <div class="svt-cal-item-content__image"><img src='images/fill.gif' /></div>
+                                                <div class="svt-cal-item-content__desc">
+                                                    <div class="svt-cal-item-content__desc-text">
+                                                   sdffsdfd
+                                                    </div>
+                                                    <div class="svt-cal-item-content__desc-credits">
+                                                        <span class="svt-cal-item-content__desc-credits-bold">f</span>
+                                                        <span class="svt-cal-item-content__desc-credits-light">f</span> |
+  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end item1 -->
+
+                                    </div>
+                            </div>
+                            <!-- day end -->
