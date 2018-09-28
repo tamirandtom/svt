@@ -27,8 +27,18 @@ body {
 .floating-caption {
     display: none;
 }
+.show-on-mobile {
+    display: none;
+}
 
 @media (max-width: 600px) {
+    .show-on-mobile {
+        display: block;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+
     .coming-soon {
         max-width: 400px;
         margin: auto auto;

@@ -259,8 +259,17 @@ function focusOnHazira() {
 	$("body").removeClass('body-start');
 	$("body").addClass('body-zira');
 	$("body").removeClass('body-svt');
-
+	
+	$('.after-images-container').isotope({
+		itemSelector: '.after-images-item',
+		percentPosition: true,
+		masonry: {
+			columnWidth: '.after-images-item',
+			gutter: 22
+		}
+	});
 	scrollToTop();
+
 }
 
 
