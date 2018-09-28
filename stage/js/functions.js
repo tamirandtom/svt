@@ -241,7 +241,8 @@ var svtScroll = 0;
 
 
 function focusOnHazira() {
-
+	if (!isMobile)
+	{
 	acticeSection = 'zira';
 	$(".wrap-svt").addClass('scroll-blur');
 	$(".wrap-svt").removeClass('scroll-focus');
@@ -269,14 +270,20 @@ function focusOnHazira() {
 		}
 	});
 	scrollToTop();
-
+	}
 }
 
 
 // Default is SVT scroll
-focusOnSvt();
+if (!isMobile)
+{
+	focusOnSvt();
+
+}
 
 function focusOnSvt() {
+	if (!isMobile)
+{
 	acticeSection = 'svt';
 
 	$(".wrap-svt").addClass('scroll-focus');
@@ -298,26 +305,34 @@ function focusOnSvt() {
 
 	scrollToTop();
 }
-
+}
 
 
 // Focus on Click
 $(".wrap-svt").click(function () {
+	if (!isMobile)
+{
 	if (acticeSection != 'svt') {
 		focusOnSvt();
 		acticeSection = 'svt';
 
 	}
+}
+	
 
 });
 
 
 $(".wrap-zira").click(function () {
+	if (!isMobile)
+{
 	if (acticeSection != 'zira') {
 		focusOnHazira();
 		acticeSection = 'zira';
 
 	}
+}
+	
 });
 
 
@@ -328,6 +343,12 @@ var isSectionTwoUp = false;
 var menuState = 'top';
 
 $(window).scroll(function () {
+	if (!isMobile)
+
+	{
+
+	}
+
 	var top_of_element = $(".after-section").offset().top;
 	var bottom_of_element = $(".after-section").offset().top + $(".after-section").outerHeight();
 	var bottom_of_screen = $(window).scrollTop() + $(window).height();
@@ -361,7 +382,8 @@ $(window).scroll(function () {
 // var scrollPos1;
 
 $(".wrap-svt").scroll(function () {
-
+	if (!isMobile)
+	{
 	// get positoin of title;
 	// scrollPos1 = $(".intro-main-title").offset().top;
 
@@ -398,6 +420,8 @@ $(".wrap-svt").scroll(function () {
 
 	svtScroll = currScrollTop;
 
+	}
+	
 
 
 });
@@ -405,47 +429,52 @@ $(".wrap-svt").scroll(function () {
 
 // Onscroll event zira
 $(".wrap-zira").scroll(function () {
-	var currScrollTop = $(this).scrollTop()
+	if (!isMobile)
+	{
+		var currScrollTop = $(this).scrollTop()
 
 
-	// Detect if scroll up or down
-	if (currScrollTop > ziraScroll) {
-		// down scroll
-	} else {
-		// up scroll
-		if (isSectionTwoUp) {
-			$('html, body').animate({
-				scrollTop: 0
-			}, 100);
-			isSectionTwoUp = false;
+		// Detect if scroll up or down
+		if (currScrollTop > ziraScroll) {
+			// down scroll
+		} else {
+			// up scroll
+			if (isSectionTwoUp) {
+				$('html, body').animate({
+					scrollTop: 0
+				}, 100);
+				isSectionTwoUp = false;
+			}
 		}
+	
+		// Hide / show intro circle
+		updateCircleOpacity();
+	
+	
+		// After innitial scroll remove 1/2 class
+		if (!innitialScroll) {
+			focusOnHazira();
+			innitialScroll = 1;
+			$(".wrap-zira").addClass('scroll-focus');
+			$(".wrap-svt").addClass('scroll-blur');
+			$(".container-half").removeClass('scroll-begin');
+		}
+	
+	
+		// Do animation:
+		// $('.intro-moon-1').animate({
+	
+		// 		left: $(this).width()*0.07 + (ziraScroll / 4) + "px",
+		// 		top: $(this).height()*0.07 + (ziraScroll / 20) + "px"
+		// 		// scale: $(this).height()*0.07
+		// 	  }, 0);
+	
+		ziraScroll = $(this).scrollTop();
+	
+		// Save new valie for up / down detection
+
 	}
 
-	// Hide / show intro circle
-	updateCircleOpacity();
-
-
-	// After innitial scroll remove 1/2 class
-	if (!innitialScroll) {
-		focusOnHazira();
-		innitialScroll = 1;
-		$(".wrap-zira").addClass('scroll-focus');
-		$(".wrap-svt").addClass('scroll-blur');
-		$(".container-half").removeClass('scroll-begin');
-	}
-
-
-	// Do animation:
-	// $('.intro-moon-1').animate({
-
-	// 		left: $(this).width()*0.07 + (ziraScroll / 4) + "px",
-	// 		top: $(this).height()*0.07 + (ziraScroll / 20) + "px"
-	// 		// scale: $(this).height()*0.07
-	// 	  }, 0);
-
-	ziraScroll = $(this).scrollTop();
-
-	// Save new valie for up / down detection
 });
 
 function updateCircleOpacity() {
@@ -802,12 +831,14 @@ $(document).ready(function () {
 	$(".svt-cal-item-title").click(function () {
 		$(this).siblings(".svt-cal-item-content-wrap").slideToggle();
 		$(this).toggleClass('svt-zippy--open');
-		scrollToTop();
+		if (!isMobile)
+			scrollToTop();
 	});
 	$(".zir-cal-item-title").click(function () {
 		$(this).siblings(".zir-cal-item-content-wrap").slideToggle();
 		$(this).toggleClass('svt-zippy--open');
-		scrollToTop();
+		if (!isMobile)
+			scrollToTop();
 	
 	});
 	
@@ -815,13 +846,15 @@ $(document).ready(function () {
 		$(".zir-cal-day-header").click(function () {
 			$(this).siblings(".zir-cal-items-wrap").slideToggle();
 			$(this).toggleClass('svt-zippy--open');
-			scrollToTop();
+			if (!isMobile)
+				scrollToTop();
 	
 		});
 		$(".svt-cal-day-header").click(function () {
 			$(this).siblings(".svt-cal-items-wrap").slideToggle();
 			$(this).toggleClass('svt-zippy--open');
-			scrollToTop();
+			if (!isMobile)
+				scrollToTop();
 	
 		});
 	// }

@@ -102,6 +102,10 @@ p {
 }
 
 
+.padding-40px {
+    height: 40px;
+    width: 100%;
+}
 
 @media (max-width: 800px) {
     body {

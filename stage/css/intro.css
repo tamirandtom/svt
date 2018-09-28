@@ -188,41 +188,70 @@ canvas {
 }
 
 @media (max-width: 800px) {
+
+
+.container-half {
+    height: auto;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.container-half.wrap-zira {
+    background: #fff;
+}
+
+.float-intro.green {
+    display: none;
+}
+.intro-main-title--mobile-caption {
+    font-family: 'Miriam Libre', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1px;
+    align-self: flex-end;
+    padding-bottom: 45px;
+    padding-right: 16px;
+    text-align: right;
+    direction: rtl;
+}
+
+    .wrapper {
+        display: block;
+    }
     canvas {
         /* display: none; */
     }
-
-
+    .scroll-blur .container-half-content {
+        opacity: 1;
+    }
+    
 .float-intro.white.hideintro {
-    left: 0%;
-    width:30px;
+    width:100%;
 }
 .float-intro.green.hideintro {
-    left: calc(100% - 30px);
-    width: 30px;
+    width: 100%;
 }
 .float-intro.green.showintro {
     opacity:1;
-    left:30px;
-    width:calc(100% - 30px);
+    width:100%;
     /* left: 0px;
     width:100%; */
 }
 .float-intro.green.showintro #px-render-green {
-    margin-right:30px;
+    margin-right:0px;
 }
 .scroll-focus.wrap-zira .intro-main-title {
-    margin-right:30px;
+    margin-right:0px;
 }
 .scroll-focus.wrap-svt .intro-main-title {
-    margin-left:30px;
+    margin-left:0px;
 }
 .container-half.scroll-focus {
-    width: calc(100% - 30px);
+    width: 100%;
 }
 
 .container-half.scroll-blur {
-    width: 30px;
+    width: 100%;
 }
 
 
@@ -231,23 +260,18 @@ canvas {
 
 
     .float-intro img{
-        max-width:100%;
+        max-width:440px;
         display: inline;
         }
 
 
     .intro-main-title--mobile {
         display: flex;
-        text-align: center;
-        font-size: 19px;
-        line-height: 24px;
-        align-self:flex-end;
-        position: relative;
-        top:-80px;
-        font-family: 'Frank Ruhl Libre', serif;
-        font-weight: 700;
-        /* align-self: flex-end; */
-        /* margin-bottom: 35px; */
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
     }
     .intro-main-title {
         display: none;

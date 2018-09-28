@@ -66,7 +66,7 @@
 
     <!-- intro animation -->
     <div class="float-intro white  showintro">
-            <img src='images/title-2018.svg' class='show-on-moile'>
+            <img src='images/intro/white.png' class='show-on-moile'>
             
         <div id="px-render" class="pixi-render"></div>
        
@@ -83,8 +83,8 @@
     </div>
     <!-- Site content -->
     <div class="wrapper">
-        <div class="text-floating-svt">מופעים</div>
-        <div class="text-floating-zir">אמנים</div>
+        <div class="text-floating-svt hide-on-mobile">מופעים</div>
+        <div class="text-floating-zir hide-on-mobile">אמנים</div>
 
         <div class="container-half container-negative wrap-svt scroll-begin scroll-focus">
             <div class="container-half-content">
@@ -93,9 +93,19 @@
                 <div class="svt-intro">
                  
                     <img class="intro-main-title" src="images/title-2018.svg" />
-                    <div class="intro-main-title--mobile">החזותי
-                        <br>30.10-2.11.17</div>
+                    <div class="intro-main-title--mobile">
+                        <span></span>
+                    <img style="width:186px; padding-top: 100px;" src="images/title-mobile-2018.png" />
+                        <div class="intro-main-title--mobile-caption">
+                                16-18.10.2018<br>
+                                בית הספר לתיאטרון חזותי<br>
+                                כנס בינלאומי<br>
+                        </div>
+
+        
+                            
                 </div>
+            </div>
                 <div class="center-col">
                     <div class="center-col-inner">
 
@@ -404,6 +414,19 @@
 
                                 </div>
                                 <div class="svt-cal-items-wrap">
+
+                                    <!-- intro -->
+
+                                    <div class="intro-text-body" style="direction: rtl;max-width: 100%;margin: 30px 16px 70px;">
+                                           
+                                            <p><strong>מחול במימד הרביעי</strong><span style="font-weight: 400;"> הינו אירוע כוריאוגרפי ופלטפורמה לאמני מחול. </span></p>
+                                            <p><span style="font-weight: 400;">האמניות והאמנים של </span><strong>מחול במימד הרביעי</strong><span style="font-weight: 400;"> מרכיבים את הגל החדש של המחול בארץ, החורג מהמבע הפיזי והאקדמי, ומבקש לחשוב מחדש על ריקוד וכוריאוגרפיה כפעולה של אמנות.</span></p>
+                                            <p><span style="font-weight: 400;">תחת המושג הטעון של סולידריות, </span><strong>מחול במימד הרביעי</strong><span style="font-weight: 400;"> נוגע בשאלות של רפרטואר ותמסורת. רפרטואר הוא אזור סוער של ידע וכוח, של פוליטיקה ובלעדיות. הוא מצביע על הפוטנציאל והמורכבות של הטקסט המחולי להיות מועבר, להתמסר לגופים שונים, לשכלל יכולות מגוונות ולעודד אינטרפרטציות אישיות וקולקטיביות.</span></p>
+                                            <p><span style="font-weight: 400;">בערב זה הרפרטואר מבקש לחזור ולשמש כאזור של הדדיות והעצמה, של לימוד והפרייה.</span></p>
+            
+                                        </div>
+
+
                                     <!-- item1 -->
                                     <div class="svt-cal-item">
                                         <div class="svt-cal-item-title">
@@ -994,8 +1017,7 @@
                     <div class="center-col-inner">
                 
                         <div class="after-images-title">
-                            <div class="after-images-title_subtitle">אמנים משתתפים</div>
-                            <div class="after-images-title_main">החזותי <img src='images/plus.svg'/> הזירה</div>
+                            <div class="after-images-title_subtitle">האמנים המשתתפים</div>
                         </div>
                         <div class="after-images-container">
         
@@ -1004,14 +1026,14 @@
                                     <div class="tooltip">
                                         <div class="title">מורן דובשני</div>
                                         <div class="tooltip-content">
-                                    <img src="images/artists/Adva-Yermiyahu.jpg" />                        
+                                    <img src="images/artists/moran.jpg" />                        
                                     מורן דובשני (ישראל, 1984) אמנית רב תחומית. פעילה כיוצרת עצמאית, פרפורמרית ויועצת אמנותית. בוגרת בית הספר לתיאטרון חזותי בהצטיינות.
 תהליכי היצירה של מורן מתבססים על התמקמות פעילה במרחב ספציפי – פיזי או רגשי, ותגובה אליו.
 בעבודותיה היא מייצרת חיבורים אלטרנטיביים בין העולם האנושי לעולם החומרי-צורני. הקהל מוזמן להכנס לעולם אותו היא יוצרת ולעבור חוויה רגשית.
 
                                 </div>
                                     </div>
-                                    <img src="images/artists/Adva-Yermiyahu.jpg" class='after-images-desktop-img' />
+                                    <img src="images/artists/moran.jpg" class='after-images-desktop-img' />
             
                                 </div>
                                 <!-- end item -->
@@ -1020,9 +1042,143 @@
                                     <div class="tooltip">
                                         <div class="title">קרן ואבנר</div>
                                         <div class="tooltip-content">
-                                    <img src="images/artists/Adva-Yermiyahu.jpg" />                        
+                                    <img src="images/artists/keren.jpg" />                        
                                     קרן בן אלטבט ואבנר מרים עמית, יצרו בשנים האחרונות סדרה של עבודות ("פה לפה", "בטן התינוק", "לביאה") המבוססות כולן על הפוטנציאל הקולי, התנועתי, הרגשי והטקסטואלי, שנובע מתוך חיבור אינטימי ברמת הנשימה, ומפרקטיקות של הקשבה עמוקה.
 נבו רומנו - כוריאוגרף, אמן ופרפורמר. עובד ויוצר בשיתוף עם אמנים שונים בארץ ובעולם. מרצה במחלקה למחול במכללת ספיר ובבית הספר למחול פאטה מורגנה שבנגב.
+
+                                </div>
+                                    </div>
+                                    <img src="images/artists/keren.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+
+
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">אנסמבל "נוימה" Noyma</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/ans.jpg" />                        
+                                    אנסמבל ווקאלי ייחודי הפועל בירושלים ומורכב ברובו מאומניות פרפורמנס, בוגרות ביה"ס לתיאטרון חזותי, בניהולה של מירב בן דוד.
+עבודת האנסמבל עוסקת במפגש בין שירה מקהלתית ממסורות שונות - עתיקות ועכשויות - לפרפורמנס חזותי.
+האנסמבל הוקם בירושלים בשנת 2017 ופועל בתמיכת ביה"ס לתיאטרון חזותי והזירה הבין תחומית.
+עד עתה הופיע האנסמבל בפסטיבלים וכנסים שונים למוסיקה, תיאטרון ואומנות בין תחומית:
+כנס פרפורמנס 2017 - ביה"ס לתיאטרון חזותי, "ספריה בלילה" -הזירה הבין תחומית, "בסוד קולות רבים" – הספריה הלאומית, פסטיבל "360 מעלות", פסטיבל "יממה" ועוד.
+
+                                </div>
+                                    </div>
+                                    <img src="images/artists/ans.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+
+
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">מירב בן דוד</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/merav.jpg" />                        
+                                    מוסיקאית ויוצרת בן תחומית. התמחתה בצרפת במוסיקה קולית של ימה"ב ובשירה ממסורות עממיות שונות באירופה ובישראל. בעבודותיה עוסקת במוסיקה קולית עתיקה ועכשווית בהקשר של פרפורמנס. יוצרת ומשתפת פעולה בתוך הרכבים מוזיקליים תיאטרליים שונים המופיעים בארץ ובחו"ל. עבודות סולו ואנסמבל מהשנים האחרונות: "המנון לקופסה", "וירגה" , "ממברנה", "אוטוביוגראפיה על איש שלא היה קיים"
+נמנית על סגל המורים בבית הספר לתיאטרון חזותי. מלמדת שירה ומנחה יחידים וקבוצות.
+                                </div>
+                                    </div>
+                                    <img src="images/artists/merav.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+
+
+                                   <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">אנסמבל הפיוט</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/ans-piut.jpg" />                        
+                                    אנסמבל הפיוט הוא הרכב קולי ייחודי בתחומו המבצע שירת קודש עברית ממרחבים שונים בצפון אפריקה, בפרשנות מקורית, שורשית ונועזת. מזה כעשור עוסק אנסמבל הפיוט בגיבוש של סגנון שירה מקהלתי ייחודי השואב את השראתו ממסורות שירה צפון אפריקאיות ומזרח-תיכוניות, משירת בית הכנסת ומחיפוש חופשי. במהלך עבודתם יצרו חברי האנסמבל פרשנות מקורית ורעננה על בסיס שירת מעגל רב קולית חיה ובוערת וחגיגה קצבית של מחיאות כפיים סוערות, עוּד וְנֶאי (חליל ערבי).
+                                </div>
+                                    </div>
+                                    <img src="images/artists/ans-piut.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">שני גרנות</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/shani.jpg" />                        
+                                    שני גרנות רקדנית ויוצרת מחול. רקדה במסגרת אנסמבל בת-שבע - הלהקה הצעירה. בוגרת בית הספר P.A.R.T.S בניהולה של אן-תרזה דה קירסמקר בבריסל. עבדה ויצרה בשיתוף עם כריסטיאן דוארטה (ברזיל) ופיטר פול (בלגיה). מאז חזרתה לארץ ב-2008 יצרה ועבדה עם שרון צוקרמן-ויזר, ארקדי זיידס, מאיה וינברג, יסמין גודר ונאוה פרנקל. משנת 2012 יוצרת בשיתוף פעולה עם נבו רומנו. מרצה במחלקה למחול במכללת ספיר. 
+                                </div>
+                                    </div>
+                                    <img src="images/artists/shani.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">תמי לבוביץ</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/tami.jpg" />                        
+                                    תמי לבוביץ, ילידת 1983. בוגרת בית הספר לתיאטרון חזותי (2007). חיה ועובדת בתל אביב. כוריאוגרפית, רקדנית, מעצבת תלבושות ומורה. עבודתה בוחנת את הגוף החי באזורים שבין מחול, פרפורמנס ואמנות חזותית. יצירותיה הוצגו במסגרות שונות בארץ ובחו"ל, ביניהן: הרמת מסך, הזירה הבינתחומית, ריקודי חדר, כנס פרפורמנס, מחול שלם, L1dancefest בבודפשט, Imflieger בוינה.
+                                </div>
+                                    </div>
+                                    <img src="images/artists/tami.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">אסף אהרונסון</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/asaf.jpg" />                        
+                                    אסף אהרונסון, יליד 1987. בעבודתו  מדגיש אהרונסון את החשיבות של בילוי זמן ביחד כאתר למציאת חומרים בימתיים. הציג בבמות שונות בארץ ובחו״ל ביניהן : l1dancefest (בודפשט), מחול חדש, מחול שלם, Summerworks (קנדה),  Joe Good Annex (סן פרנסיסקו), Performance Works NW (פורטלנד), Theaterszene Europa (גרמניה), Ponderosa, DOK11, Tiger Dublin Fringe. בוגר סדנת הריקוד של להקת המחול ורטיגו. סיים לימודי תואר ראשון במחול וכוריאוגרפיה ב-2015 בבית ספר Hzt בברלין, כמו כן למד לוליינות אוויר אצל קרן אלנקווה. בין האמנים עמם משתף פעולה: איריס ארז, תמי ליבוביץ, ארקדי זיידס, אמילי קומבט, פיטר פלייר, רורי דונבין, פרידריך גיס, מיה חביב, וחנה ארדמן. 
+                                </div>
+                                    </div>
+                                    <img src="images/artists/asaf.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">דניאל שופרא</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/daniel.jpg" />                        
+                                    דניאל שופרא, יוצרת מחול ופרפורמנס. בוגרת בית הספר לתיאטרון חזותי ובעלת תואר מהאקדמיה למוסיקה ולמחול בירושלים. עוסקת בתחום בו כוריאוגרפיה מגיעה ממצב קונקרטי הלקוח מתוך מציאות עכשווית או מהיסטוריה מוכתבת ועוסקת במהלך אמנותי המגיב לו ומפרק אותו. דניאל הציגה במסגרות שונות ביניהן כנס פרפורמנס 0:5, תערוכות בחלל ׳עזה 13׳, פסטיבל ״אינטימדנס״, במסגרת פרויקט ATLAS של פסטיבל ImpulsTanz בוינה ועוד. שיתפה פעולה עם כוריאוגראפים שונים וכיום עובדת עם ׳תנועה ציבורית׳.
+                                </div>
+                                    </div>
+                                    <img src="images/artists/daniel.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">אנה זקרבסקי</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/ana-zak.jpg" />                        
+                                    אנה זקרבסקי היא אמנית בינתחומית,ילידת מינסק (בלרוס), בוגרת בית הספר לתיאטרון חזותי.
+מיצירותיה האחרונות:"מינסק"- סולו אוטוביוגרפי-סוריאליסטי/ הזירה הבינתחומית, "קיו.אר"- פרפורמנס פיזי-דיגיטלי/ מוזיאון חיפה לאמנות, "וילונות צהובים"- מופע לחלל גלריסטי/גלריה אלפרד. שיתפה פעולה עם אמנים שונים כמלווה אמנותית וכמופיעה, ביניהם : דין מוס (ניו-יורק), תמר רבן, גוני פז, מורן דובשני ועוד.
+
+                                </div>
+                                    </div>
+                                    <img src="images/artists/ana-zak.jpg" class='after-images-desktop-img' />
+            
+                                </div>
+                                <!-- end item -->
+                                 <!-- start item -->
+                            <div class="after-images-item">
+                                    <div class="tooltip">
+                                        <div class="title">תמר אוסטרהוף</div>
+                                        <div class="tooltip-content">
+                                    <img src="images/artists/Adva-Yermiyahu.jpg" />                        
+                                    תמר אוסטרהוף בוגרת בית הספר לתיאטרון חזותי. בת 31, אמנית ואוצרת מתחילה.
+ניגודים ומפגשים בלתי אפשריים מאתגרים אותי, אני מחפשת אותם ויוצרת מתוכם. 
+מתגוררת באמסטרדם עד שאחזור הביתה. 
 
                                 </div>
                                     </div>
@@ -1030,16 +1186,16 @@
             
                                 </div>
                                 <!-- end item -->
-                                   <!-- start item -->
+                                 <!-- start item -->
                             <div class="after-images-item">
                                     <div class="tooltip">
-                                        <div class="title">ירמיהו</div>
+                                        <div class="title">תשע נשמות</div>
                                         <div class="tooltip-content">
-                                    <img src="images/artists/Adva-Yermiyahu.jpg" />                        
+                                    <img src="images/artists/nine.jpg" />                        
                                     sss
                                 </div>
                                     </div>
-                                    <img src="images/artists/Adva-Yermiyahu.jpg" class='after-images-desktop-img' />
+                                    <img src="images/artists/nine.jpg" class='after-images-desktop-img' />
             
                                 </div>
                                 <!-- end item -->
@@ -1056,17 +1212,51 @@
     <div class="after-section">
         <div class="center-col">
             <div class="center-col-inner">
+                    <div class="after-map-credits map-section">
+                            <!-- map -->
+                
+                            <div class="after-map-credits__col no-paddding">
+                
+                                <a href='https://www.google.co.il/maps/place/Hemed+Interchange/@31.8009395,35.122345,17z/data=!3m1!4b1!4m5!3m4!1s0x1502d0d4fbc66fbd:0x7a28de6ae5edae9c!8m2!3d31.800935!4d35.124539?hl=en' target="_blank">
+                                    <b>ימק״א</b>
+                                    <br>דוד המלך 26
+                                    <br>
+                                    <img src='images/arrow-left.svg' class="img-arrow"/>
+                                </a>
+                
+                
+                                <a href='https://www.google.co.il/maps/place/Interdisciplinary+arena/@31.751323,35.2069565,17z/data=!3m1!4b1!4m5!3m4!1s0x1502d7e1a5567f4f:0x8c892c2d2ceab1f3!8m2!3d31.7513185!4d35.2091505'
+                                    target="_blank">
+                                    <b>הגן הבוטני</b>
+                                    <br>זלמן שניאור 1, ניות 
+                                    <br>
+                                    <img src='images/arrow-left.svg' class="img-arrow" />
+                                </a>
+                
+                                <a href='https://www.google.co.il/maps/place/The+School+of+Visual+Theater+%D7%94%D7%AA%D7%99%D7%90%D7%98%D7%A8%D7%95%D7%9F+%D7%94%D7%97%D7%96%D7%95%D7%AA%D7%99%E2%80%AD/@31.7544154,35.2150264,17z/data=!3m1!4b1!4m5!3m4!1s0x1503281f81445075:0xec7b9e9752af0ab9!8m2!3d31.7544109!4d35.2172204'
+                                    target="_blank">
+                                    <b>בית הספר לתיאטרון חזותי</b>
+                                    <br> יד חרוצים 4, קומה 4
+                                    <br>
+                                    <img src='images/arrow-left.svg' class="img-arrow" />
+                                </a>
+                
+                
+                
+                            </div>
+                            
                 </div>
         </div>
-            <div class="after-map-divider"> </div>
+            <div class="padding-70px"> </div>
 
-<div class="after-map-divider"> </div>
+<!-- <div class="after-map-divider"> </div> -->
 <div class="center-col">
         <div class="center-col-inner">
                 <div class="after-map-credits">
                         
             <!-- credits -->
-            
+            <div class="after-map-credits__col after-map-credits__col--align-left"><img src="images/svt-logo.svg" style="width:151px;" alt=""></div>
+            <div class="after-map-credits__col"></div>
             <div class="after-map-credits__col">
                     <p><strong>בית‭ ‬הספר‭ ‬לתיאטרון‭ ‬חזותי</strong></p>
                     <p>– – –</p>
@@ -1101,11 +1291,8 @@
                     <p><strong>תומכים‭ ‬בבית‭ ‬הספר‭ ‬לתיאטרון‭ ‬חזותי:</strong><span style="font-weight: 400;"> ‬משרד‭ ‬התרבות‭ ‬והספורט‭ ‬‮&mdash;‬‭ ‬מנהל‭ ‬תרבות, ‬עיריית‭ ‬ירושלים‭ ‬‮&mdash;‬‭ ‬אגף‭ ‬תרבות‭ ‬ואמנויות, ‬הקרן‭ ‬לירושלים, ‬מפעל‭ ‬הפיס, ‬קרן‭ ‬ברכה</span></p>
             </div>
            
-            <div class="after-map-credits__col"></div>
-            <div class="after-map-credits__col">
-               
-
-            </div>
+        
+         
             <div class="after-map-credits__col after-map-credits__col--full-line after-map-credits--spacer">
                 <img src='images/logos/1.jpg' class='logo-img'>
                 <img src='images/logos/2.jpg' class='logo-img'>

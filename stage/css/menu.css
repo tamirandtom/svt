@@ -95,7 +95,7 @@ menu.menu--green .menu-content a:hover {
 @media (max-width: 800px) {
 
     .body-start menu {
-    opacity:0;
+    opacity:1;
     }        
     menu {
         opacity:1;
@@ -151,11 +151,11 @@ menu .menucircle {
         height:100%;
         pointer-events:none;
         opacity:0;
-        background-color:var(--main-color-50);
+        background-color:#767678;
         z-index:900;
     }
     .svt-backdrop.svt-backdrop--visible {
-       opacity:1;
+       opacity:0.9;
        pointer-events:all;       
     }
     menu:hover .menu-content {

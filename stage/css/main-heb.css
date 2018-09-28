@@ -65,8 +65,12 @@ body {
     --color-black: #000;
     --left-space: 130px;
     --line-width: 2px;
-}
 
+
+}
+.padding-70px {
+    height: 70px;
+    width: 100%;
 }
 .scrolloff {
     pointer-events:none;

@@ -961,4 +961,9 @@ a.cal-ticket-cta:hover img {
     a.cal-ticket-cta {
         display: none;
     }
+
+    /* bug fix */
+    .svt-cal-item-title__left {
+        width: 100%;
+    }
 }
