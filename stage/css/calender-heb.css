@@ -1,14 +1,14 @@
 /* Setting up color vars */
 
 .wrap-zira .container-half-content {
-    --main-color: #00AE7C;
+    --main-color: #767678;
     --bg-color: #fff;
     color: var(--main-color);
 }
 
 .wrap-svt .container-half-content {
     --main-color: #fff;
-    --bg-color: #00AE7C;
+    --bg-color: #767678;
     color: var(--main-color);
 }
 

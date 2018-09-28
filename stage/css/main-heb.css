@@ -11,7 +11,7 @@ html, body {
 
 .preloader {
     position:fixed;
-    background:#00AE7C;
+    background:#767678;
     width:100%;
     height:100%;
     z-index:9999999;
@@ -54,12 +54,12 @@ html, body {
 body {
     height: 100%;
     /* overflow: hidden; */
-    background:#00AE7C;
+    background:#767678;
     color: #000;
     margin: 0;
     padding: 0;
     /* cursor: none; */
-    --main-color: #00AE7C;
+    --main-color: #767678;
     --main-color-50: rgba(0, 174, 124, 0.8);
     --main-color-pos: #fff;
     --color-black: #000;

@@ -76,7 +76,7 @@ menu .menu-content a:hover {
 
 
 menu.menu--green .menucircle {
-    background: #CBEFE5;
+    background: #E9E9E9;
     box-shadow: 0 0 9px 4px var(--main-color);
 }
 menu.menu--green:hover .menucircle {
@@ -127,7 +127,7 @@ menu.menu--green .menu-content a:hover {
 
 
 menu .menucircle {
-    background: #CBEFE5;
+    background: #E9E9E9;
     box-shadow: 0 0 9px 4px var(--main-color);
     
 }

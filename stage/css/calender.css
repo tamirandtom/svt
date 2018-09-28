@@ -1,90 +1,95 @@
 /* Setting up color vars */
- 
+
 .wrap-zira .container-half-content {
-    --main-color: #00AE7C;
+    --main-color: #767678;
     --bg-color: #fff;
     color: var(--main-color);
 }
 
 .wrap-svt .container-half-content {
     --main-color: #fff;
-    --bg-color: #00AE7C;
+    --bg-color: #767678;
     color: var(--main-color);
 }
 
 .inline-link {
-    color:#fff;
-    text-decoration:none;
-    font-weight:700;
-    border-bottom:2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
 }
+
 em {
     font-family: 'Libre Baskerville', serif;
 }
+
 /* floating labels */
 
 .text-floating-svt {
     transform: rotate(-90deg);
 
     font-family: 'Miriam Libre', sans-serif;
-    font-weight:700;
+    font-weight: 700;
     font-size: 14px;
     color: #FFFFFF;
     letter-spacing: 3.64px;
-    line-height: 29px;   
-    position:absolute; 
-    top:calc(50% - 30px);
-    transition:all 1s ease;
-    opacity:1;
-pointer-events:none;    
-    }
+    line-height: 29px;
+    position: absolute;
+    top: calc(50% - 30px);
+    transition: all 1s ease;
+    opacity: 1;
+    pointer-events: none;
+}
 
 
 .text-floating-zir {
     transform: rotate(-90deg);
     font-family: 'Miriam Libre', sans-serif;
-    font-weight:700;
+    font-weight: 700;
     font-size: 14px;
-    color:var(--main-color);
+    color: var(--main-color);
     letter-spacing: 3.64px;
-    line-height: 29px;  
-    position:absolute; 
-    top:calc(50% - 30px);
-    transition:all 1s ease;
-    opacity:1;
-pointer-events:none;    
+    line-height: 29px;
+    position: absolute;
+    top: calc(50% - 30px);
+    transition: all 1s ease;
+    opacity: 1;
+    pointer-events: none;
 
-    }
-
-
-    .focus-svt .text-floating-zir {
-        left:calc(100% - var(--left-space));
-        }
-        .focus-svt .text-floating-svt {
-            left:calc(100% - var(--left-space) - 60px);
-            }
+}
 
 
-            .focus-zira .text-floating-zir {
-                left:calc(var(--left-space));
-                }
-                .focus-zira .text-floating-svt {
-                    left:calc(var(--left-space) - 60px);
-                    }
+.focus-svt .text-floating-zir {
+    left: calc(100% - var(--left-space));
+}
+
+.focus-svt .text-floating-svt {
+    left: calc(100% - var(--left-space) - 60px);
+}
 
 
-            .focus-start .text-floating-zir{
-                left:50%;
-                opacity:0;
-                }
-                .focus-start .text-floating-svt{
-                    left:50%;
-                opacity:0;
-                
-                    }
+.focus-zira .text-floating-zir {
+    left: calc(var(--left-space));
+}
 
-        
-    
+.focus-zira .text-floating-svt {
+    left: calc(var(--left-space) - 60px);
+}
+
+
+.focus-start .text-floating-zir {
+    left: 50%;
+    opacity: 0;
+}
+
+.focus-start .text-floating-svt {
+    left: 50%;
+    opacity: 0;
+
+}
+
+
+
 
 /* intro text */
 
@@ -132,7 +137,7 @@ pointer-events:none;
     line-height: 32px;
     letter-spacing: 1.7px;
     word-spacing: -7px;
-    margin:55px 0 30px 0;
+    margin: 55px 0 30px 0;
 }
 
 .intro-text-pre {
@@ -147,24 +152,26 @@ pointer-events:none;
 .intro-text-body {
     /* font-family: 'Frank Ruhl Libre', serif; */
     font-family: 'Libre Baskerville', serif;
-    
-    
+
+
     font-size: 18px;
     max-width: 760px;
     line-height: 29px;
     letter-spacing: normal;
     margin-bottom: 120px;
 }
+
 .intro-text-body-sub2 {
-    font-size:24px;
-    line-height:34px;
-    letter-spacing:0.3px;
-    margin-bottom:24px;
-    display:block;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0.3px;
+    margin-bottom: 24px;
+    display: block;
 }
+
 .intro-text-body b {
     font-weight: 400;
-    font-style:italic;
+    font-style: italic;
     letter-spacing: 1px;
 }
 
@@ -190,7 +197,7 @@ pointer-events:none;
 
 .zi-text-pre {
     font-family: 'Libre Baskerville', serif;
-    font-style:italic;
+    font-style: italic;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
@@ -199,20 +206,22 @@ pointer-events:none;
 
 .zi-text-body {
     font-family: 'Libre Baskerville', serif;
-    
+
     font-size: 18px;
     max-width: 760px;
     line-height: 29px;
-    letter-spacing:normal;
+    letter-spacing: normal;
     margin-bottom: 120px;
 }
 
 
 .wrap-zira strong {
-    font-weight:700;
+    font-weight: 700;
 }
-.wrap-zira  p ,.wrap-svt  p {
-margin:0px;
+
+.wrap-zira p,
+.wrap-svt p {
+    margin: 0px;
 }
 
 
@@ -227,8 +236,8 @@ a.cal-ticket-cta {
     position: relative;
     top: -65px;
     left: -40px;
-    display:inline-block;
-    
+    display: inline-block;
+
 }
 
 .svt-cal-item-content__buttons a.cal-ticket-cta {
@@ -237,34 +246,34 @@ a.cal-ticket-cta {
     position: static;
     top: auto;
     left: auto;
-    margin-bottom:34px;
+    margin-bottom: 34px;
     /* display: */
-    
+
 }
 
 
 a.cal-ticket-cta img {
-   width:100%;
+    width: 100%;
 }
 
-a.cal-ticket-cta:hover  {
-    background-image:url('../images/en_tickets_cta_white--hover.svg');
-    background-size:cover;
+a.cal-ticket-cta:hover {
+    background-image: url('../images/en_tickets_cta_white--hover.svg');
+    background-size: cover;
 }
 
-.wrap-zira  a.cal-ticket-cta:hover  {
-    background-image:url('../images/en_tickets_cta_green--hover.svg');
-    background-size:cover;
+.wrap-zira a.cal-ticket-cta:hover {
+    background-image: url('../images/en_tickets_cta_green--hover.svg');
+    background-size: cover;
 }
 
 
 a.cal-ticket-cta:hover img {
-    opacity:0;
+    opacity: 0;
 }
 
 
 
-.cal-complex-item .svt-cal-item-content__desc-text a.cal-ticket-cta{
+.cal-complex-item .svt-cal-item-content__desc-text a.cal-ticket-cta {
     position: static;
     top: 0px;
     left: 0px;
@@ -459,12 +468,12 @@ a.cal-ticket-cta:hover img {
     line-height: 32px;
     text-align: center;
     font-size: 13px;
-    font-weight:700;
+    font-weight: 700;
     letter-spacing: 2px;
     font-family: 'Miriam Libre', sans-serif;
 
     margin-top: 20px;
-    
+
 }
 
 
@@ -489,7 +498,7 @@ a.cal-ticket-cta:hover img {
     line-height: 20px;
     letter-spacing: 1.2px;
     font-family: 'Frank Ruhl Libre', serif;
-    
+
     padding: 0 8px;
     display: none;
     /* top: -4px; */
@@ -510,7 +519,7 @@ a.cal-ticket-cta:hover img {
 .svt-cal-item-title__location {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    
+
     line-height: 20px;
     letter-spacing: .9px;
 }
@@ -523,15 +532,15 @@ a.cal-ticket-cta:hover img {
 
 .svt-cal-item-content__desc {
     width: 50%;
-    margin-bottom:60px;
+    margin-bottom: 60px;
 }
 
 .svt-cal-item-content__desc-text {
-    font-family: 'Libre Baskerville', serif;    
+    font-family: 'Libre Baskerville', serif;
     margin-bottom: 35px;
-font-size: 15px;
-letter-spacing: normal;
-line-height: 24px;
+    font-size: 15px;
+    letter-spacing: normal;
+    line-height: 24px;
 
 }
 
@@ -574,7 +583,7 @@ line-height: 24px;
     letter-spacing: 2.2px;
     font-family: 'Hadassah';
     font-weight: 700;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 
@@ -587,7 +596,7 @@ line-height: 24px;
     top: 2px;
     letter-spacing: 0.8px;
     font-family: 'Frank Ruhl Libre', serif;
-    
+
     padding: 0 8px;
     display: none;
 }
@@ -619,8 +628,8 @@ line-height: 24px;
 
 .zir-cal-item-content__desc {
     width: 50%;
-    margin-bottom:60px;
-    
+    margin-bottom: 60px;
+
 }
 
 
@@ -629,7 +638,7 @@ line-height: 24px;
     letter-spacing: normal;
     line-height: 24px;
     font-family: 'Libre Baskerville', serif;
-    
+
     /* font-family: 'Frank Ruhl Libre', serif; */
     font-weight: 400;
     margin-bottom: 35px;
@@ -646,7 +655,7 @@ line-height: 24px;
 .zir-cal-item-content__desc-credits-light {
     font-family: 'Miriam Libre', sans-serif;
     font-size: 13px;
-    
+
     letter-spacing: 0.55px;
     line-height: 20px;
 }
@@ -700,7 +709,7 @@ line-height: 24px;
     color: var(--bg-color);
     background-color: var(--main-color);
 }
-  
+
 
 
 /* Mobile */
@@ -709,6 +718,7 @@ line-height: 24px;
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
         margin-right: 40px;
     }
+
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-content__image {
         margin-right: 40px;
     }
@@ -717,9 +727,9 @@ line-height: 24px;
 @media (max-width: 800px) {
 
     .intro-text-body-sub2 {
-        font-size:14px;
-        line-height:24px;
-        letter-spacing:0px;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0px;
     }
 
 
@@ -728,27 +738,27 @@ line-height: 24px;
         font-weight: 700;
         line-height: 21px;
         letter-spacing: 0;
-    
+
         /* margin:55px 0 30px 0; */
     }
 
     .focus-svt .text-floating-zir {
         left: calc(100% - var(--left-space) - 20px);
-        }
+    }
 
-        .focus-zira .text-floating-svt {
+    .focus-zira .text-floating-svt {
         /* left: calc(100% - var(--left-space) - 12px); */
         left: calc(var(--left-space) - 35px);
-            }
+    }
 
 
-        .focus-svt .text-floating-svt,
-        .focus-zira .text-floating-zir {
-            opacity:0;
-            }
+    .focus-svt .text-floating-svt,
+    .focus-zira .text-floating-zir {
+        opacity: 0;
+    }
 
-       
-/* .text-floating-zir,
+
+    /* .text-floating-zir,
 .text-floating-svt {
     display:none;
 } */
@@ -756,14 +766,16 @@ line-height: 24px;
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-title__name {
         margin-left: 16px;
     }
+
     .cal-complex-item .svt-cal-item-content-wrap .svt-cal-item-content__image {
         margin-left: 0px;
     }
 
     .center-col {
-        max-width:100%;
+        max-width: 100%;
         min-width: 100%;
     }
+
     .center-col-inner {
         margin: 0 0px;
     }
@@ -771,17 +783,18 @@ line-height: 24px;
 
     .svt-section-text,
     .zi-section-text {
-        padding:0 16px;
+        padding: 0 16px;
     }
 
 
-   
+
     /* Into texts*/
     .intro-text-title {
         font-size: 35px;
         line-height: 29px;
         letter-spacing: 2px;
     }
+
     .intro-text-subtitle {
         font-size: 20px;
         line-height: 21px;
@@ -789,16 +802,19 @@ line-height: 24px;
         margin-bottom: 30px;
         margin-top: 15px;
     }
+
     .intro-text-body {
         font-size: 14px;
         line-height: 24px;
         letter-spacing: 0px;
     }
+
     .zi-text-title {
         font-size: 35px;
         line-height: 29px;
         letter-spacing: 2px;
     }
+
     .zi-text-subtitle {
         font-size: 20px;
         line-height: 29px;
@@ -806,17 +822,20 @@ line-height: 24px;
         margin-bottom: 30px;
         margin-top: 8px;
     }
+
     .zi-text-pre {
-        
+
         font-size: 15px;
         line-height: 21px;
         letter-spacing: normal;
     }
+
     .zi-text-body {
         font-size: 14px;
         line-height: 22px;
         letter-spacing: normal;
     }
+
     /* Day titles */
     .zira-cal-day-header_arrow,
     .svt-cal-day-header_arrow {
@@ -824,57 +843,65 @@ line-height: 24px;
         text-align: right;
         padding-top: 0px;
     }
+
     .svt-cal-day-header {
         padding: 30px 0 0 0;
     }
+
     .svt-cal-day-header__day-name {
         word-spacing: 1px;
     }
+
     .svt-cal-day-header__day-name {
         word-spacing: 1px;
     }
+
     .svt-cal-day-header--mobile-part1 {
         font-size: 45px;
         line-height: 45px;
         font-family: 'Nitti', serif;
     }
+
     .svt-cal-day-header--mobile-part2 {
         font-size: 24px;
         line-height: 38px;
         letter-spacing: .5px;
-        font-family: 'Nitti', serif;   
-        
+        font-family: 'Nitti', serif;
+
         font-weight: 700;
         margin-top: 8px;
     }
+
     .svt-cal-day-header--mobile-part3 {
         font-size: 12px;
         line-height: 15px;
         letter-spacing: 0.5px;
         margin-top: 20px;
-        font-family: 'Nitti', serif;   
-        
-        
+        font-family: 'Nitti', serif;
+
+
     }
 
     .svt-cal-day-header--mobile-part4 {
         font-size: 12px;
         line-height: 19px;
         letter-spacing: 1.5px;
-        font-family: 'Miriam Libre', sans-serif;    
-        font-weight:400;    
+        font-family: 'Miriam Libre', sans-serif;
+        font-weight: 400;
         /* margin-top: 20px; */
-        
+
     }
+
     .svt-cal-day-header__day-title {
         font-size: 15px;
         line-height: 20px;
         word-spacing: -4px;
     }
-  
+
     .cal-ticket-cta {
         display: none;
     }
+
     .cal-ticket-cta--mobile {
         display: inline-block;
         font-family: 'Miriam Libre', sans-serif;
@@ -886,16 +913,19 @@ line-height: 24px;
         color: var(--main-color);
         text-decoration: none;
     }
+
     .cal-ticket-cta--mobile:hover {
         color: var(--bg-color);
         background-color: var(--main-color);
     }
+
     .svt-cal-item-content__desc-text {
         margin-top: 35px;
         font-size: 15px;
         line-height: 24px;
         letter-spacing: normal;
     }
+
     .zir-cal-item-content__desc-text {
         margin-top: 15px;
         font-size: 14px;
@@ -909,14 +939,15 @@ line-height: 24px;
         margin: 16px 0 0 0;
     }
 
-    
 
-    .svt-cal-item-title__accordion, .zir-cal-item-title__accordion 
-    {
-    position: relative;
-    top: -11px;
-    
+
+    .svt-cal-item-title__accordion,
+    .zir-cal-item-title__accordion {
+        position: relative;
+        top: -11px;
+
     }
+
     /* Items flexbox */
     .zir-cal-item-title {
         flex-direction: column;
@@ -938,14 +969,17 @@ line-height: 24px;
         margin-top: 10px;
         /* font-weight:400; */
     }
+
     .svt-cal-item-content,
     .zir-cal-item-content {
         flex-direction: column;
         margin-bottom: 20px;
     }
+
     .svt-cal-item-title__name {
         margin: 0px;
     }
+
     .svt-cal-item-title__left:before {
         content: "***";
         font-family: 'Miriam Libre', sans-serif;
@@ -954,6 +988,7 @@ line-height: 24px;
         letter-spacing: 1.3px;
         padding-top: 6px;
     }
+
     .zir-cal-item-title__left:before {
         content: "***";
         font-family: 'Miriam Libre', sans-serif;
@@ -962,15 +997,18 @@ line-height: 24px;
         letter-spacing: 1.3px;
         /* padding-top: 6px; */
     }
+
     .svt-cal-item-title__name__name,
     .svt-cal-item-title__name__author {
         line-height: 22px;
     }
+
     .svt-cal-item-title__name__author {
         font-size: 15px;
         line-height: 21px;
         letter-spacing: normal;
     }
+
     /* images */
     .svt-cal-item-content__image,
     .zir-cal-item-content__image {
@@ -978,12 +1016,14 @@ line-height: 24px;
         padding: 0;
         margin: 0;
     }
+
     .zir-cal-item-content__desc,
     .svt-cal-item-content__desc {
         width: 100%;
-        margin-bottom:20px;
+        margin-bottom: 20px;
 
     }
+
     .svt-cal-item-title__right,
     .zir-cal-item-title__right {
         align-items: center;
@@ -991,8 +1031,8 @@ line-height: 24px;
         direction: rtl;
         justify-content: space-between;
         width: 100%;
-        min-height:45px;
-        
+        min-height: 45px;
+
     }
 
 
@@ -1001,18 +1041,25 @@ line-height: 24px;
      */
 
 
-     .svt-cal-day-header, .svt-cal-item-title, .svt-cal-item-content__desc,  .zir-cal-day-header, .zir-cal-item-title, .zir-cal-item-content__desc {
+    .svt-cal-day-header,
+    .svt-cal-item-title,
+    .svt-cal-item-content__desc,
+    .zir-cal-day-header,
+    .zir-cal-item-title,
+    .zir-cal-item-content__desc {
         padding-left: 16px;
         padding-right: 16px;
         max-width: 100%;
         box-sizing: border-box;
     }
+
     .zir-cal-day-header {
         padding-bottom: 60px;
     }
+
     .svt-cal-day-header {
         padding-bottom: 40px;
-        
+
     }
 
 
@@ -1021,5 +1068,5 @@ line-height: 24px;
     a.cal-ticket-cta {
         display: none;
     }
-    
+
 }

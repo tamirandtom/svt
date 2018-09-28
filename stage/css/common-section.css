@@ -2,14 +2,14 @@
 
 .after-section {
     padding:60px 0;
-    background:#CBEFE5;
+    background:#E9E9E9;
 }
 
 .after-map-divider {
 max-width:1180px;
 background:var(--main-color);
 height:2px;
-margin:20px 64px;
+margin:20px auto;
 box-sizing:border-box;
 }
 
@@ -176,13 +176,13 @@ margin-bottom:26px;
     height:35px;
     background:#fff;
     border-radius:35px;
-    box-shadow: 0 0 15px 5px #00AE7C;
+    box-shadow: 0 0 15px 5px #767678;
  }
 
  .after-map-container .map-marker:hover {
     background:var(--main-color);
     
-     box-shadow: 0 0 15px 5px #00AE7C;
+     box-shadow: 0 0 15px 5px #767678;
  }
 
 
@@ -328,7 +328,7 @@ margin-bottom:26px;
 display:block;
 font-size: 13.5px;
 
-color: #00AE7C;
+color: #767678;
 letter-spacing: 0;
 line-height: 20px;
     direction:ltr;
@@ -356,7 +356,7 @@ line-height: 20px;
 
     .after-images-item .tooltip .title{
         font-size: 19px;
-        color: #00AE7C;
+        color: #767678;
         letter-spacing:normal;
         line-height: 21px;
         padding:25px 20px;

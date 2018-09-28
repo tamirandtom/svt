@@ -263,6 +263,10 @@ function focusOnHazira() {
 	scrollToTop();
 }
 
+
+// Default is SVT scroll
+focusOnSvt();
+
 function focusOnSvt() {
 	acticeSection = 'svt';
 
@@ -508,7 +512,7 @@ if (!isMobile && showAniamtion) {
 	var playground = document.getElementById('px-render');
 	var playground2 = document.getElementById('px-render-green');
 	var canvas, canvas2;
-	// Timer for animation
+	// Timer for animationr
 	var count = 0;
 	var raf;
 
@@ -523,7 +527,7 @@ if (!isMobile && showAniamtion) {
 	renderer2.autoResize = false;
 
 	renderer.backgroundColor = 0x000000;
-	renderer2.backgroundColor = 0x00AE7C;
+	renderer2.backgroundColor = 0x767678;
 
 	var innerCircle, outerCircle, bgCircle;
 	var innerCircle2, outerCircle2, bgCircle2;
@@ -572,7 +576,7 @@ if (!isMobile && showAniamtion) {
 
 		var bgSquare = new PIXI.Graphics();
 		var bgSquare2 = new PIXI.Graphics();
-		bgSquare.beginFill(0x00AE7C);
+		bgSquare.beginFill(0x767678);
 		bgSquare.drawRect(0, 0, width, height);
 		mainGroup.addChild(bgSquare);
 
@@ -582,7 +586,7 @@ if (!isMobile && showAniamtion) {
 
 
 		bgCircle = new PIXI.Graphics();
-		bgCircle.beginFill(0x00AE7C);
+		bgCircle.beginFill(0x767678);
 		bgCircle.drawCircle(width / 2, height / 2, (width)); //(x,y,radius)
 		bgCircle.endFill();
 
@@ -598,7 +602,7 @@ if (!isMobile && showAniamtion) {
 		outerCircle.endFill();
 
 		outerCircle2 = new PIXI.Graphics();
-		outerCircle2.beginFill(0x00AE7C);
+		outerCircle2.beginFill(0x767678);
 		outerCircle2.drawCircle(width / 2, height / 2, outerCircleRadius); //(x,y,radius)
 		outerCircle2.endFill();
 
@@ -606,7 +610,7 @@ if (!isMobile && showAniamtion) {
 
 
 		innerCircle = new PIXI.Graphics();
-		innerCircle.beginFill(0x00AE7C);
+		innerCircle.beginFill(0x767678);
 		innerCircle.drawCircle(width / 2, height / 2, innerCircleRadius); //(x,y,radius)
 		innerCircle.endFill();
 
@@ -744,11 +748,11 @@ if (!isMobile && showAniamtion) {
 				renderer.render(stage);
 
 			} else if (acticeSection == 'zira') {
-				renderer2.render(stage2);
+				// renderer2.render(stage2);
 
 			} else {
 				renderer.render(stage);
-				renderer2.render(stage2);
+				// renderer2.render(stage2);
 			}
 
 
