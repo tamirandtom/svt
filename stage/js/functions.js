@@ -144,11 +144,18 @@ $(window).resize(function () {
 // Menu links
 $(".menu-link__zira").click(function () {
 	//Scroll to top
+	if (!isMobile)
+	{
 	$('html, body, .wrap-svt, .wrap-zira').animate({
 		scrollTop: 0
 	}, 300);
 	//Focus on Zira
 	focusOnHazira();
+} else {
+	$('body, html').animate({
+		scrollTop: $('.wrap-zira').offset().top
+	}, 300);
+}
 	// Remove backdrop
 	$(".svt-backdrop").removeClass('svt-backdrop--visible');
 	$("menu").removeClass('menu--open');
@@ -270,7 +277,7 @@ function focusOnHazira() {
 		}
 	});
 	scrollToTop();
-	}
+	} 
 }
 
 
@@ -859,5 +866,8 @@ $(document).ready(function () {
 		});
 	// }
 	
+	// auto open 1st day's event
+	$('.svt-cal-item--start-open').siblings(".svt-cal-item-content-wrap").slideToggle();
+	$('.svt-cal-item--start-open').toggleClass('svt-zippy--open');
 	
 });

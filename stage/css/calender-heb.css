@@ -370,6 +370,9 @@ a.cal-ticket-cta:hover img {
 .zir-cal-item-content-wrap {
     display: none;
 }
+.svt-cal-item--start-open {
+    display: block;
+}
 
 .svt-cal-item-content__image,
 .zir-cal-item-content__image {
