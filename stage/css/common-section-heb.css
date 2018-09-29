@@ -14,7 +14,7 @@
 
 .after-images-title {
     text-align:center;
-    padding:55px 0;
+    padding:130px 0 55px 0;
     /* border-top: 2px solid var(--main-color); */
     /* border-bottom: 2px solid var(--main-color); */
     color:var(--main-color);
@@ -131,7 +131,7 @@ padding:0 6px;
     letter-spacing:0.3px;
     font-family: 'Miriam Libre', sans-serif;    
     background: #FFFFFF;
-    box-shadow: -5px 5px 6px 0 rgba(0,174,124,0.20);
+    box-shadow: -5px 5px 6px 0 #767678;
     display: none; 
 
 }
@@ -194,7 +194,7 @@ margin-bottom:26px;
     letter-spacing:0.3px;
     font-family: 'Miriam Libre', sans-serif;    
     background: #FFFFFF;
-    box-shadow: -5px 5px 6px 0 rgba(0,174,124,0.20);
+    box-shadow: -5px 5px 6px 0 #767678;
     display: none; 
 }
 .map-marker .tooltip b {
@@ -218,7 +218,7 @@ margin-bottom:26px;
     width:25%;
     box-sizing:border-box;
     padding-right:0px;
-    padding-left:60px;
+    padding-left:10px;
     direction:rtl;
     color:var(--main-color);
     padding-top:28px;
@@ -242,7 +242,7 @@ margin-bottom:26px;
 }
 
 .after-map-credits.map-section  .after-map-credits__col a {
-    width: calc(25% + 18px);
+    width:25%;
 }
 
 .after-map-credits__col--full-line.after-map-credits__col--full-line {

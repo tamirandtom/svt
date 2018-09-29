@@ -240,7 +240,7 @@ $(".svt-backdrop").click(function () {
 
 // Onscroll event svt
 
-var innitialScroll = 0;
+var innitialScroll = 1;
 
 var ziraScroll = 0;
 var svtScroll = 0;
@@ -455,7 +455,7 @@ $(".wrap-zira").scroll(function () {
 		}
 	
 		// Hide / show intro circle
-		updateCircleOpacity();
+		// updateCircleOpacity();
 	
 	
 		// After innitial scroll remove 1/2 class
@@ -476,7 +476,7 @@ $(".wrap-zira").scroll(function () {
 		// 		// scale: $(this).height()*0.07
 		// 	  }, 0);
 	
-		ziraScroll = $(this).scrollTop();
+		// ziraScroll = $(this).scrollTop();
 	
 		// Save new valie for up / down detection
 
